@@ -37,6 +37,7 @@ const PRODUCTS = [
       category: "earrings",
       price: 1250,
       img: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
       desc: "Stately 22k burnished gold earrings featuring intricate filigree work and polished gold drop accents. Infuse modern royalty into your evening wear."
   },
   {
@@ -45,6 +46,7 @@ const PRODUCTS = [
       category: "bracelets",
       price: 4500,
       img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
       desc: "A bold statement cuff in 18k gold encrusted with over 3 carats of brilliant VVS1 clarity baguette diamonds, shining with unmatched luxury."
   },
   {
@@ -53,6 +55,7 @@ const PRODUCTS = [
       category: "rings",
       price: 2100,
       img: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
       desc: "A classic signet ring featuring a polished square-cut deep green emerald set in chunky 22k yellow gold. Unisex elegance at its peak."
   },
   {
@@ -61,6 +64,7 @@ const PRODUCTS = [
       category: "necklaces",
       price: 8900,
       img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1599643471487-2c92c90cbfbb?auto=format&fit=crop&w=600&q=80",
       desc: "A grand statement choker necklace crafted in platinum, featuring cascading pear-cut diamonds that capture and reflect the light from every angle."
   }
 ];
