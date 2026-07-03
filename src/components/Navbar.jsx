@@ -82,7 +82,7 @@ export default function Navbar({ cartCount, onCartToggle }) {
 
         <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
           <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-            <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Jewellery Shop</span>
+            <span style={{ fontSize: 'clamp(16px, 4.5vw, 24px)', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14', whiteSpace: 'nowrap' }}>Jewellery Shop</span>
           </span>
         </a>
         

@@ -43,11 +43,20 @@ export default function Hero() {
           .hero-container { flex-direction: row; }
           .hero-content { padding: 60px; }
           .hero-image { min-height: 500px; }
+          .hero-btn { padding: 15px 40px; font-size: 13px; align-self: flex-start; }
           @media (max-width: 768px) {
             .hero-container { flex-direction: column-reverse; }
             .hero-content { padding: 30px; }
             .hero-image { min-height: 300px; }
             .hero h1 { font-size: 2rem !important; }
+            .hero-btn { 
+              padding: 14px 24px; 
+              font-size: 12px; 
+              width: 100%; 
+              text-align: center; 
+              align-self: center;
+              margin-top: 10px;
+            }
           }
         `}</style>
         
@@ -62,7 +71,7 @@ export default function Hero() {
           <p style={{ color: 'var(--gray-text)', fontSize: '15px', lineHeight: '1.6', marginBottom: '30px', maxWidth: '400px' }}>
             {SLIDES[current].desc}
           </p>
-          <a href="#catalog" className="btn-gold" style={{ alignSelf: 'flex-start', padding: '15px 40px', background: 'var(--emerald-deep)', color: 'var(--white)', textDecoration: 'none', borderRadius: '4px', textTransform: 'uppercase', fontSize: '13px', letterSpacing: '1px' }}>
+          <a href="#catalog" className="btn-gold hero-btn" style={{ background: 'var(--emerald-deep)', color: 'var(--white)', textDecoration: 'none', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px' }}>
             Shop The Collection
           </a>
         </div>
