@@ -157,7 +157,7 @@ export default function App() {
       <InstagramFeed />
 
       {/* Footer */}
-      <footer style={{ background: 'var(--white)', padding: '60px 20px', borderTop: '1px solid var(--gray-light)', color: 'var(--charcoal)' }}>
+      <footer style={{ background: 'var(--white)', padding: 'clamp(40px, 6vw, 60px) clamp(16px, 3vw, 20px)', borderTop: '1px solid var(--gray-light)', color: 'var(--charcoal)' }}>
         <div className="footer-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
             <div className="footer-col">
                 <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px', textDecoration: 'none' }}>
@@ -198,14 +198,14 @@ export default function App() {
                   e.preventDefault();
                   alert("Thank you for subscribing to Jewellery Shop!");
                   e.target.reset();
-                }} style={{ display: 'flex', gap: '10px' }}>
-                    <input type="email" placeholder="Your email address" required style={{ flex: 1, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
-                    <button type="submit" style={{ padding: '10px 20px', background: 'var(--emerald-deep)', color: 'var(--white)', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Subscribe</button>
+                }} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                    <input type="email" placeholder="Your email address" required style={{ flex: '1 1 180px', minWidth: 0, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
+                    <button type="submit" style={{ padding: '10px 20px', background: 'var(--emerald-deep)', color: 'var(--white)', border: 'none', borderRadius: '4px', cursor: 'pointer', whiteSpace: 'nowrap' }}>Subscribe</button>
                 </form>
             </div>
         </div>
 
-        <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', color: 'var(--gray-text)', fontSize: '13px' }}>
+        <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', color: 'var(--gray-text)', fontSize: '13px' }}>
             <div>&copy; 2026 Jewellery Shop. All rights reserved.</div>
             <div>Designed for Elegance</div>
         </div>

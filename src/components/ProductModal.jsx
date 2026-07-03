@@ -148,7 +148,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
             <h4 style={{ color: 'var(--gold-light)', fontSize: '11px', margin: '0 0 10px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>
               ✦ Pricing Breakdown (Rate Per Gram)
             </h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '12px', color: 'var(--white)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px', fontSize: '12px', color: 'var(--white)' }}>
               <div><span style={{ color: 'var(--gray-text)' }}>Metal Purity:</span> {getPricingBreakdown(product.category, product.price).purity}</div>
               <div><span style={{ color: 'var(--gray-text)' }}>Net Weight:</span> {getPricingBreakdown(product.category, product.price).weight} g</div>
               <div><span style={{ color: 'var(--gray-text)' }}>Rate / Gram:</span> ${getPricingBreakdown(product.category, product.price).rate.toFixed(2)}</div>
@@ -188,10 +188,10 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px' }}>
-            <div style={{ display: 'flex', gap: '10px' }}>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               <button 
                 className="btn-gold" 
-                style={{ flex: 1, padding: '12px', fontSize: '13px' }}
+                style={{ flex: '1 1 120px', padding: '12px', fontSize: '13px' }}
                 onClick={() => {
                   if (onBuyNow) onBuyNow(product, { metal, size, engraving });
                   handleClose();
@@ -201,7 +201,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               </button>
               <button 
                 className="btn-outline" 
-                style={{ flex: 1, padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--gold-light)', border: '1px solid var(--gold-light)', cursor: 'pointer' }}
+                style={{ flex: '1 1 120px', padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--gold-light)', border: '1px solid var(--gold-light)', cursor: 'pointer' }}
                 onClick={() => {
                   onAddToCart(product, { metal, size, engraving });
                   handleClose();
@@ -210,6 +210,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
                 Add To Treasury Box
               </button>
             </div>
+
             <button 
               style={{ width: '100%', padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--gray-text)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', transition: 'all 0.3s' }}
               onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)' }}

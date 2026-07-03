@@ -11,14 +11,14 @@ const CATEGORIES = [
 
 export default function ShopByCategory() {
   return (
-    <section style={{ padding: '60px 20px', background: 'var(--white)', textAlign: 'center' }}>
+    <section style={{ padding: 'clamp(40px, 6vw, 60px) clamp(16px, 3vw, 20px)', background: 'var(--white)', textAlign: 'center' }}>
       <h2 style={{ fontSize: '28px', fontFamily: 'Cinzel, serif', color: 'var(--emerald-deep)', marginBottom: '40px' }}>
         Shop by Category
       </h2>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap', maxWidth: '1200px', margin: '0 auto' }}>
         {CATEGORIES.map((cat, idx) => (
           <a key={idx} href="#catalog" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', cursor: 'pointer', group: 'true' }}>
-            <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--gray-light)', padding: '4px', transition: 'all 0.3s' }}
+            <div style={{ width: 'clamp(80px, 18vw, 120px)', height: 'clamp(80px, 18vw, 120px)', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--gray-light)', padding: '4px', transition: 'all 0.3s' }}
                  onMouseOver={(e) => e.currentTarget.style.borderColor = 'var(--gold-burnished)'}
                  onMouseOut={(e) => e.currentTarget.style.borderColor = 'var(--gray-light)'}
             >

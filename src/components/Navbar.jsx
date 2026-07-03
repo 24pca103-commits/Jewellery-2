@@ -7,9 +7,9 @@ export default function Navbar({ cartCount, onCartToggle }) {
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1000, background: 'var(--white)', borderBottom: '1px solid var(--gray-light)' }}>
       <style>{`
-        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 8px 40px; }
-        .topbar-left { display: flex; gap: 20px; alignItems: center; }
-        .topbar-right { display: flex; gap: 15px; alignItems: center; }
+        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 8px clamp(10px, 3vw, 40px); gap: 8px; flex-wrap: wrap; }
+        .topbar-left { display: flex; gap: 20px; alignItems: center; flex-wrap: wrap; }
+        .topbar-right { display: flex; gap: 15px; alignItems: center; flex-wrap: wrap; }
         .brands-dropdown-container { position: relative; }
         .brands-dropdown { position: absolute; top: 100%; left: 0; background-color: var(--white); border: 1px solid var(--gray-light); box-shadow: var(--shadow-soft); min-width: 200px; padding: 10px 0; display: flex; flex-direction: column; gap: 10px; z-index: 100; }
         .brands-dropdown .nav-link { padding: 5px 20px; color: var(--charcoal); }
@@ -60,7 +60,7 @@ export default function Navbar({ cartCount, onCartToggle }) {
         </div>
       </div>
       
-      <div className="nav-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px', padding: '0 30px' }}>
+      <div className="nav-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: '64px', height: 'auto', padding: '0 clamp(12px, 3vw, 30px)', flexWrap: 'wrap', gap: '8px' }}>
         
         {/* Mobile Hamburger menu toggle button */}
         <button 

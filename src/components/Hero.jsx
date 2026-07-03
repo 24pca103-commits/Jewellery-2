@@ -35,7 +35,7 @@ export default function Hero() {
   const prevSlide = () => setCurrent((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
 
   return (
-    <section className="hero" style={{ background: 'var(--cream-bg)', display: 'flex', justifyContent: 'center', padding: '20px', position: 'relative' }}>
+    <section className="hero" style={{ background: 'var(--cream-bg)', display: 'flex', justifyContent: 'center', padding: 'clamp(12px, 2vw, 20px)', position: 'relative' }}>
       <div className="hero-container" style={{ maxWidth: '1400px', width: '100%', position: 'relative', display: 'flex', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', backgroundColor: 'var(--white)' }}>
         
         {/* Responsive Style */}
@@ -56,7 +56,7 @@ export default function Hero() {
           <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--emerald-light)', marginBottom: '15px', fontWeight: 'bold' }}>
             {SLIDES[current].tag}
           </span>
-          <h1 style={{ fontSize: '3rem', fontFamily: 'Cinzel, serif', color: 'var(--emerald-deep)', lineHeight: '1.2', marginBottom: '20px', whiteSpace: 'pre-line' }}>
+          <h1 style={{ fontSize: 'clamp(1.6rem, 5vw, 3rem)', fontFamily: 'Cinzel, serif', color: 'var(--emerald-deep)', lineHeight: '1.2', marginBottom: '20px', whiteSpace: 'pre-line' }}>
             {SLIDES[current].title}
           </h1>
           <p style={{ color: 'var(--gray-text)', fontSize: '15px', lineHeight: '1.6', marginBottom: '30px', maxWidth: '400px' }}>

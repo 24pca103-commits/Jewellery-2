@@ -95,7 +95,7 @@ export default function MetalRates() {
   const timeStr = updated.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   return (
-    <section id="metal-rates" style={{ background: 'var(--cream)', padding: '90px 40px' }}>
+    <section id="metal-rates" style={{ background: 'var(--cream)', padding: 'clamp(40px, 8vw, 90px) clamp(16px, 4vw, 40px)' }}>
       <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
 
         {/* Header */}

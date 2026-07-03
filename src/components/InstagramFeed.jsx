@@ -20,7 +20,7 @@ export default function InstagramFeed() {
       
       <div style={{ display: 'flex', overflowX: 'auto', gap: '0', scrollbarWidth: 'none' }}>
         {POSTS.map((img, idx) => (
-          <div key={idx} style={{ flex: '0 0 auto', width: '20%', minWidth: '250px', position: 'relative', overflow: 'hidden', aspectRatio: '1/1' }}>
+          <div key={idx} style={{ flex: '0 0 auto', width: '20%', minWidth: 'clamp(160px, 30vw, 250px)', position: 'relative', overflow: 'hidden', aspectRatio: '1/1' }}>
             <img 
               src={img} 
               alt={`Instagram post ${idx}`} 

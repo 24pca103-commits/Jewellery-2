@@ -8,7 +8,7 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
     : products.filter(p => p.category === filter);
 
   return (
-    <section className="section" id="catalog" style={{ padding: '60px 20px', background: 'var(--white)' }}>
+    <section className="section" id="catalog" style={{ padding: 'clamp(40px, 6vw, 60px) clamp(16px, 3vw, 20px)', background: 'var(--white)' }}>
       <div className="section-header" style={{ marginBottom: '40px' }}>
         <h2 className="section-title" style={{ fontSize: '32px', color: 'var(--emerald-deep)', fontFamily: 'Cinzel, serif' }}>Our Collections</h2>
       </div>
@@ -60,7 +60,7 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
             className="product-card" 
             key={p.id} 
             onClick={() => onQuickView(p)} 
-            style={{ cursor: 'pointer', minWidth: '300px', flex: '0 0 auto', scrollSnapAlign: 'start' }}
+            style={{ cursor: 'pointer', minWidth: 'clamp(240px, 70vw, 300px)', flex: '0 0 auto', scrollSnapAlign: 'start' }}
           >
             <div className="product-img-wrapper" style={{ height: '350px', position: 'relative' }}>
               <span className="product-badge" style={{ background: 'var(--gold-burnished)', color: 'var(--white)' }}>Premium</span>
