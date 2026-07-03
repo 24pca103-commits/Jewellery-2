@@ -43,7 +43,8 @@ export default function Hero() {
           .hero-container { flex-direction: row; }
           .hero-content { padding: 60px; }
           .hero-image { min-height: 500px; }
-          .hero-btn { padding: 15px 40px; font-size: 13px; align-self: flex-start; }
+          .hero-btn { padding: 15px 40px; font-size: 13px; align-self: flex-start; display: inline-block; box-sizing: border-box; transition: opacity 0.2s; }
+          .hero-btn:active { opacity: 0.8; }
           @media (max-width: 768px) {
             .hero-container { flex-direction: column-reverse; }
             .hero-content { padding: 30px; }
@@ -53,6 +54,7 @@ export default function Hero() {
               padding: 14px 24px; 
               font-size: 12px; 
               width: 100%; 
+              box-sizing: border-box;
               text-align: center; 
               align-self: center;
               margin-top: 10px;
