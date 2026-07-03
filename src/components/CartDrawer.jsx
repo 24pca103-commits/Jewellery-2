@@ -33,7 +33,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     if (checkoutStep === 1) {
       return (
         <div className="checkout-step">
-          <h4 style={{ color: 'var(--gold-light)', marginBottom: '15px', fontWeight: '500' }}>1. Customer Details</h4>
+          <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px', fontWeight: '500' }}>1. Customer Details</h4>
           <input type="text" placeholder="Full Name" className="checkout-input" style={inputStyle} />
           <input type="email" placeholder="Email Address" className="checkout-input" style={inputStyle} />
           <input type="text" placeholder="Member ID (Optional)" className="checkout-input" style={inputStyle} />
@@ -43,30 +43,30 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     if (checkoutStep === 2) {
       return (
         <div className="checkout-step">
-          <h4 style={{ color: 'var(--gold-light)', marginBottom: '15px', fontWeight: '500' }}>2. Shipping & Gifting</h4>
+          <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px', fontWeight: '500' }}>2. Shipping & Gifting</h4>
           <div className="shipping-options" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <label style={radioLabelStyle}>
-              <input type="radio" name="shipping" defaultChecked style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="radio" name="shipping" defaultChecked style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Bespoke Courier Delivery (Insured) - Complimentary</span>
             </label>
             <label style={radioLabelStyle}>
-              <input type="radio" name="shipping" style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="radio" name="shipping" style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Secure Vault Pickup (Local Boutique)</span>
             </label>
           </div>
           
-          <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--gray-light)', borderRadius: '4px' }}>
-            <h5 style={{ color: 'var(--white)', marginBottom: '10px', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>Corporate Sales & Gifting</h5>
+          <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(74, 59, 50, 0.03)', border: '1px solid var(--gray-light)', borderRadius: '4px' }}>
+            <h5 style={{ color: 'var(--emerald-deep)', marginBottom: '10px', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>Corporate Sales & Gifting</h5>
             <label style={{ ...radioLabelStyle, marginBottom: '8px' }}>
-              <input type="checkbox" style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="checkbox" style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Mark as a Gift (No prices on receipt)</span>
             </label>
             <label style={{ ...radioLabelStyle, marginBottom: '8px' }}>
-              <input type="checkbox" style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="checkbox" style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Add Complimentary Gift Wrapping</span>
             </label>
             <label style={{ ...radioLabelStyle }}>
-              <input type="checkbox" style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="checkbox" style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Request Corporate Bulk Order Invoice</span>
             </label>
             <textarea placeholder="Gift Message (Optional)" style={{ ...inputStyle, minHeight: '60px', marginTop: '15px', resize: 'vertical' }}></textarea>
@@ -79,25 +79,25 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     if (checkoutStep === 3) {
       return (
         <div className="checkout-step">
-          <h4 style={{ color: 'var(--gold-light)', marginBottom: '15px', fontWeight: '500' }}>3. Secure Payment</h4>
+          <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px', fontWeight: '500' }}>3. Secure Payment</h4>
           <div className="payment-options" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <label style={radioLabelStyle}>
-              <input type="radio" name="payment" defaultChecked style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="radio" name="payment" defaultChecked style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Concierge Credit Card</span>
             </label>
             <label style={radioLabelStyle}>
-              <input type="radio" name="payment" style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="radio" name="payment" style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Direct Wire Transfer</span>
             </label>
             <label style={radioLabelStyle}>
-              <input type="radio" name="payment" style={{ accentColor: 'var(--gold-light)' }} />
+              <input type="radio" name="payment" style={{ accentColor: 'var(--emerald-deep)' }} />
               <span>Crypto Wallet (BTC / ETH)</span>
             </label>
           </div>
-          <div style={{ marginTop: '20px', padding: '15px', border: '1px solid rgba(188,160,87,0.3)', borderRadius: '4px', background: 'rgba(188,160,87,0.05)' }}>
+          <div style={{ marginTop: '20px', padding: '15px', border: '1px solid rgba(92, 74, 61, 0.3)', borderRadius: '4px', background: 'rgba(92, 74, 61, 0.05)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
               <span>Total to Pay:</span>
-              <span style={{ color: 'var(--gold-light)', fontWeight: 'bold' }}>${subtotal.toLocaleString()}</span>
+              <span style={{ color: 'var(--emerald-deep)', fontWeight: 'bold' }}>${subtotal.toLocaleString()}</span>
             </div>
             <p style={{ fontSize: '11px', color: 'var(--gray-text)' }}>Your transaction is encrypted and secured by Jewellery Shop.</p>
           </div>
@@ -108,7 +108,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
       return (
         <div className="checkout-success-view">
           <div className="success-icon">✦</div>
-          <h3 style={{ marginBottom: '10px', fontFamily: 'Cinzel, serif', color: 'var(--gold-light)' }}>Purchase Confirmed</h3>
+          <h3 style={{ marginBottom: '10px', fontFamily: 'Cinzel, serif', color: 'var(--emerald-deep)' }}>Purchase Confirmed</h3>
           <p style={{ fontSize: '13px', color: 'var(--gray-text)', lineHeight: '1.5' }}>
             Your order has been confirmed. A certified shipping specialist will contact you shortly with tracking details.
           </p>
