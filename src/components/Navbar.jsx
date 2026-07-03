@@ -56,7 +56,7 @@ export default function Navbar({ cartCount, onCartToggle }) {
         </button>
 
         <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
-          <span className="logo-main" style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: 'var(--emerald-deep)', fontFamily: 'Cinzel, serif' }}>Jewellery Shop</span>
+          <span className="logo-main" style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: 'var(--emerald-deep)', fontFamily: 'Cinzel, serif' }}>Jewellry shop</span>
         </a>
         
         <nav className={`nav-wrapper ${isMenuOpen ? 'open' : ''}`}>

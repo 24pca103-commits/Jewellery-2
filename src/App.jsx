@@ -151,7 +151,7 @@ export default function App() {
         <div className="footer-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
             <div className="footer-col">
                 <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px', textDecoration: 'none' }}>
-                    <span className="logo-main" style={{ color: 'var(--emerald-deep)', fontSize: '20px', fontWeight: 'bold' }}>Jewellery Shop</span>
+                    <span className="logo-main" style={{ color: 'var(--emerald-deep)', fontSize: '20px', fontWeight: 'bold' }}>Jewellry shop</span>
                 </a>
                 <p style={{ color: 'var(--gray-text)', fontSize: '14px', lineHeight: '1.8' }}>
                   Your trusted destination for exquisite handcrafted jewelry, certified diamonds, and precious metals.
@@ -184,7 +184,7 @@ export default function App() {
                 </p>
                 <form className="newsletter-form" onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Thank you for subscribing to Jewellery Shop!");
+                  alert("Thank you for subscribing to Jewellry shop!");
                   e.target.reset();
                 }} style={{ display: 'flex', gap: '10px' }}>
                     <input type="email" placeholder="Your email address" required style={{ flex: 1, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
@@ -194,7 +194,7 @@ export default function App() {
         </div>
 
         <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', color: 'var(--gray-text)', fontSize: '13px' }}>
-            <div>&copy; 2026 Jewellery Shop. All rights reserved.</div>
+            <div>&copy; 2026 Jewellry shop. All rights reserved.</div>
             <div>Designed for Elegance</div>
         </div>
       </footer>
