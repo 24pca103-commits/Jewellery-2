@@ -14,9 +14,9 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
   const inputStyle = {
     flex: 1,
     padding: '10px',
-    background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(188, 160, 87, 0.3)',
-    color: '#fff',
+    background: 'var(--white)',
+    border: '1px solid var(--gray-light)',
+    color: 'var(--charcoal)',
     borderRadius: '4px',
     fontSize: '13px',
     outline: 'none'

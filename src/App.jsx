@@ -147,56 +147,55 @@ export default function App() {
       <Consultation />
       
       {/* Footer */}
-      <footer>
-        <div className="footer-grid">
+      <footer style={{ background: 'var(--white)', padding: '60px 20px', borderTop: '1px solid var(--gray-light)', color: 'var(--charcoal)' }}>
+        <div className="footer-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
             <div className="footer-col">
-                <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px' }}>
-                    <span className="logo-main" style={{ color: 'var(--gold-light)' }}>AURA</span>
-                    <span className="logo-sub" style={{ color: 'rgba(255,255,255,0.6)' }}>Vault of Treasures</span>
+                <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px', textDecoration: 'none' }}>
+                    <span className="logo-main" style={{ color: 'var(--emerald-deep)', fontSize: '20px', fontWeight: 'bold' }}>Jewellery Shop</span>
                 </a>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', lineHeight: '1.8' }}>
-                  Exquisite custom jewellery designed by hand using certified high-carat minerals, diamonds, and precious metals.
+                <p style={{ color: 'var(--gray-text)', fontSize: '14px', lineHeight: '1.8' }}>
+                  Your trusted destination for exquisite handcrafted jewelry, certified diamonds, and precious metals.
                 </p>
             </div>
             
             <div className="footer-col">
-                <h4>Collections</h4>
-                <ul className="footer-links">
-                    <li><a href="#catalog">The Rings</a></li>
-                    <li><a href="#catalog">The Necklaces</a></li>
-                    <li><a href="#catalog">The Earrings</a></li>
-                    <li><a href="#catalog">The Cuffs & Bracelets</a></li>
+                <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px' }}>Collections</h4>
+                <ul className="footer-links" style={{ listStyle: 'none', padding: 0 }}>
+                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Rings</a></li>
+                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Necklaces</a></li>
+                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Earrings</a></li>
+                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Bracelets</a></li>
                 </ul>
             </div>
 
             <div className="footer-col">
-                <h4>Bespoke Care</h4>
-                <ul className="footer-links">
-                    <li><a href="#consultation">Book Private Viewing</a></li>
-                    <li><a href="#metal-rates">Today's Metal Rates</a></li>
-                    <li><a href="#">Bespoke Cleansing & Fitting</a></li>
+                <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px' }}>Customer Service</h4>
+                <ul className="footer-links" style={{ listStyle: 'none', padding: 0 }}>
+                    <li style={{ marginBottom: '10px' }}><a href="#consultation" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Book Video Consultation</a></li>
+                    <li style={{ marginBottom: '10px' }}><a href="#metal-rates" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Live Metal Rates</a></li>
+                    <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Track Order</a></li>
                 </ul>
             </div>
 
             <div className="footer-col">
-                <h4>The Inner Circle</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginBottom: '20px' }}>
-                  Receive notifications of private vault listings and custom gem sourcing updates.
+                <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px' }}>Newsletter</h4>
+                <p style={{ color: 'var(--gray-text)', fontSize: '14px', marginBottom: '20px' }}>
+                  Subscribe to receive updates on new collections and special offers.
                 </p>
                 <form className="newsletter-form" onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Welcome to the inner circle. You have successfully subscribed to AURA's premium releases.");
+                  alert("Thank you for subscribing to Jewellery Shop!");
                   e.target.reset();
-                }}>
-                    <input type="email" className="newsletter-input" placeholder="Your email address" required />
-                    <button type="submit" className="newsletter-btn">Join</button>
+                }} style={{ display: 'flex', gap: '10px' }}>
+                    <input type="email" placeholder="Your email address" required style={{ flex: 1, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
+                    <button type="submit" style={{ padding: '10px 20px', background: 'var(--emerald-deep)', color: 'var(--white)', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Subscribe</button>
                 </form>
             </div>
         </div>
 
-        <div className="footer-bottom">
-            <div>&copy; 2026 AURA Bespoke Jewellery. All luxury rights reserved.</div>
-            <div>Designed with Ethereal Gold & Royal Emerald</div>
+        <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', color: 'var(--gray-text)', fontSize: '13px' }}>
+            <div>&copy; 2026 Jewellery Shop. All rights reserved.</div>
+            <div>Designed for Elegance</div>
         </div>
       </footer>
 

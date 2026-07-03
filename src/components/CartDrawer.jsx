@@ -33,10 +33,10 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     if (checkoutStep === 1) {
       return (
         <div className="checkout-step">
-          <h4 style={{ color: 'var(--gold-light)', marginBottom: '15px', fontWeight: '500' }}>1. VIP Details</h4>
+          <h4 style={{ color: 'var(--gold-light)', marginBottom: '15px', fontWeight: '500' }}>1. Customer Details</h4>
           <input type="text" placeholder="Full Name" className="checkout-input" style={inputStyle} />
           <input type="email" placeholder="Email Address" className="checkout-input" style={inputStyle} />
-          <input type="text" placeholder="AURA VIP ID (Optional)" className="checkout-input" style={inputStyle} />
+          <input type="text" placeholder="Member ID (Optional)" className="checkout-input" style={inputStyle} />
         </div>
       );
     }
@@ -99,7 +99,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
               <span>Total to Pay:</span>
               <span style={{ color: 'var(--gold-light)', fontWeight: 'bold' }}>${subtotal.toLocaleString()}</span>
             </div>
-            <p style={{ fontSize: '11px', color: 'var(--gray-text)' }}>Your transaction is encrypted and secured by AURA Vault.</p>
+            <p style={{ fontSize: '11px', color: 'var(--gray-text)' }}>Your transaction is encrypted and secured by Jewellery Shop.</p>
           </div>
         </div>
       );
@@ -110,7 +110,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
           <div className="success-icon">✦</div>
           <h3 style={{ marginBottom: '10px', fontFamily: 'Cinzel, serif', color: 'var(--gold-light)' }}>Purchase Confirmed</h3>
           <p style={{ fontSize: '13px', color: 'var(--gray-text)', lineHeight: '1.5' }}>
-            Your bespoke order has been logged into our vault. A certified shipping specialist will contact you shortly with tracking details.
+            Your order has been confirmed. A certified shipping specialist will contact you shortly with tracking details.
           </p>
         </div>
       );
@@ -122,9 +122,9 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     width: '100%',
     padding: '12px',
     marginBottom: '10px',
-    background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(255,255,255,0.1)',
-    color: '#fff',
+    background: 'var(--white)',
+    border: '1px solid var(--gray-light)',
+    color: 'var(--charcoal)',
     borderRadius: '4px',
     fontSize: '13px',
     outline: 'none'
@@ -135,7 +135,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     alignItems: 'center',
     gap: '10px',
     fontSize: '13px',
-    color: '#ccc',
+    color: 'var(--charcoal)',
     cursor: 'pointer'
   };
 

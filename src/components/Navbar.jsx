@@ -55,9 +55,8 @@ export default function Navbar({ cartCount, onCartToggle }) {
           {isMenuOpen ? '✕' : '☰'}
         </button>
 
-        <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <span className="logo-main" style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '3px', color: 'var(--emerald-deep)' }}>AURA</span>
-          <span className="logo-sub" style={{ fontSize: '9px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--gold-burnished)', marginTop: '2px' }}>Vault of Treasures</span>
+        <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
+          <span className="logo-main" style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: 'var(--emerald-deep)', fontFamily: 'Cinzel, serif' }}>Jewellery Shop</span>
         </a>
         
         <nav className={`nav-wrapper ${isMenuOpen ? 'open' : ''}`}>
