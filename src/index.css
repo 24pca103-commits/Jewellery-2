@@ -1478,6 +1478,17 @@ footer {
     .section-title {
         font-size: 28px;
     }
+    
+    /* Product card and actions overrides for mobile/tablet */
+    .product-img-wrapper {
+        height: 280px !important;
+    }
+    .product-actions {
+        bottom: 15px !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
 
     /* Estimator */
     .estimator-layout {
@@ -1637,7 +1648,12 @@ footer {
         min-width: 260px !important;
     }
     .product-img-wrapper {
-        height: 260px;
+        height: 260px !important;
+    }
+    .product-actions {
+        bottom: 12px !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
     }
 
     /* Estimator */

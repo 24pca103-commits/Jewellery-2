@@ -62,7 +62,7 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
             onClick={() => onQuickView(p)} 
             style={{ cursor: 'pointer', minWidth: 'clamp(240px, 70vw, 300px)', flex: '0 0 auto', scrollSnapAlign: 'start' }}
           >
-            <div className="product-img-wrapper" style={{ height: '350px', position: 'relative' }}>
+            <div className="product-img-wrapper">
               <span className="product-badge" style={{ background: 'var(--gold-burnished)', color: 'var(--white)' }}>Premium</span>
               <img src={p.img} alt={p.title} className="product-img" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'opacity 0.3s ease' }} 
                    onMouseOver={(e) => { if (p.hoverImg) e.currentTarget.style.opacity = 0; }}
