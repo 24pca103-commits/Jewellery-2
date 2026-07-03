@@ -76,34 +76,7 @@ a {
     background: var(--gold-burnished);
 }
 
-/* Preloader */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--emerald-deep);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease;
-}
 
-.loader {
-    width: 60px;
-    height: 60px;
-    border: 3px solid var(--emerald-light);
-    border-top: 3px solid var(--gold-champagne);
-    border-radius: 50%;
-    animation: spin 1.2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 /* Header & Navigation */
 header {

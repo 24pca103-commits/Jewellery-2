@@ -71,19 +71,6 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isDirectCheckout, setIsDirectCheckout] = useState(false);
 
-  // Fade out loader on mount
-  useEffect(() => {
-    const loader = document.getElementById('preloader');
-    if (loader) {
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-          loader.style.display = 'none';
-        }, 500);
-      }, 500);
-    }
-  }, []);
-
   const getCartItemId = (productId, customDetails) => {
     return `${productId}-${customDetails?.metal || ''}-${customDetails?.size || ''}-${customDetails?.engraving || ''}`;
   };
