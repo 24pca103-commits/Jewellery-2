@@ -43,20 +43,19 @@ export default function Hero() {
           .hero-container { flex-direction: row; }
           .hero-content { padding: 60px; }
           .hero-image { min-height: 500px; }
-          .hero-btn { padding: 15px 40px; font-size: 13px; align-self: flex-start; display: inline-block; box-sizing: border-box; transition: opacity 0.2s; }
+          .hero-btn { padding: 15px 40px; font-size: 13px; align-self: flex-start; display: inline-flex; justify-content: center; align-items: center; box-sizing: border-box; transition: opacity 0.2s; }
           .hero-btn:active { opacity: 0.8; }
           @media (max-width: 768px) {
             .hero-container { flex-direction: column-reverse; }
-            .hero-content { padding: 30px; }
+            .hero-content { padding: 40px 24px 50px 24px !important; }
             .hero-image { min-height: 300px; }
             .hero h1 { font-size: 2rem !important; }
             .hero-btn { 
-              padding: 14px 24px; 
+              padding: 16px 24px; 
               font-size: 12px; 
               width: 100%; 
               box-sizing: border-box;
               text-align: center; 
-              align-self: center;
               margin-top: 10px;
             }
           }
