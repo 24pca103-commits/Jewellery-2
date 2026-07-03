@@ -10,10 +10,15 @@ export default function Navbar({ cartCount, onCartToggle }) {
         .topbar { display: flex; justify-content: space-between; align-items: center; padding: 8px 40px; }
         .topbar-left { display: flex; gap: 20px; alignItems: center; }
         .topbar-right { display: flex; gap: 15px; alignItems: center; }
+        .brands-dropdown-container { position: relative; }
+        .brands-dropdown { position: absolute; top: 100%; left: 0; background-color: var(--white); border: 1px solid var(--gray-light); box-shadow: var(--shadow-soft); min-width: 200px; padding: 10px 0; display: flex; flex-direction: column; gap: 10px; z-index: 100; }
+        .brands-dropdown .nav-link { padding: 5px 20px; color: var(--charcoal); }
         @media (max-width: 768px) {
           .topbar { flex-direction: column; gap: 10px; padding: 8px 10px; text-align: center; }
           .topbar-left { justify-content: center; }
           .topbar-right { flex-wrap: wrap; justify-content: center; }
+          .brands-dropdown-container { display: flex; flex-direction: column; align-items: center; width: 100%; }
+          .brands-dropdown { position: static; box-shadow: none; border: none; padding: 0; align-items: center; background-color: transparent; margin-top: 10px; }
         }
       `}</style>
       {/* Top Bar for Store Locator and Live Gold Rates */}
@@ -87,32 +92,20 @@ export default function Navbar({ cartCount, onCartToggle }) {
             
             {/* Our Brands Dropdown */}
             <li 
+              className="brands-dropdown-container"
               onMouseEnter={() => setIsBrandsOpen(true)} 
               onMouseLeave={() => setIsBrandsOpen(false)}
-              style={{ position: 'relative' }}
+              onClick={() => setIsBrandsOpen(!isBrandsOpen)}
             >
-              <a href="#brands" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <a href="#brands" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '5px' }} onClick={(e) => e.preventDefault()}>
                 Our Brands
                 <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
               </a>
               {isBrandsOpen && (
-                <div style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: 0,
-                  backgroundColor: 'var(--white)',
-                  border: '1px solid var(--gray-light)',
-                  boxShadow: 'var(--shadow-soft)',
-                  minWidth: '200px',
-                  padding: '10px 0',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px',
-                  zIndex: 100
-                }}>
-                  <a href="#mudhra" className="nav-link" style={{ padding: '5px 20px', color: 'var(--charcoal)' }}>Mudhra Antique</a>
-                  <a href="#nimah" className="nav-link" style={{ padding: '5px 20px', color: 'var(--charcoal)' }}>Nimah Heritage</a>
-                  <a href="#anokhi" className="nav-link" style={{ padding: '5px 20px', color: 'var(--charcoal)' }}>Anokhi Uncut</a>
+                <div className="brands-dropdown">
+                  <a href="#mudhra" className="nav-link" onClick={() => setIsMenuOpen(false)}>Mudhra Antique</a>
+                  <a href="#nimah" className="nav-link" onClick={() => setIsMenuOpen(false)}>Nimah Heritage</a>
+                  <a href="#anokhi" className="nav-link" onClick={() => setIsMenuOpen(false)}>Anokhi Uncut</a>
                 </div>
               )}
             </li>

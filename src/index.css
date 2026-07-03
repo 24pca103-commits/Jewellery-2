@@ -1372,7 +1372,7 @@ footer {
     .nav-wrapper {
         display: none;
         position: absolute;
-        top: 80px;
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--white);
