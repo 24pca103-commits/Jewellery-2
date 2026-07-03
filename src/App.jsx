@@ -7,6 +7,8 @@ import Diamond3D from './components/Diamond3D';
 import Consultation from './components/Consultation';
 import CartDrawer from './components/CartDrawer';
 import ProductModal from './components/ProductModal';
+import ShopByCategory from './components/ShopByCategory';
+import TrustBadges from './components/TrustBadges';
 
 const PRODUCTS = [
   {
@@ -141,6 +143,8 @@ export default function App() {
     <>
       <Navbar cartCount={totalQty} onCartToggle={() => setIsCartOpen(true)} />
       <Hero />
+      <TrustBadges />
+      <ShopByCategory />
       <Catalog products={PRODUCTS} onAddToCart={handleAddToCart} onQuickView={setSelectedProduct} />
       <MetalRates />
       <Diamond3D />

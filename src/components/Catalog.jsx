@@ -8,10 +8,9 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
     : products.filter(p => p.category === filter);
 
   return (
-    <section className="section" id="catalog">
-      <div className="section-header">
-        <span className="section-tag">Curated Vault</span>
-        <h2 className="section-title">The Master Collections</h2>
+    <section className="section" id="catalog" style={{ padding: '60px 20px', background: 'var(--white)' }}>
+      <div className="section-header" style={{ marginBottom: '40px' }}>
+        <h2 className="section-title" style={{ fontSize: '32px', color: 'var(--emerald-deep)', fontFamily: 'Cinzel, serif' }}>Our Collections</h2>
       </div>
 
       {/* Simplified Category Filters Only */}
@@ -23,13 +22,22 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
         paddingBottom: '20px',
         borderBottom: '1px solid var(--gray-light)'
       }}>
-        <div className="catalog-filters" style={{ margin: 0 }}>
+        <div className="catalog-filters" style={{ margin: 0, display: 'flex', gap: '15px', overflowX: 'auto', paddingBottom: '10px' }}>
           {['all', 'rings', 'necklaces', 'earrings', 'bracelets'].map(cat => (
             <button 
               key={cat}
               className={`filter-btn ${filter === cat ? 'active' : ''}`}
               onClick={() => setFilter(cat)}
-              style={{ textTransform: 'capitalize' }}
+              style={{ 
+                textTransform: 'capitalize', 
+                whiteSpace: 'nowrap',
+                padding: '8px 24px',
+                border: filter === cat ? '1px solid var(--gold-burnished)' : '1px solid var(--gray-light)',
+                borderRadius: '30px',
+                background: filter === cat ? 'var(--gold-burnished)' : 'transparent',
+                color: filter === cat ? 'var(--white)' : 'var(--charcoal)',
+                cursor: 'pointer'
+              }}
             >
               {cat}
             </button>
@@ -37,18 +45,26 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
         </div>
       </div>
 
-      {/* Product Display Grid */}
-      <div className="product-grid">
+      {/* Product Display Horizontal Scroll */}
+      <div className="product-grid" style={{ 
+        display: 'flex', 
+        overflowX: 'auto', 
+        gap: '30px', 
+        paddingBottom: '20px', 
+        scrollSnapType: 'x mandatory',
+        WebkitOverflowScrolling: 'touch',
+        scrollbarWidth: 'none'
+      }}>
         {filteredProducts.map(p => (
           <div 
             className="product-card" 
             key={p.id} 
             onClick={() => onQuickView(p)} 
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', minWidth: '300px', flex: '0 0 auto', scrollSnapAlign: 'start' }}
           >
-            <div className="product-img-wrapper">
-              <span className="product-badge">Premium</span>
-              <img src={p.img} alt={p.title} className="product-img" />
+            <div className="product-img-wrapper" style={{ height: '350px' }}>
+              <span className="product-badge" style={{ background: 'var(--gold-burnished)', color: 'var(--white)' }}>Premium</span>
+              <img src={p.img} alt={p.title} className="product-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="product-actions">
                 <button 
                   className="action-btn" 
@@ -72,10 +88,10 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
                 </button>
               </div>
             </div>
-            <div className="product-info">
-              <div className="product-category">{p.category}</div>
-              <h4 className="product-title">{p.title}</h4>
-              <div className="product-price">${p.price.toLocaleString()}</div>
+            <div className="product-info" style={{ textAlign: 'center', marginTop: '15px' }}>
+              <div className="product-category" style={{ color: 'var(--gray-text)', fontSize: '12px', textTransform: 'uppercase' }}>{p.category}</div>
+              <h4 className="product-title" style={{ fontSize: '16px', color: 'var(--charcoal)', margin: '5px 0' }}>{p.title}</h4>
+              <div className="product-price" style={{ color: 'var(--gold-burnished)', fontWeight: 'bold' }}>${p.price.toLocaleString()}</div>
             </div>
           </div>
         ))}
