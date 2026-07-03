@@ -60,7 +60,7 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
             className="product-card" 
             key={p.id} 
             onClick={() => onQuickView(p)} 
-            style={{ cursor: 'pointer', minWidth: 'clamp(240px, 70vw, 300px)', flex: '0 0 auto', scrollSnapAlign: 'start' }}
+            style={{ cursor: 'pointer', flex: '0 0 clamp(240px, 70vw, 300px)', scrollSnapAlign: 'start' }}
           >
             <div className="product-img-wrapper">
               <span className="product-badge" style={{ background: 'var(--gold-burnished)', color: 'var(--white)' }}>Premium</span>
