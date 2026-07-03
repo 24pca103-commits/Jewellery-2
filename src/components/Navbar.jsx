@@ -6,20 +6,26 @@ export default function Navbar({ cartCount, onCartToggle }) {
 
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1000, background: 'var(--white)', borderBottom: '1px solid var(--gray-light)' }}>
+      <style>{`
+        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 8px 40px; }
+        .topbar-left { display: flex; gap: 20px; alignItems: center; }
+        .topbar-right { display: flex; gap: 15px; alignItems: center; }
+        @media (max-width: 768px) {
+          .topbar { flex-direction: column; gap: 10px; padding: 8px 10px; text-align: center; }
+          .topbar-left { justify-content: center; }
+          .topbar-right { flex-wrap: wrap; justify-content: center; }
+        }
+      `}</style>
       {/* Top Bar for Store Locator and Live Gold Rates */}
-      <div style={{
+      <div className="topbar" style={{
         backgroundColor: 'var(--emerald-deep)',
         color: 'var(--gold-light)',
         fontSize: '11px',
-        padding: '8px 40px',
         fontWeight: '600',
         letterSpacing: '1px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
         textTransform: 'uppercase'
       }}>
-        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+        <div className="topbar-left">
           <a href="#store-locator" style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             Store Locator
@@ -29,7 +35,7 @@ export default function Navbar({ cartCount, onCartToggle }) {
             Corporate & Gifting
           </a>
         </div>
-        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+        <div className="topbar-right">
           <span>Live Gold (24K): $75.50/g</span>
           <span>Silver (925): $1.80/g</span>
           <div style={{ borderLeft: '1px solid var(--gold-burnished)', height: '12px', margin: '0 5px' }}></div>

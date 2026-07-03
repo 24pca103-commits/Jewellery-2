@@ -36,10 +36,23 @@ export default function Hero() {
 
   return (
     <section className="hero" style={{ background: 'var(--cream-bg)', display: 'flex', justifyContent: 'center', padding: '20px', position: 'relative' }}>
-      <div style={{ maxWidth: '1400px', width: '100%', position: 'relative', display: 'flex', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', backgroundColor: 'var(--white)' }}>
+      <div className="hero-container" style={{ maxWidth: '1400px', width: '100%', position: 'relative', display: 'flex', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', backgroundColor: 'var(--white)' }}>
+        
+        {/* Responsive Style */}
+        <style>{`
+          .hero-container { flex-direction: row; }
+          .hero-content { padding: 60px; }
+          .hero-image { min-height: 500px; }
+          @media (max-width: 768px) {
+            .hero-container { flex-direction: column-reverse; }
+            .hero-content { padding: 30px; }
+            .hero-image { min-height: 300px; }
+            .hero h1 { font-size: 2rem !important; }
+          }
+        `}</style>
         
         {/* Banner Content Box */}
-        <div style={{ flex: 1, padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
+        <div className="hero-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2, backgroundColor: 'var(--white)' }}>
           <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--emerald-light)', marginBottom: '15px', fontWeight: 'bold' }}>
             {SLIDES[current].tag}
           </span>
@@ -55,7 +68,7 @@ export default function Hero() {
         </div>
         
         {/* Banner Image */}
-        <div style={{ flex: 1, minHeight: '500px', position: 'relative', overflow: 'hidden' }}>
+        <div className="hero-image" style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
           {SLIDES.map((slide, index) => (
             <div 
               key={index}
