@@ -9,6 +9,8 @@ import CartDrawer from './components/CartDrawer';
 import ProductModal from './components/ProductModal';
 import ShopByCategory from './components/ShopByCategory';
 import TrustBadges from './components/TrustBadges';
+import InstagramFeed from './components/InstagramFeed';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const PRODUCTS = [
   {
@@ -17,15 +19,17 @@ const PRODUCTS = [
       category: "rings",
       price: 1850,
       img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
       desc: "An exquisite 18k Burnished Gold solitaire ring featuring a brilliant 1.5 carat round cut diamond. Crafted to represent timeless elegance and supreme sophistication."
   },
   {
       id: 2,
-      title: "Ethereal Emerald Pendant",
+      title: "Royal Kundan Choker",
       category: "necklaces",
-      price: 3200,
-      img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-      desc: "A stunning teardrop-cut Colombian emerald surrounded by a halo of micro-pave diamonds, suspended on a delicate 18k champagne gold chain."
+      price: 3400,
+      img: "https://images.unsplash.com/photo-1599643471487-2c92c90cbfbb?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+      desc: "A breathtaking traditional Kundan choker set, hand-crafted with uncut diamonds and pearls, perfect for the modern bride seeking vintage charm."
   },
   {
       id: 3,
@@ -150,14 +154,16 @@ export default function App() {
       <Diamond3D />
       <Consultation />
       
+      <InstagramFeed />
+
       {/* Footer */}
       <footer style={{ background: 'var(--white)', padding: '60px 20px', borderTop: '1px solid var(--gray-light)', color: 'var(--charcoal)' }}>
         <div className="footer-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
             <div className="footer-col">
                 <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px', textDecoration: 'none' }}>
                     <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-                      <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Vaibhav</span>
-                      <span style={{ fontSize: '11px', letterSpacing: '3px', fontWeight: '600', color: '#a67c52', marginTop: '2px' }}>JEWELS</span>
+                      <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Vaibav</span>
+                      <span style={{ fontSize: '11px', letterSpacing: '3px', fontWeight: '600', color: '#a67c52', marginTop: '2px' }}>Jeweles</span>
                     </span>
                 </a>
                 <p style={{ color: 'var(--gray-text)', fontSize: '14px', lineHeight: '1.8' }}>
@@ -191,7 +197,7 @@ export default function App() {
                 </p>
                 <form className="newsletter-form" onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Thank you for subscribing to Vaibhav Jewels!");
+                  alert("Thank you for subscribing to Vaibav Jeweles!");
                   e.target.reset();
                 }} style={{ display: 'flex', gap: '10px' }}>
                     <input type="email" placeholder="Your email address" required style={{ flex: 1, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
@@ -201,7 +207,7 @@ export default function App() {
         </div>
 
         <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', color: 'var(--gray-text)', fontSize: '13px' }}>
-            <div>&copy; 2026 Vaibhav Jewels. All rights reserved.</div>
+            <div>&copy; 2026 Vaibav Jeweles. All rights reserved.</div>
             <div>Designed for Elegance</div>
         </div>
       </footer>
@@ -230,6 +236,9 @@ export default function App() {
         onAddToCart={handleAddToCart}
         onBuyNow={handleBuyNow}
       />
+      
+      <FloatingWhatsApp />
     </>
   );
 }
+

@@ -29,9 +29,23 @@ export default function Navbar({ cartCount, onCartToggle }) {
             Corporate & Gifting
           </a>
         </div>
-        <div style={{ display: 'flex', gap: '15px' }}>
+        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
           <span>Live Gold (24K): $75.50/g</span>
           <span>Silver (925): $1.80/g</span>
+          <div style={{ borderLeft: '1px solid var(--gold-burnished)', height: '12px', margin: '0 5px' }}></div>
+          <select style={{ 
+            background: 'transparent', 
+            color: 'var(--gold-light)', 
+            border: 'none', 
+            fontSize: '11px', 
+            fontWeight: '600',
+            cursor: 'pointer',
+            outline: 'none'
+          }}>
+            <option value="USD">USD ($)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="EUR">EUR (€)</option>
+          </select>
         </div>
       </div>
       
@@ -57,8 +71,8 @@ export default function Navbar({ cartCount, onCartToggle }) {
 
         <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
           <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-            <span style={{ fontSize: '28px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Vaibhav</span>
-            <span style={{ fontSize: '12px', letterSpacing: '3px', fontWeight: '600', color: '#a67c52', marginTop: '2px' }}>JEWELS</span>
+            <span style={{ fontSize: '28px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Vaibav</span>
+            <span style={{ fontSize: '12px', letterSpacing: '3px', fontWeight: '600', color: '#a67c52', marginTop: '2px' }}>Jeweles</span>
           </span>
         </a>
         
@@ -118,3 +132,5 @@ export default function Navbar({ cartCount, onCartToggle }) {
     </header>
   );
 }
+
+

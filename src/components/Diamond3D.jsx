@@ -29,3 +29,5 @@ export default function Diamond3D() {
     </section>
   );
 }
+
+

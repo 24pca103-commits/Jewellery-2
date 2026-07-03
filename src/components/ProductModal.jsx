@@ -241,3 +241,5 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
     </div>
   );
 }
+
+

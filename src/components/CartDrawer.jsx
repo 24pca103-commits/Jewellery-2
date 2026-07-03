@@ -99,7 +99,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
               <span>Total to Pay:</span>
               <span style={{ color: 'var(--gold-light)', fontWeight: 'bold' }}>${subtotal.toLocaleString()}</span>
             </div>
-            <p style={{ fontSize: '11px', color: 'var(--gray-text)' }}>Your transaction is encrypted and secured by Vaibhav Jewels.</p>
+            <p style={{ fontSize: '11px', color: 'var(--gray-text)' }}>Your transaction is encrypted and secured by Vaibav Jeweles.</p>
           </div>
         </div>
       );
@@ -218,3 +218,5 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
     </>
   );
 }
+
+
