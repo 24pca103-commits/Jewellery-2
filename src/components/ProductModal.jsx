@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
 
-export default function ProductModal({ product, onClose, onAddToCart }) {
+export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }) {
   if (!product) return null;
 
   const [activeTab, setActiveTab] = useState('image'); // 'image' | 'video'
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
 
+  const [metal, setMetal] = useState('18k Yellow Gold');
+  const [size, setSize] = useState('Standard');
+  const [engraving, setEngraving] = useState('');
+
+  const inputStyle = {
+    flex: 1,
+    padding: '10px',
+    background: 'rgba(255,255,255,0.03)',
+    border: '1px solid rgba(188, 160, 87, 0.3)',
+    color: '#fff',
+    borderRadius: '4px',
+    fontSize: '13px',
+    outline: 'none'
+  };
+
   // Close helper reset
   const handleClose = () => {
     setActiveTab('image');
     setIsZoomed(false);
     setZoomPos({ x: 50, y: 50 });
+    setMetal('18k Yellow Gold');
+    setSize('Standard');
+    setEngraving('');
     onClose();
   };
 
@@ -141,15 +159,83 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
           </div>
 
           <p className="modal-desc">{product.desc}</p>
-          <button 
-            className="btn-gold" 
-            onClick={() => {
-              onAddToCart(product);
-              handleClose();
-            }}
-          >
-            Add To Cart
-          </button>
+          
+          <div className="customization-options" style={{ marginTop: '15px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <select value={metal} onChange={(e) => setMetal(e.target.value)} style={inputStyle}>
+                <option value="18k Yellow Gold">18k Yellow Gold</option>
+                <option value="18k Rose Gold">18k Rose Gold</option>
+                <option value="Platinum">Platinum</option>
+                <option value="22k Burnished Gold">22k Burnished Gold</option>
+              </select>
+              <select value={size} onChange={(e) => setSize(e.target.value)} style={inputStyle}>
+                <option value="Standard">Standard Size</option>
+                <option value="Size 5">Size 5</option>
+                <option value="Size 6">Size 6</option>
+                <option value="Size 7">Size 7</option>
+                <option value="Size 8">Size 8</option>
+                <option value="Size 9">Size 9</option>
+              </select>
+            </div>
+            <input 
+              type="text" 
+              placeholder="Complimentary Engraving (Max 15 chars)" 
+              maxLength={15}
+              value={engraving}
+              onChange={(e) => setEngraving(e.target.value)}
+              style={inputStyle}
+            />
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px' }}>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <button 
+                className="btn-gold" 
+                style={{ flex: 1, padding: '12px', fontSize: '13px' }}
+                onClick={() => {
+                  if (onBuyNow) onBuyNow(product, { metal, size, engraving });
+                  handleClose();
+                }}
+              >
+                Buy Now
+              </button>
+              <button 
+                className="btn-outline" 
+                style={{ flex: 1, padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--gold-light)', border: '1px solid var(--gold-light)', cursor: 'pointer' }}
+                onClick={() => {
+                  onAddToCart(product, { metal, size, engraving });
+                  handleClose();
+                }}
+              >
+                Add To Treasury Box
+              </button>
+            </div>
+            <button 
+              style={{ width: '100%', padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--gray-text)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', transition: 'all 0.3s' }}
+              onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)' }}
+              onMouseOut={(e) => { e.currentTarget.style.color = 'var(--gray-text)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)' }}
+              onClick={() => {
+                window.location.hash = "#consultation";
+                handleClose();
+              }}
+            >
+              Book Private Viewing
+            </button>
+            <button 
+              style={{ width: '100%', padding: '12px', fontSize: '13px', background: 'var(--charcoal)', color: 'var(--white)', border: 'none', cursor: 'pointer', transition: 'all 0.3s', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
+              onMouseOver={(e) => { e.currentTarget.style.background = 'var(--emerald-mid)' }}
+              onMouseOut={(e) => { e.currentTarget.style.background = 'var(--charcoal)' }}
+              onClick={() => {
+                alert("Initiating Live Video Shopping Experience with a jewelry expert...");
+              }}
+            >
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              Live Video Shopping
+            </button>
+            <div style={{ textAlign: 'center', fontSize: '12px', color: 'var(--gray-text)', marginTop: '8px', fontStyle: 'italic' }}>
+              ✦ Financing available: 4 interest-free payments of ${(product.price / 4).toLocaleString()}
+            </div>
+          </div>
         </div>
       </div>
     </div>

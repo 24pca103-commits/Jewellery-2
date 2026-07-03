@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --emerald-deep: #2c1b12; /* Premium dark espresso brown */
-    --emerald-mid: #442f23; /* Medium mocha brown */
-    --emerald-light: #604637; /* Warm copper/brown accent */
-    --emerald-soft: rgba(44, 27, 18, 0.05); /* Translucent soft brown */
-    --gold-burnished: #bca057; /* Keep gold accents for luxury contrast */
-    --gold-champagne: #c5a880; /* Soft champagne/latte gold */
-    --gold-light: #f3e9dc; /* Pale warm cream */
-    --cream-bg: #fcfaf7; /* Creamy off-white background */
-    --white: #ffffff; /* Pure white */
-    --charcoal: #1e1510; /* Dark brown-charcoal for text harmony */
-    --gray-light: #ede6dd; /* Soft warm grey border/line */
-    --gray-text: #736760; /* Warm taupe text color */
+    --emerald-deep: #2A1B14; /* Deep Coffee Brown */
+    --emerald-mid: #4A3B32; /* Rich Cocoa Brown */
+    --emerald-light: #7A6354; /* Warm Light Brown */
+    --emerald-soft: rgba(74, 59, 50, 0.05); /* Soft Brown overlay */
+    --gold-burnished: #5C4A3D; /* Muted Bronze/Brown (replacing gold) */
+    --gold-champagne: #D9D0C7; /* Pale Taupe (replacing champagne) */
+    --gold-light: #F2ECE7; /* Warm Off-White */
+    --cream-bg: #FFFFFF; /* Pure White background */
+    --white: #FFFFFF; /* Pure white */
+    --charcoal: #1C120C; /* Dark Espresso for text */
+    --gray-light: #EBE5E0; /* Very light brown-grey */
+    --gray-text: #665C54; /* Medium brown-grey for text */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --shadow-premium: 0 20px 40px rgba(44, 27, 18, 0.06);
-    --shadow-soft: 0 10px 30px rgba(44, 27, 18, 0.04);
+    --shadow-premium: 0 20px 40px rgba(42, 27, 20, 0.06);
+    --shadow-soft: 0 10px 30px rgba(42, 27, 20, 0.04);
 }
 
 /* Reset and Global Styles */

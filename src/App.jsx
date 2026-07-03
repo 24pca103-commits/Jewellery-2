@@ -63,6 +63,7 @@ export default function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isDirectCheckout, setIsDirectCheckout] = useState(false);
 
   // Fade out loader on mount
   useEffect(() => {
@@ -77,35 +78,53 @@ export default function App() {
     }
   }, []);
 
-  const handleAddToCart = (product) => {
+  const getCartItemId = (productId, customDetails) => {
+    return `${productId}-${customDetails?.metal || ''}-${customDetails?.size || ''}-${customDetails?.engraving || ''}`;
+  };
+
+  const handleAddToCart = (product, customDetails) => {
     setCart(prev => {
-      const existing = prev.find(item => item.product.id === product.id);
+      const itemId = getCartItemId(product.id, customDetails);
+      const existing = prev.find(item => item.cartItemId === itemId);
       if (existing) {
         return prev.map(item => 
-          item.product.id === product.id 
+          item.cartItemId === itemId 
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      return [...prev, { product, quantity: 1 }];
+      return [...prev, { product, quantity: 1, customDetails, cartItemId: itemId }];
     });
     setIsCartOpen(true); // Automatically slide in drawer on add
   };
 
-  const handleQtyChange = (id, delta) => {
+  const handleBuyNow = (product, customDetails) => {
     setCart(prev => {
-      const item = prev.find(i => i.product.id === id);
+      const itemId = getCartItemId(product.id, customDetails);
+      const existing = prev.find(item => item.cartItemId === itemId);
+      if (!existing) {
+        return [...prev, { product, quantity: 1, customDetails, cartItemId: itemId }];
+      }
+      return prev;
+    });
+    setIsDirectCheckout(true);
+    setIsCartOpen(true);
+  };
+
+  const handleQtyChange = (cartItemId, delta) => {
+    setCart(prev => {
+      const item = prev.find(i => i.cartItemId === cartItemId);
       if (!item) return prev;
       const newQty = item.quantity + delta;
       if (newQty <= 0) {
-        return prev.filter(i => i.product.id !== id);
+        return prev.filter(i => i.cartItemId !== cartItemId);
       }
-      return prev.map(i => i.product.id === id ? { ...i, quantity: newQty } : i);
+      return prev.map(i => i.cartItemId === cartItemId ? { ...i, quantity: newQty } : i);
     });
   };
 
-  const handleRemove = (id) => {
-    setCart(prev => prev.filter(item => item.product.id !== id));
+  const handleRemove = (cartItemId) => {
+    setCart(prev => prev.filter(item => item.cartItemId !== cartItemId));
   };
 
   const handleCheckout = () => {
@@ -185,8 +204,11 @@ export default function App() {
       <CartDrawer 
         isOpen={isCartOpen}
         cart={cart}
+        isDirectCheckout={isDirectCheckout}
+        setIsDirectCheckout={setIsDirectCheckout}
         onClose={() => {
           setIsCartOpen(false);
+          setIsDirectCheckout(false);
           // If checkout succeeded and drawer closes, clear the cart
           if (cart.length === 0) handleCheckoutFinished();
         }}
@@ -200,6 +222,7 @@ export default function App() {
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
         onAddToCart={handleAddToCart}
+        onBuyNow={handleBuyNow}
       />
     </>
   );
