@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Gold ring band -->
+  <circle cx="30" cy="35" r="17" fill="none" stroke="#d4af37" stroke-width="4.5" />
+  <circle cx="30" cy="35" r="17" fill="none" stroke="#bca057" stroke-width="2.5" />
+  
+  <!-- Crown setting -->
+  <path d="M 23 18 L 30 25 L 37 18 L 35 15 L 25 15 Z" fill="#dfba6b" stroke="#d4af37" stroke-width="1" />
+  
+  <!-- Large Emerald gemstone -->
+  <polygon points="30,6 20,15 30,24 40,15" fill="#0b2e22" stroke="#d4af37" stroke-width="1.5" />
+  
+  <!-- Inner diamond sparkler facet -->
+  <polygon points="30,10 25,15 30,20 35,15" fill="#154c3c" opacity="0.8" />
+  
+  <!-- Facet highlight lines -->
+  <line x1="30" y1="6" x2="30" y2="24" stroke="#d4af37" stroke-width="0.8" />
+  
+  <!-- Little diamond highlights on ring side -->
+  <circle cx="12" cy="30" r="2" fill="#ffffff" stroke="#d4af37" stroke-width="0.5" />
+  <circle cx="48" cy="30" r="2" fill="#ffffff" stroke="#d4af37" stroke-width="0.5" />
+</svg>
