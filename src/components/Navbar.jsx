@@ -71,8 +71,7 @@ export default function Navbar({ cartCount, onCartToggle }) {
 
         <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
           <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-            <span style={{ fontSize: '28px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Vaibav</span>
-            <span style={{ fontSize: '12px', letterSpacing: '3px', fontWeight: '600', color: '#a67c52', marginTop: '2px' }}>Jeweles</span>
+            <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Jewellery Shop</span>
           </span>
         </a>
         
@@ -132,5 +131,6 @@ export default function Navbar({ cartCount, onCartToggle }) {
     </header>
   );
 }
+
 
 

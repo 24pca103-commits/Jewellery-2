@@ -162,8 +162,7 @@ export default function App() {
             <div className="footer-col">
                 <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px', textDecoration: 'none' }}>
                     <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-                      <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Vaibav</span>
-                      <span style={{ fontSize: '11px', letterSpacing: '3px', fontWeight: '600', color: '#a67c52', marginTop: '2px' }}>Jeweles</span>
+                      <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Jewellery Shop</span>
                     </span>
                 </a>
                 <p style={{ color: 'var(--gray-text)', fontSize: '14px', lineHeight: '1.8' }}>
@@ -197,7 +196,7 @@ export default function App() {
                 </p>
                 <form className="newsletter-form" onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Thank you for subscribing to Vaibav Jeweles!");
+                  alert("Thank you for subscribing to Jewellery Shop!");
                   e.target.reset();
                 }} style={{ display: 'flex', gap: '10px' }}>
                     <input type="email" placeholder="Your email address" required style={{ flex: 1, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
@@ -207,7 +206,7 @@ export default function App() {
         </div>
 
         <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', color: 'var(--gray-text)', fontSize: '13px' }}>
-            <div>&copy; 2026 Vaibav Jeweles. All rights reserved.</div>
+            <div>&copy; 2026 Jewellery Shop. All rights reserved.</div>
             <div>Designed for Elegance</div>
         </div>
       </footer>
@@ -241,4 +240,5 @@ export default function App() {
     </>
   );
 }
+
 

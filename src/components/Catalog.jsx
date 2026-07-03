@@ -107,3 +107,4 @@ export default function Catalog({ products, onAddToCart, onQuickView }) {
 }
 
 
+

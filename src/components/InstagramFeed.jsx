@@ -15,7 +15,7 @@ export default function InstagramFeed() {
         As Seen On You
       </h2>
       <p style={{ color: 'var(--gray-text)', marginBottom: '40px', fontSize: '14px' }}>
-        Tag @VaibavJeweles to be featured on our page.
+        Tag @JewelleryShop to be featured on our page.
       </p>
       
       <div style={{ display: 'flex', overflowX: 'auto', gap: '0', scrollbarWidth: 'none' }}>
@@ -64,4 +64,5 @@ export default function InstagramFeed() {
     </section>
   );
 }
+
 
