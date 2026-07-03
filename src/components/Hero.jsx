@@ -35,7 +35,7 @@ export default function Hero() {
   const prevSlide = () => setCurrent((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
 
   return (
-    <section className="hero" style={{ background: 'var(--cream-bg)', display: 'flex', justifyContent: 'center', padding: 'clamp(12px, 2vw, 20px)', position: 'relative' }}>
+    <section className="hero" style={{ background: 'var(--cream-bg)', display: 'flex', justifyContent: 'center', position: 'relative' }}>
       <div className="hero-container" style={{ maxWidth: '1400px', width: '100%', position: 'relative', display: 'flex', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', backgroundColor: 'var(--white)' }}>
         
         {/* Responsive Style */}
@@ -86,21 +86,21 @@ export default function Hero() {
               }}
             />
           ))}
-        </div>
-        
-        {/* Slider Controls */}
-        <button onClick={prevSlide} style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', zIndex: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-          <svg width="20" height="20" fill="none" stroke="var(--emerald-deep)" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
-        </button>
-        <button onClick={nextSlide} style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', zIndex: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-          <svg width="20" height="20" fill="none" stroke="var(--emerald-deep)" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg>
-        </button>
-        
-        {/* Dots */}
-        <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '8px', zIndex: 10 }}>
-          {SLIDES.map((_, index) => (
-            <div key={index} onClick={() => setCurrent(index)} style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: current === index ? 'var(--emerald-deep)' : 'rgba(0,0,0,0.2)', cursor: 'pointer', transition: 'background-color 0.3s' }} />
-          ))}
+          
+          {/* Slider Controls */}
+          <button onClick={prevSlide} style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', zIndex: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+            <svg width="20" height="20" fill="none" stroke="var(--emerald-deep)" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
+          </button>
+          <button onClick={nextSlide} style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', zIndex: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+            <svg width="20" height="20" fill="none" stroke="var(--emerald-deep)" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg>
+          </button>
+          
+          {/* Dots */}
+          <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '8px', zIndex: 10 }}>
+            {SLIDES.map((_, index) => (
+              <div key={index} onClick={() => setCurrent(index)} style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: current === index ? 'var(--emerald-deep)' : 'rgba(255,255,255,0.6)', cursor: 'pointer', transition: 'background-color 0.3s' }} />
+            ))}
+          </div>
         </div>
         
       </div>
