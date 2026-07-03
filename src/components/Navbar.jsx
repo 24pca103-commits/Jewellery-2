@@ -86,7 +86,52 @@ export default function Navbar({ cartCount, onCartToggle }) {
           </span>
         </a>
         
+        {/* Mobile menu overlay backdrop */}
+        {isMenuOpen && (
+          <div 
+            className="mobile-nav-overlay"
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: 'rgba(6, 28, 20, 0.4)',
+              backdropFilter: 'blur(2px)',
+              zIndex: 2050
+            }}
+          />
+        )}
+        
         <nav className={`nav-wrapper ${isMenuOpen ? 'open' : ''}`}>
+          {/* Mobile Close Header */}
+          <div className="mobile-menu-header" style={{
+            display: 'none',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '24px 20px',
+            borderBottom: '1px solid var(--gray-light)',
+            marginBottom: '15px'
+          }}>
+            <span style={{ fontFamily: 'Cinzel, serif', fontWeight: '700', fontSize: '18px', color: 'var(--emerald-deep)', letterSpacing: '1px' }}>Jewellery Shop</span>
+            <button 
+              onClick={() => setIsMenuOpen(false)} 
+              aria-label="Close Menu"
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '28px',
+                cursor: 'pointer',
+                color: 'var(--emerald-deep)',
+                padding: '5px',
+                lineHeight: 1
+              }}
+            >
+              &times;
+            </button>
+          </div>
+
           <ul className="nav-menu">
             <li><a href="#" className="nav-link active" onClick={() => setIsMenuOpen(false)}>Home</a></li>
             
