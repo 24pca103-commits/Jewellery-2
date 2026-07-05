@@ -11,14 +11,56 @@ export default function Navbar({ cartCount, onCartToggle }) {
         .topbar-left { display: flex; gap: 20px; alignItems: center; flex-wrap: wrap; }
         .topbar-right { display: flex; gap: 15px; alignItems: center; flex-wrap: wrap; }
         .brands-dropdown-container { position: relative; }
-        .brands-dropdown { position: absolute; top: 100%; left: 0; background-color: var(--white); border: 1px solid var(--gray-light); box-shadow: var(--shadow-soft); min-width: 200px; padding: 10px 0; display: flex; flex-direction: column; gap: 10px; z-index: 100; }
         .brands-dropdown .nav-link { padding: 5px 20px; color: var(--charcoal); }
+        
+        /* Desktop: Dropdown hover behavior with smooth CSS transition */
+        @media (min-width: 769px) {
+          .brands-dropdown { 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background-color: var(--white); 
+            border: 1px solid var(--gray-light); 
+            box-shadow: var(--shadow-soft); 
+            min-width: 200px; 
+            padding: 10px 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+          }
+          .brands-dropdown-container:hover .brands-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+        }
+        
+        /* Mobile: Dropdown display logic */
         @media (max-width: 768px) {
           .topbar { flex-direction: column; gap: 10px; padding: 8px 10px; text-align: center; }
           .topbar-left { justify-content: center; }
           .topbar-right { flex-wrap: wrap; justify-content: center; }
           .brands-dropdown-container { display: flex; flex-direction: column; align-items: center; width: 100%; }
-          .brands-dropdown { position: static; box-shadow: none; border: none; padding: 0; align-items: center; background-color: transparent; margin-top: 10px; }
+          .brands-dropdown {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin-top: 10px;
+            align-items: center;
+          }
+          .brands-dropdown.mobile-open {
+            display: flex;
+          }
         }
       `}</style>
       {/* Top Bar for Store Locator and Live Gold Rates */}
@@ -154,21 +196,17 @@ export default function Navbar({ cartCount, onCartToggle }) {
             {/* Our Brands Dropdown */}
             <li 
               className="brands-dropdown-container"
-              onMouseEnter={() => setIsBrandsOpen(true)} 
-              onMouseLeave={() => setIsBrandsOpen(false)}
               onClick={() => setIsBrandsOpen(!isBrandsOpen)}
             >
               <a href="#brands" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '5px' }} onClick={(e) => e.preventDefault()}>
                 Our Brands
                 <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
               </a>
-              {isBrandsOpen && (
-                <div className="brands-dropdown">
-                  <a href="#mudhra" className="nav-link" onClick={() => setIsMenuOpen(false)}>Mudhra Antique</a>
-                  <a href="#nimah" className="nav-link" onClick={() => setIsMenuOpen(false)}>Nimah Heritage</a>
-                  <a href="#anokhi" className="nav-link" onClick={() => setIsMenuOpen(false)}>Anokhi Uncut</a>
-                </div>
-              )}
+              <div className={`brands-dropdown ${isBrandsOpen ? 'mobile-open' : ''}`}>
+                <a href="#mudhra" className="nav-link" onClick={() => { setIsMenuOpen(false); setIsBrandsOpen(false); }}>Mudhra Antique</a>
+                <a href="#nimah" className="nav-link" onClick={() => { setIsMenuOpen(false); setIsBrandsOpen(false); }}>Nimah Heritage</a>
+                <a href="#anokhi" className="nav-link" onClick={() => { setIsMenuOpen(false); setIsBrandsOpen(false); }}>Anokhi Uncut</a>
+              </div>
             </li>
             
             <li><a href="#catalog" className="nav-link" onClick={() => setIsMenuOpen(false)}>Collections</a></li>
