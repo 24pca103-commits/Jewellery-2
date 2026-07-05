@@ -80,10 +80,20 @@ export default function Navbar({ cartCount, onCartToggle }) {
           {isMenuOpen ? '✕' : '☰'}
         </button>
 
-        <a href="#" className="logo-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
-          <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-            <span style={{ fontSize: 'clamp(16px, 4.5vw, 24px)', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14', whiteSpace: 'nowrap' }}>Jewellery Shop</span>
-          </span>
+        <a href="#" className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+          {/* Premium Diamond Icon */}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-burnished)" strokeWidth="1.5" style={{ minWidth: '28px' }}>
+            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(188, 160, 87, 0.1)"></path>
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: '1.1' }}>
+            <span className="logo-main" style={{ fontFamily: 'Cinzel, serif', fontSize: 'clamp(16px, 3.5vw, 20px)', fontWeight: '800', letterSpacing: '2px', color: '#2a1a14', textTransform: 'uppercase' }}>
+              Thodoo
+            </span>
+            <span className="logo-sub" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '8px', letterSpacing: '4px', color: 'var(--gold-burnished)', textTransform: 'uppercase', marginTop: '2px' }}>
+              Jewellery
+            </span>
+          </div>
         </a>
         
         {/* Mobile menu overlay backdrop */}
@@ -114,7 +124,13 @@ export default function Navbar({ cartCount, onCartToggle }) {
             borderBottom: '1px solid var(--gray-light)',
             marginBottom: '15px'
           }}>
-            <span style={{ fontFamily: 'Cinzel, serif', fontWeight: '700', fontSize: '18px', color: 'var(--emerald-deep)', letterSpacing: '1px' }}>Jewellery Shop</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-burnished)" strokeWidth="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(188, 160, 87, 0.1)"></path>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+              <span style={{ fontFamily: 'Cinzel, serif', fontWeight: '800', fontSize: '16px', color: 'var(--emerald-deep)', letterSpacing: '1px' }}>THODOO</span>
+            </div>
             <button 
               onClick={() => setIsMenuOpen(false)} 
               aria-label="Close Menu"

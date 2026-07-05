@@ -151,10 +151,19 @@ export default function App() {
       <footer style={{ background: 'var(--white)', padding: 'clamp(40px, 6vw, 60px) clamp(16px, 3vw, 20px)', borderTop: '1px solid var(--gray-light)', color: 'var(--charcoal)' }}>
         <div className="footer-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
             <div className="footer-col">
-                <a href="#" className="logo-container" style={{ alignItems: 'flex-start', marginBottom: '20px', textDecoration: 'none' }}>
-                    <span className="logo-main" style={{ display: 'flex', flexDirection: 'column', lineHeight: '1', fontFamily: 'Cinzel, serif' }}>
-                      <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '1px', color: '#2a1a14' }}>Jewellery Shop</span>
-                    </span>
+                <a href="#" className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', textDecoration: 'none' }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-burnished)" strokeWidth="1.5" style={{ minWidth: '28px' }}>
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(188, 160, 87, 0.1)"></path>
+                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: '1.1' }}>
+                      <span className="logo-main" style={{ fontFamily: 'Cinzel, serif', fontSize: '20px', fontWeight: '800', letterSpacing: '2px', color: '#2a1a14', textTransform: 'uppercase' }}>
+                        Thodoo
+                      </span>
+                      <span className="logo-sub" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '8px', letterSpacing: '4px', color: 'var(--gold-burnished)', textTransform: 'uppercase', marginTop: '2px' }}>
+                        Jewellery
+                      </span>
+                    </div>
                 </a>
                 <p style={{ color: 'var(--gray-text)', fontSize: '14px', lineHeight: '1.8' }}>
                   Your trusted destination for exquisite handcrafted jewelry, certified diamonds, and precious metals.
