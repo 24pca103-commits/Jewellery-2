@@ -1,6 +1,10 @@
 /* Google Fonts: Cinzel for luxurious headings, Montserrat for elegant and readable body text */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --emerald-deep: #2A1B14; /* Deep Coffee Brown */
     --emerald-mid: #4A3B32; /* Rich Cocoa Brown */

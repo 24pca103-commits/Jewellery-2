@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { X, Sparkles, ShoppingBag, CreditCard, Video, Image as ImageIcon, Calendar } from 'lucide-react';
 
 export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }) {
   if (!product) return null;
@@ -10,17 +11,6 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
   const [metal, setMetal] = useState('18k Yellow Gold');
   const [size, setSize] = useState('Standard');
   const [engraving, setEngraving] = useState('');
-
-  const inputStyle = {
-    flex: 1,
-    padding: '10px',
-    background: 'var(--white)',
-    border: '1px solid var(--gray-light)',
-    color: 'var(--charcoal)',
-    borderRadius: '4px',
-    fontSize: '13px',
-    outline: 'none'
-  };
 
   // Close helper reset
   const handleClose = () => {
@@ -77,171 +67,228 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
   };
 
   const videoUrl = "https://assets.mixkit.co/videos/preview/mixkit-diamond-ring-on-black-surface-41585-large.mp4";
+  const breakdown = getPricingBreakdown(product.category, product.price);
 
   return (
-    <div className="modal-overlay open" onClick={handleClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-modal" onClick={handleClose}>&times;</button>
-        
-        <div className="modal-media-carousel">
-          {activeTab === 'image' ? (
-            <div 
-              className="modal-img-wrapper"
-              onClick={() => setIsZoomed(!isZoomed)}
-              onMouseMove={handleMouseMove}
-              style={{ cursor: isZoomed ? 'zoom-out' : 'zoom-in' }}
-            >
-              <img 
-                src={product.img} 
-                alt={product.title} 
-                style={{ 
-                  transform: isZoomed ? 'scale(2.5)' : 'scale(1)',
-                  transformOrigin: isZoomed ? `${zoomPos.x}% ${zoomPos.y}%` : 'center center'
-                }}
-              />
-            </div>
-          ) : (
-            <div className="modal-video-wrapper">
-              <video 
-                src={videoUrl}
-                className="modal-video"
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                controls
-              />
-            </div>
-          )}
+    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
+        onClick={handleClose} 
+      />
 
-          {/* Media Slider Tabs */}
-          <div className="modal-media-tabs">
+      {/* Modal Container */}
+      <div className="relative bg-white w-full max-w-4xl rounded-sm shadow-premium border border-gold-light/20 overflow-hidden grid grid-cols-1 md:grid-cols-2 z-10 animate-in fade-in zoom-in-95 duration-300">
+        
+        {/* Close Button */}
+        <button 
+          onClick={handleClose}
+          className="absolute right-4 top-4 p-1.5 rounded-full bg-white/80 hover:bg-gold hover:text-charcoal transition-colors text-charcoal shadow-soft z-30 cursor-pointer"
+          aria-label="Close Modal"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        {/* Left Column: Media Area */}
+        <div className="bg-luxury-cream p-6 flex flex-col justify-between border-r border-gold-light/10">
+          <div className="relative flex-grow flex items-center justify-center min-h-[300px]">
+            {activeTab === 'image' ? (
+              <div 
+                className="relative overflow-hidden w-full h-full aspect-square rounded-sm cursor-zoom-in"
+                onClick={() => setIsZoomed(!isZoomed)}
+                onMouseMove={handleMouseMove}
+                style={{ cursor: isZoomed ? 'zoom-out' : 'zoom-in' }}
+              >
+                <img 
+                  src={product.img} 
+                  alt={product.title} 
+                  className="w-full h-full object-cover transition-transform duration-200"
+                  style={{ 
+                    transform: isZoomed ? 'scale(2.2)' : 'scale(1)',
+                    transformOrigin: isZoomed ? `${zoomPos.x}% ${zoomPos.y}%` : 'center center'
+                  }}
+                />
+              </div>
+            ) : (
+              <div className="w-full h-full aspect-square rounded-sm overflow-hidden flex items-center justify-center">
+                <video 
+                  src={videoUrl}
+                  className="w-full h-full object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  controls
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Media Switcher Tabs */}
+          <div className="flex gap-2 justify-center mt-4">
             <button 
-              className={`media-tab-btn ${activeTab === 'image' ? 'active' : ''}`}
+              className={`flex items-center gap-1 px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-sm border transition-all ${
+                activeTab === 'image' 
+                  ? 'bg-charcoal text-white border-charcoal' 
+                  : 'bg-white text-charcoal-muted border-gold-light/35 hover:border-gold'
+              }`}
               onClick={() => { setActiveTab('image'); setIsZoomed(false); }}
             >
-              View Image (Click to Zoom)
+              <ImageIcon className="w-3.5 h-3.5" />
+              Image Detail
             </button>
             <button 
-              className={`media-tab-btn ${activeTab === 'video' ? 'active' : ''}`}
+              className={`flex items-center gap-1 px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-sm border transition-all ${
+                activeTab === 'video' 
+                  ? 'bg-charcoal text-white border-charcoal' 
+                  : 'bg-white text-charcoal-muted border-gold-light/35 hover:border-gold'
+              }`}
               onClick={() => setActiveTab('video')}
             >
-              Play Video
+              <Video className="w-3.5 h-3.5" />
+              360&deg; Video
             </button>
           </div>
         </div>
 
-        <div className="modal-info">
-          <span className="modal-category">{product.category}</span>
-          <h3 className="modal-title">{product.title}</h3>
-          <div className="modal-price">${product.price.toLocaleString()}</div>
+        {/* Right Column: Details Area */}
+        <div className="p-8 flex flex-col justify-between overflow-y-auto max-h-[85vh] md:max-h-none space-y-6">
+          <div className="space-y-4">
+            <div className="space-y-1.5">
+              <span className="text-[10px] text-gold font-bold uppercase tracking-widest block">
+                {product.category}
+              </span>
+              <h2 className="font-serif text-2xl font-bold text-charcoal tracking-wide">
+                {product.title}
+              </h2>
+              <p className="text-xl font-serif text-gold-dark font-bold">
+                ${product.price.toLocaleString()}
+              </p>
+            </div>
 
-          {/* Dynamic per-gram pricing breakdown table */}
-          <div className="pricing-breakdown-card" style={{
-            marginTop: '15px',
-            marginBottom: '15px',
-            padding: '14px',
-            background: 'rgba(188, 160, 87, 0.05)',
-            border: '1px solid rgba(188, 160, 87, 0.2)',
-            borderRadius: '6px'
-          }}>
-            <h4 style={{ color: 'var(--gold-burnished)', fontSize: '11px', margin: '0 0 10px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              ✦ Pricing Breakdown (Rate Per Gram)
-            </h4>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px', fontSize: '12px', color: 'var(--charcoal)' }}>
-              <div><span style={{ color: 'var(--gray-text)' }}>Metal Purity:</span> {getPricingBreakdown(product.category, product.price).purity}</div>
-              <div><span style={{ color: 'var(--gray-text)' }}>Net Weight:</span> {getPricingBreakdown(product.category, product.price).weight} g</div>
-              <div><span style={{ color: 'var(--gray-text)' }}>Rate / Gram:</span> ${getPricingBreakdown(product.category, product.price).rate.toFixed(2)}</div>
-              <div><span style={{ color: 'var(--gray-text)' }}>Metal Value:</span> ${getPricingBreakdown(product.category, product.price).metalValue.toLocaleString()}</div>
-              <div><span style={{ color: 'var(--gray-text)' }}>Making (15%):</span> ${getPricingBreakdown(product.category, product.price).makingCharges.toLocaleString()}</div>
-              <div><span style={{ color: 'var(--gray-text)' }}>Gemstones:</span> ${getPricingBreakdown(product.category, product.price).stoneValue.toLocaleString()}</div>
+            {/* Pricing breakdown */}
+            <div className="p-4 bg-luxury-cream border border-gold-light/25 rounded-sm space-y-3">
+              <h4 className="flex items-center gap-1.5 text-[10px] text-gold font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5" />
+                Value Specification
+              </h4>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 text-xs font-sans">
+                <div className="flex justify-between border-b border-gold-light/10 pb-1">
+                  <span className="text-charcoal-muted font-light">Purity:</span>
+                  <span className="font-semibold text-charcoal">{breakdown.purity}</span>
+                </div>
+                <div className="flex justify-between border-b border-gold-light/10 pb-1">
+                  <span className="text-charcoal-muted font-light">Net Weight:</span>
+                  <span className="font-semibold text-charcoal">{breakdown.weight} g</span>
+                </div>
+                <div className="flex justify-between border-b border-gold-light/10 pb-1">
+                  <span className="text-charcoal-muted font-light">Metal Value:</span>
+                  <span className="font-semibold text-charcoal">${breakdown.metalValue.toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between border-b border-gold-light/10 pb-1">
+                  <span className="text-charcoal-muted font-light">Making Charges:</span>
+                  <span className="font-semibold text-charcoal">${breakdown.makingCharges.toLocaleString()}</span>
+                </div>
+                <div className="col-span-2 flex justify-between border-b border-gold-light/10 pb-1 pt-1">
+                  <span className="text-charcoal-muted font-light">Certified Stone Value:</span>
+                  <span className="font-semibold text-charcoal">${breakdown.stoneValue.toLocaleString()}</span>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-xs sm:text-sm text-charcoal-muted font-light leading-relaxed">
+              {product.desc}
+            </p>
+
+            {/* Customizations */}
+            <div className="space-y-3 pt-2">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="text-[10px] text-charcoal-muted font-bold uppercase tracking-wider">Metal Type</label>
+                  <select 
+                    value={metal} 
+                    onChange={(e) => setMetal(e.target.value)}
+                    className="w-full bg-luxury-cream border border-gold-light/35 rounded-sm p-2 text-xs font-semibold focus:outline-none focus:border-gold"
+                  >
+                    <option value="18k Yellow Gold">18k Yellow Gold</option>
+                    <option value="18k Rose Gold">18k Rose Gold</option>
+                    <option value="Platinum">Platinum</option>
+                    <option value="22k Burnished Gold">22k Burnished Gold</option>
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] text-charcoal-muted font-bold uppercase tracking-wider">Size Selector</label>
+                  <select 
+                    value={size} 
+                    onChange={(e) => setSize(e.target.value)}
+                    className="w-full bg-luxury-cream border border-gold-light/35 rounded-sm p-2 text-xs font-semibold focus:outline-none focus:border-gold"
+                  >
+                    <option value="Standard">Standard Size</option>
+                    <option value="Size 5">Size 5</option>
+                    <option value="Size 6">Size 6</option>
+                    <option value="Size 7">Size 7</option>
+                    <option value="Size 8">Size 8</option>
+                  </select>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <label className="text-[10px] text-charcoal-muted font-bold uppercase tracking-wider">Custom Engraving</label>
+                <input 
+                  type="text" 
+                  placeholder="Complimentary (Max 15 characters)" 
+                  maxLength={15}
+                  value={engraving}
+                  onChange={(e) => setEngraving(e.target.value)}
+                  className="w-full bg-luxury-cream border border-gold-light/35 rounded-sm px-3 py-2 text-xs font-semibold focus:outline-none focus:border-gold font-sans placeholder:font-light"
+                />
+              </div>
             </div>
           </div>
 
-          <p className="modal-desc">{product.desc}</p>
-          
-          <div className="customization-options" style={{ marginTop: '15px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <div style={{ display: 'flex', gap: '10px' }}>
-              <select value={metal} onChange={(e) => setMetal(e.target.value)} style={inputStyle}>
-                <option value="18k Yellow Gold">18k Yellow Gold</option>
-                <option value="18k Rose Gold">18k Rose Gold</option>
-                <option value="Platinum">Platinum</option>
-                <option value="22k Burnished Gold">22k Burnished Gold</option>
-              </select>
-              <select value={size} onChange={(e) => setSize(e.target.value)} style={inputStyle}>
-                <option value="Standard">Standard Size</option>
-                <option value="Size 5">Size 5</option>
-                <option value="Size 6">Size 6</option>
-                <option value="Size 7">Size 7</option>
-                <option value="Size 8">Size 8</option>
-                <option value="Size 9">Size 9</option>
-              </select>
-            </div>
-            <input 
-              type="text" 
-              placeholder="Complimentary Engraving (Max 15 chars)" 
-              maxLength={15}
-              value={engraving}
-              onChange={(e) => setEngraving(e.target.value)}
-              style={inputStyle}
-            />
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '20px' }}>
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          {/* Action buttons */}
+          <div className="space-y-3 pt-4 border-t border-luxury-cream">
+            <div className="flex gap-3">
               <button 
-                className="btn-gold" 
-                style={{ flex: '1 1 120px', padding: '12px', fontSize: '13px' }}
                 onClick={() => {
-                  if (onBuyNow) onBuyNow(product, { metal, size, engraving });
+                  onBuyNow(product, { metal, size, engraving });
                   handleClose();
                 }}
+                className="flex-1 inline-flex justify-center items-center gap-1.5 px-6 py-3 bg-gold hover:bg-gold-dark text-charcoal text-xs uppercase tracking-widest font-bold rounded-sm shadow-soft transition-colors cursor-pointer"
               >
+                <CreditCard className="w-4 h-4" />
                 Buy Now
               </button>
               <button 
-                className="btn-outline" 
-                style={{ flex: '1 1 120px', padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--emerald-deep)', border: '1px solid var(--emerald-deep)', cursor: 'pointer' }}
                 onClick={() => {
                   onAddToCart(product, { metal, size, engraving });
                   handleClose();
                 }}
+                className="flex-1 inline-flex justify-center items-center gap-1.5 px-6 py-3 border border-charcoal hover:border-gold hover:text-gold text-charcoal text-xs uppercase tracking-widest font-bold rounded-sm transition-colors cursor-pointer"
               >
-                Add To Treasury Box
+                <ShoppingBag className="w-4 h-4" />
+                Add to Cart
               </button>
             </div>
 
             <button 
-              style={{ width: '100%', padding: '12px', fontSize: '13px', background: 'transparent', color: 'var(--emerald-deep)', border: '1px solid var(--emerald-deep)', cursor: 'pointer', transition: 'all 0.3s' }}
-              onMouseOver={(e) => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.backgroundColor = 'var(--emerald-deep)' }}
-              onMouseOut={(e) => { e.currentTarget.style.color = 'var(--emerald-deep)'; e.currentTarget.style.backgroundColor = 'transparent' }}
               onClick={() => {
                 window.location.hash = "#consultation";
                 handleClose();
               }}
+              className="w-full inline-flex justify-center items-center gap-1.5 px-6 py-3 border border-gold hover:bg-gold hover:text-charcoal text-gold text-xs uppercase tracking-widest font-bold rounded-sm transition-colors cursor-pointer"
             >
+              <Calendar className="w-4 h-4" />
               Book Private Viewing
             </button>
-            <button 
-              style={{ width: '100%', padding: '12px', fontSize: '13px', background: 'var(--charcoal)', color: 'var(--white)', border: 'none', cursor: 'pointer', transition: 'all 0.3s', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
-              onMouseOver={(e) => { e.currentTarget.style.background = 'var(--emerald-mid)' }}
-              onMouseOut={(e) => { e.currentTarget.style.background = 'var(--charcoal)' }}
-              onClick={() => {
-                alert("Initiating Live Video Shopping Experience with a jewelry expert...");
-              }}
-            >
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
-              Live Video Shopping
-            </button>
-            <div style={{ textAlign: 'center', fontSize: '12px', color: 'var(--gray-text)', marginTop: '8px', fontStyle: 'italic' }}>
-              ✦ Financing available: 4 interest-free payments of ${(product.price / 4).toLocaleString()}
+
+            <div className="text-center text-[10px] text-charcoal-muted italic font-light pt-1">
+              * Govt BIS Hallmarked gold. Certified Diamond authentication included.
             </div>
           </div>
+
         </div>
+
       </div>
     </div>
   );
 }
-
-
-

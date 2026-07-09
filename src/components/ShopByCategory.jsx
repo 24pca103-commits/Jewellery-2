@@ -1,41 +1,149 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 
 const CATEGORIES = [
-  { name: 'Rings', img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Necklaces', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Earrings', img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Bracelets', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Bridal', img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Gifts', img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=300&q=80' }
+  {
+    name: 'Jhumka Collection',
+    img: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=400&q=80',
+    count: '95+ Masterpieces',
+    tag: 'Bridal & Antique Temple'
+  },
+  {
+    name: 'Stud Earrings',
+    img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=400&q=80',
+    count: '120+ Solitaires',
+    tag: 'Daily VVS1 Elegance'
+  },
+  {
+    name: 'Hoop Earrings',
+    img: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=400&q=80',
+    count: '80+ Classics',
+    tag: 'Modern Textured Gold'
+  },
+  {
+    name: 'Chandelier Earrings',
+    img: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=400&q=80',
+    count: '65+ Cascades',
+    tag: 'Grand Evening Luxury'
+  },
+  {
+    name: 'Diamond Earrings',
+    img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=400&q=80',
+    count: '110+ Certified',
+    tag: 'Fine Baguette Cut'
+  },
+  {
+    name: 'Gold Earrings',
+    img: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=400&q=80',
+    count: '150+ Hallmarked',
+    tag: '22K Traditional Filigree'
+  }
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 35 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+};
 
 export default function ShopByCategory() {
   return (
-    <section style={{ padding: 'clamp(40px, 6vw, 60px) clamp(16px, 3vw, 20px)', background: 'var(--white)', textAlign: 'center' }}>
-      <h2 style={{ fontSize: '28px', fontFamily: 'Cinzel, serif', color: 'var(--emerald-deep)', marginBottom: '40px' }}>
-        Shop by Category
-      </h2>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap', maxWidth: '1200px', margin: '0 auto' }}>
-        {CATEGORIES.map((cat, idx) => (
-          <a key={idx} href="#catalog" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', cursor: 'pointer', group: 'true' }}>
-            <div style={{ width: 'clamp(80px, 18vw, 120px)', height: 'clamp(80px, 18vw, 120px)', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--gray-light)', padding: '4px', transition: 'all 0.3s' }}
-                 onMouseOver={(e) => e.currentTarget.style.borderColor = 'var(--gold-burnished)'}
-                 onMouseOut={(e) => e.currentTarget.style.borderColor = 'var(--gray-light)'}
+    <section id="shop-by-type" className="py-20 bg-luxury-cream border-t border-gold-light/20 relative overflow-hidden">
+      
+      {/* Decorative luxury radial background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-radial opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
+          <div className="flex items-center justify-center gap-1.5 text-xs text-gold font-bold uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5" />
+            Curated Collections
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-wide text-charcoal">
+            Shop By Type
+          </h2>
+          <div className="w-16 h-0.5 bg-gold mx-auto mt-4" />
+          <p className="font-sans text-charcoal-muted text-sm leading-relaxed font-light">
+            Explore our majestic array of fine earrings, crafted in pristine 22K gold and certified brilliant-cut diamonds.
+          </p>
+        </div>
+
+        {/* Categories Grid with 3D perspective viewport */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 [perspective:1200px]"
+        >
+          {CATEGORIES.map((cat, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ 
+                y: -10,
+                rotateX: 4,
+                rotateY: -4,
+                scale: 1.01,
+                transition: { duration: 0.4, ease: 'easeOut' }
+              }}
+              style={{ transformStyle: 'preserve-3d' }}
+              className="group relative h-[380px] bg-charcoal rounded-sm overflow-hidden shadow-soft hover:shadow-premium transition-all duration-500 cursor-pointer"
             >
-              <img src={cat.img} alt={cat.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', transition: 'transform 0.5s' }} 
-                   onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-                   onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-              />
-            </div>
-            <span style={{ color: 'var(--charcoal)', fontWeight: '600', textTransform: 'uppercase', fontSize: '13px', letterSpacing: '1px' }}>
-              {cat.name}
-            </span>
-          </a>
-        ))}
+              {/* Luxury Shine Sweep Overlay (Metallic Gleam Reflection) */}
+              <div className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-30 transform -skew-x-25" />
+
+              {/* Background Image Container with Zoom */}
+              <div className="absolute inset-0 z-0 overflow-hidden">
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-108"
+                />
+                {/* Grand gold/dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-85 group-hover:opacity-90 transition-opacity duration-500" />
+              </div>
+
+              {/* Text Content Overlay - Translate slightly forward in 3D */}
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 text-left space-y-2 [transform:translateZ(40px)]">
+                <span className="font-sans text-[10px] tracking-widest uppercase text-gold font-bold">
+                  {cat.tag}
+                </span>
+                
+                {/* Heading with self-drawing gold underline animation */}
+                <div className="relative inline-block self-start">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white group-hover:text-gold transition-colors duration-300 relative pb-1">
+                    {cat.name}
+                  </h3>
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-500 ease-out" />
+                </div>
+                
+                {/* Interactive Card Action Footer */}
+                <div className="flex justify-between items-center pt-3 border-t border-white/10 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="font-sans text-[11px] text-white/80 font-light">{cat.count}</span>
+                  <span className="font-sans text-[10px] font-bold text-gold uppercase tracking-wider group-hover:underline">
+                    View All &rarr;
+                  </span>
+                </div>
+              </div>
+
+            </motion.div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );
 }
-
-
-

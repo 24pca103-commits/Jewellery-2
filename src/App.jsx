@@ -1,79 +1,94 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
+import ShopByCategory from './components/ShopByCategory';
 import Catalog from './components/Catalog';
 import MetalRates from './components/MetalRates';
 import Diamond3D from './components/Diamond3D';
 import Consultation from './components/Consultation';
+import TrustBadges from './components/TrustBadges';
+import Testimonials from './components/Testimonials';
+import InstagramFeed from './components/InstagramFeed';
+import Newsletter from './components/Newsletter';
+import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import ProductModal from './components/ProductModal';
-import ShopByCategory from './components/ShopByCategory';
-import TrustBadges from './components/TrustBadges';
-import InstagramFeed from './components/InstagramFeed';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const PRODUCTS = [
   {
       id: 1,
-      title: "Aura Diamond Solitaire",
-      category: "rings",
-      price: 1850,
-      img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+      title: "Royal Antique Gold Jhumkas",
+      category: "jhumka",
+      price: 2800,
+      img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
       hoverImg: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-      desc: "An exquisite 18k Burnished Gold solitaire ring featuring a brilliant 1.5 carat round cut diamond. Crafted to represent timeless elegance and supreme sophistication."
+      desc: "Stately 22k burnished gold jhumkas featuring intricate temple filigree work and polished gold drop accents. Perfect for bridal elegance."
   },
   {
       id: 2,
-      title: "Royal Kundan Choker",
-      category: "necklaces",
-      price: 3400,
-      img: "https://images.unsplash.com/photo-1599643471487-2c92c90cbfbb?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
-      desc: "A breathtaking traditional Kundan choker set, hand-crafted with uncut diamonds and pearls, perfect for the modern bride seeking vintage charm."
+      title: "Aura Solitaire Diamond Studs",
+      category: "studs",
+      price: 1450,
+      img: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+      desc: "Breathtaking 18k white gold stud earrings featuring brilliant-cut 1.5 carat diamonds with VVS1 clarity, crafted for timeless everyday sophistication."
   },
   {
       id: 3,
-      title: "Imperial Gold Drops",
-      category: "earrings",
-      price: 1250,
-      img: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-      desc: "Stately 22k burnished gold earrings featuring intricate filigree work and polished gold drop accents. Infuse modern royalty into your evening wear."
+      title: "Imperial Gold Hoop Earrings",
+      category: "hoops",
+      price: 950,
+      img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+      desc: "Sculpted 22k gold hoops showcasing textured twist engraving, transitioning seamlessly from workspace elegance to evening luxury."
   },
   {
       id: 4,
-      title: "Celestia Diamond Cuff",
-      category: "bracelets",
-      price: 4500,
-      img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
-      desc: "A bold statement cuff in 18k gold encrusted with over 3 carats of brilliant VVS1 clarity baguette diamonds, shining with unmatched luxury."
+      title: "Celestia Diamond Chandeliers",
+      category: "chandeliers",
+      price: 3900,
+      img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+      desc: "Cascading chandelier earrings encrusted with baguette and round-cut diamonds, catching and reflecting light at every angle."
   },
   {
       id: 5,
-      title: "Regal Emerald Signet",
-      category: "rings",
-      price: 2100,
-      img: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
-      desc: "A classic signet ring featuring a polished square-cut deep green emerald set in chunky 22k yellow gold. Unisex elegance at its peak."
+      title: "Regal Emerald Drop Earrings",
+      category: "gold",
+      price: 1650,
+      img: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80",
+      hoverImg: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
+      desc: "Polished pear-cut natural emeralds suspended from detailed 22k yellow gold filigree posts. Royal charm personified."
   },
   {
       id: 6,
-      title: "Orion Diamond Choker",
-      category: "necklaces",
-      price: 8900,
-      img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+      title: "Orion Diamond Cascade Drops",
+      category: "diamond",
+      price: 4500,
+      img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
       hoverImg: "https://images.unsplash.com/photo-1599643471487-2c92c90cbfbb?auto=format&fit=crop&w=600&q=80",
-      desc: "A grand statement choker necklace crafted in platinum, featuring cascading pear-cut diamonds that capture and reflect the light from every angle."
+      desc: "Elegant platinum drops featuring cascading emerald-cut diamonds, bringing elite sophistication to your most important milestones."
   }
 ];
 
 export default function App() {
   const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isDirectCheckout, setIsDirectCheckout] = useState(false);
+
+  const handleToggleWishlist = (productId) => {
+    setWishlist(prev => {
+      if (prev.includes(productId)) {
+        return prev.filter(id => id !== productId);
+      } else {
+        return [...prev, productId];
+      }
+    });
+  };
 
   const getCartItemId = (productId, customDetails) => {
     return `${productId}-${customDetails?.metal || ''}-${customDetails?.size || ''}-${customDetails?.engraving || ''}`;
@@ -92,7 +107,7 @@ export default function App() {
       }
       return [...prev, { product, quantity: 1, customDetails, cartItemId: itemId }];
     });
-    setIsCartOpen(true); // Automatically slide in drawer on add
+    setIsCartOpen(true);
   };
 
   const handleBuyNow = (product, customDetails) => {
@@ -124,10 +139,6 @@ export default function App() {
     setCart(prev => prev.filter(item => item.cartItemId !== cartItemId));
   };
 
-  const handleCheckout = () => {
-    // CartDrawer handles success UI; we just clear state after drawer is closed
-  };
-
   const handleCheckoutFinished = () => {
     setCart([]);
   };
@@ -135,83 +146,56 @@ export default function App() {
   const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <>
-      <Navbar cartCount={totalQty} onCartToggle={() => setIsCartOpen(true)} />
+    <div className="bg-white min-h-screen text-charcoal font-sans overflow-x-hidden selection:bg-gold/30 selection:text-charcoal-dark">
+      {/* 1. Header & Navigation */}
+      <Navbar 
+        cartCount={totalQty} 
+        onCartToggle={() => setIsCartOpen(true)}
+      />
+
+      {/* 2. Hero Slider Banner (Home) */}
       <Hero />
+
+      {/* 3. About Us Heritage Section (About) */}
+      <AboutUs />
+
+      {/* 4. Why Choose Us (Trust Badges) */}
       <TrustBadges />
+
+      {/* 5. Curated Shop By Type (ShopByCategory) */}
       <ShopByCategory />
-      <Catalog products={PRODUCTS} onAddToCart={handleAddToCart} onQuickView={setSelectedProduct} />
+
+      {/* 6. Collections (New Arrivals, Best Sellers & Bridal Banner) */}
+      <Catalog 
+        products={PRODUCTS} 
+        wishlist={wishlist}
+        onWishlistToggle={handleToggleWishlist}
+        onAddToCart={handleAddToCart} 
+        onQuickView={setSelectedProduct} 
+      />
+
+      {/* 7. Live Gold & Silver Market Rates */}
       <MetalRates />
+
+      {/* 8. 3D Diamond Custom Showcase */}
       <Diamond3D />
+
+      {/* 9. Booking & Consultation Service */}
       <Consultation />
-      
+
+      {/* 10. Customer Testimonials */}
+      <Testimonials />
+
+      {/* 11. Social Gallery Feed */}
       <InstagramFeed />
 
-      {/* Footer */}
-      <footer style={{ background: 'var(--white)', padding: 'clamp(40px, 6vw, 60px) clamp(16px, 3vw, 20px)', borderTop: '1px solid var(--gray-light)', color: 'var(--charcoal)' }}>
-        <div className="footer-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
-            <div className="footer-col">
-                <a href="#" className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', textDecoration: 'none' }}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-burnished)" strokeWidth="1.5" style={{ minWidth: '28px' }}>
-                      <path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(188, 160, 87, 0.1)"></path>
-                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: '1.1' }}>
-                      <span className="logo-main" style={{ fontFamily: 'Cinzel, serif', fontSize: '20px', fontWeight: '800', letterSpacing: '2px', color: '#2a1a14', textTransform: 'uppercase' }}>
-                        Thodoo
-                      </span>
-                      <span className="logo-sub" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '8px', letterSpacing: '4px', color: 'var(--gold-burnished)', textTransform: 'uppercase', marginTop: '2px' }}>
-                        Jewellery
-                      </span>
-                    </div>
-                </a>
-                <p style={{ color: 'var(--gray-text)', fontSize: '14px', lineHeight: '1.8' }}>
-                  Your trusted destination for exquisite handcrafted jewelry, certified diamonds, and precious metals.
-                </p>
-            </div>
-            
-            <div className="footer-col">
-                <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px' }}>Collections</h4>
-                <ul className="footer-links" style={{ listStyle: 'none', padding: 0 }}>
-                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Rings</a></li>
-                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Necklaces</a></li>
-                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Earrings</a></li>
-                    <li style={{ marginBottom: '10px' }}><a href="#catalog" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Bracelets</a></li>
-                </ul>
-            </div>
+      {/* 12. Privilege Club Newsletter Sign-up */}
+      <Newsletter />
 
-            <div className="footer-col">
-                <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px' }}>Customer Service</h4>
-                <ul className="footer-links" style={{ listStyle: 'none', padding: 0 }}>
-                    <li style={{ marginBottom: '10px' }}><a href="#consultation" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Book Video Consultation</a></li>
-                    <li style={{ marginBottom: '10px' }}><a href="#metal-rates" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Live Metal Rates</a></li>
-                    <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: 'var(--gray-text)', textDecoration: 'none' }}>Track Order</a></li>
-                </ul>
-            </div>
+      {/* 13. Premium Multi-column Footer */}
+      <Footer />
 
-            <div className="footer-col">
-                <h4 style={{ color: 'var(--emerald-deep)', marginBottom: '15px' }}>Newsletter</h4>
-                <p style={{ color: 'var(--gray-text)', fontSize: '14px', marginBottom: '20px' }}>
-                  Subscribe to receive updates on new collections and special offers.
-                </p>
-                <form className="newsletter-form" onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Thank you for subscribing to Jewellery Shop!");
-                  e.target.reset();
-                }} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                    <input type="email" placeholder="Your email address" required style={{ flex: '1 1 180px', minWidth: 0, padding: '10px', border: '1px solid var(--gray-light)', borderRadius: '4px' }} />
-                    <button type="submit" style={{ padding: '10px 20px', background: 'var(--emerald-deep)', color: 'var(--white)', border: 'none', borderRadius: '4px', cursor: 'pointer', whiteSpace: 'nowrap' }}>Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-        <div className="footer-bottom" style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid var(--gray-light)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', color: 'var(--gray-text)', fontSize: '13px' }}>
-            <div>&copy; 2026 Jewellery Shop. All rights reserved.</div>
-            <div>Designed for Elegance</div>
-        </div>
-      </footer>
-
-      {/* Cart Slider Drawer */}
+      {/* E-Commerce Drawer Overlay */}
       <CartDrawer 
         isOpen={isCartOpen}
         cart={cart}
@@ -220,7 +204,6 @@ export default function App() {
         onClose={() => {
           setIsCartOpen(false);
           setIsDirectCheckout(false);
-          // If checkout succeeded and drawer closes, clear the cart
           if (cart.length === 0) handleCheckoutFinished();
         }}
         onQtyChange={handleQtyChange}
@@ -228,17 +211,16 @@ export default function App() {
         onCheckout={handleCheckoutFinished}
       />
 
-      {/* Details Modal */}
+      {/* Details Quick-View Modal */}
       <ProductModal 
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
         onAddToCart={handleAddToCart}
         onBuyNow={handleBuyNow}
       />
-      
+
+      {/* Floating Support Button */}
       <FloatingWhatsApp />
-    </>
+    </div>
   );
 }
-
-
