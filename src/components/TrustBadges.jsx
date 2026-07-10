@@ -81,7 +81,7 @@ export default function TrustBadges() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-4 xl:gap-5"
         >
           {TRUST_ITEMS.map((item, idx) => (
             <motion.div
@@ -94,18 +94,18 @@ export default function TrustBadges() {
                 boxShadow: '0 15px 30px rgba(42, 27, 20, 0.15)'
               }}
               transition={{ type: 'spring', stiffness: 350, damping: 20 }}
-              className="group p-6 rounded-sm border border-gold-light/20 bg-[#FAF5EF]/60 transition-all duration-300 flex items-start gap-4 text-left cursor-pointer"
+              className="group p-5 rounded-sm border border-gold-light/20 bg-[#FAF5EF]/60 transition-all duration-300 flex flex-col items-center text-center gap-4 cursor-pointer h-full"
             >
               {/* Icon Container with Scale-up and gold highlights on hover */}
               <div className="p-3 bg-white rounded-full border border-gold-light/15 shadow-soft group-hover:bg-gold/15 group-hover:scale-105 transition-all duration-300 flex-shrink-0 flex items-center justify-center">
                 {item.icon}
               </div>
               
-              <div className="space-y-2">
-                <h4 className="font-serif text-base font-bold text-charcoal group-hover:text-white transition-colors duration-300 tracking-wide">
+              <div className="space-y-2 flex-grow flex flex-col justify-start">
+                <h4 className="font-serif text-sm font-bold text-charcoal group-hover:text-white transition-colors duration-300 tracking-wide">
                   {item.title}
                 </h4>
-                <p className="font-sans text-xs text-charcoal-muted group-hover:text-white/70 transition-colors duration-300 leading-relaxed font-light">
+                <p className="font-sans text-[11px] text-charcoal-muted group-hover:text-white/70 transition-colors duration-300 leading-relaxed font-light">
                   {item.desc}
                 </p>
               </div>
