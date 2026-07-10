@@ -82,7 +82,7 @@ export default function TryOn({ products = [] }) {
     <section className="section" id="tryon" onMouseMove={onMouseMove} onMouseUp={onMouseUp}>
       <div className="section-header">
         <span className="section-tag">Interactive Mirror</span>
-        <h2 className="section-title">Virtual Try-On Studio</h2>
+        <h2 className="section-title">Virtual Mirror Studio</h2>
       </div>
 
       <div className="tryon-layout">
@@ -119,7 +119,7 @@ export default function TryOn({ products = [] }) {
         </div>
 
         <div className="tryon-sidebar">
-          <h3>Try On Your Vault Favorites</h3>
+          <h3>Mirror Your Vault Favorites</h3>
           <p>Test out your next heirloom. Select one of our hand-picked model canvas layouts, upload your own photo to personalize the experience, and scale/drag the earrings into place.</p>
           
           <div className="tryon-selection">

@@ -18,58 +18,58 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const PRODUCTS = [
   {
-      id: 1,
-      title: "Royal Antique Gold Jhumkas",
-      category: "jhumka",
-      price: 2800,
-      img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-      desc: "Stately 22k burnished gold jhumkas featuring intricate temple filigree work and polished gold drop accents. Perfect for bridal elegance."
+    id: 1,
+    title: "Royal Antique Gold Jhumkas",
+    category: "jhumka",
+    price: 2800,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR427BZ93vcV4nm9zlbfmwPJb6F2y21RHGYU2ao9ZH8Kz7nTB0-_wLlllQ&s=10",
+    hoverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB476eX8NokiLet-1NO_KkTSjjiRRNsohxed3PRohDYDyQsMp_cWYknKQ&s=10",
+    desc: "Stately 22k burnished gold jhumkas featuring intricate temple filigree work and polished gold drop accents. Perfect for bridal elegance."
   },
   {
-      id: 2,
-      title: "Aura Solitaire Diamond Studs",
-      category: "studs",
-      price: 1450,
-      img: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
-      desc: "Breathtaking 18k white gold stud earrings featuring brilliant-cut 1.5 carat diamonds with VVS1 clarity, crafted for timeless everyday sophistication."
+    id: 2,
+    title: "Aura Solitaire Diamond Studs",
+    category: "studs",
+    price: 1450,
+    img: "https://cdn.eternz.com/thumbnails/products/1_73155584_thumbnail_1024.jpg",
+    hoverImg: "https://www.craftier.in/cdn/shop/files/3_a51d1854-f8dd-4e8c-89e2-ae92b07c74af.jpg?v=1777637694",
+    desc: "Breathtaking 18k white gold stud earrings featuring brilliant-cut 1.5 carat diamonds with VVS1 clarity, crafted for timeless everyday sophistication."
   },
   {
-      id: 3,
-      title: "Imperial Gold Hoop Earrings",
-      category: "hoops",
-      price: 950,
-      img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
-      desc: "Sculpted 22k gold hoops showcasing textured twist engraving, transitioning seamlessly from workspace elegance to evening luxury."
+    id: 3,
+    title: "Imperial Gold Hoop Earrings",
+    category: "hoops",
+    price: 950,
+    img: "https://www.gehnaindia.com/_next/image?url=https%3A%2F%2Fcdn-assets.gehnaindia.com%2F5q0f97fc4jx1okh4wv5ds31yohw1&w=2560&q=75",
+    hoverImg: "https://i.etsystatic.com/22353755/r/il/86e419/2440359383/il_fullxfull.2440359383_an3w.jpg",
+    desc: "Sculpted 22k gold hoops showcasing textured twist engraving, transitioning seamlessly from workspace elegance to evening luxury."
   },
   {
-      id: 4,
-      title: "Celestia Diamond Chandeliers",
-      category: "chandeliers",
-      price: 3900,
-      img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
-      desc: "Cascading chandelier earrings encrusted with baguette and round-cut diamonds, catching and reflecting light at every angle."
+    id: 4,
+    title: "Celestia Diamond Chandeliers",
+    category: "chandeliers",
+    price: 3900,
+    img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
+    hoverImg: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+    desc: "Cascading chandelier earrings encrusted with baguette and round-cut diamonds, catching and reflecting light at every angle."
   },
   {
-      id: 5,
-      title: "Regal Emerald Drop Earrings",
-      category: "gold",
-      price: 1650,
-      img: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
-      desc: "Polished pear-cut natural emeralds suspended from detailed 22k yellow gold filigree posts. Royal charm personified."
+    id: 5,
+    title: "Regal Emerald Drop Earrings",
+    category: "gold",
+    price: 1650,
+    img: "https://houseofarmilla.com/cdn/shop/files/7A0904EB-FA67-4F7B-B80D-79A072CDBCAB.png?v=1755165740&width=1946",
+    hoverImg: "https://cdn.eternz.com/thumbnails/products/ake045-1_52ff5aa2_thumbnail_1024.jpg",
+    desc: "Polished pear-cut natural emeralds suspended from detailed 22k yellow gold filigree posts. Royal charm personified."
   },
   {
-      id: 6,
-      title: "Orion Diamond Cascade Drops",
-      category: "diamond",
-      price: 4500,
-      img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
-      hoverImg: "https://images.unsplash.com/photo-1599643471487-2c92c90cbfbb?auto=format&fit=crop&w=600&q=80",
-      desc: "Elegant platinum drops featuring cascading emerald-cut diamonds, bringing elite sophistication to your most important milestones."
+    id: 6,
+    title: "Orion Diamond Cascade Drops",
+    category: "diamond",
+    price: 4500,
+    img: "https://www.miabytanishq.com/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw2164c89f/images/Mia/hi-res/2922DCN_1.jpg",
+    hoverImg: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwd596221b/images/Mia/hi-res/2922DCN_4.jpg?sw=640&sh=640",
+    desc: "Elegant platinum drops featuring cascading emerald-cut diamonds, bringing elite sophistication to your most important milestones."
   }
 ];
 
@@ -99,8 +99,8 @@ export default function App() {
       const itemId = getCartItemId(product.id, customDetails);
       const existing = prev.find(item => item.cartItemId === itemId);
       if (existing) {
-        return prev.map(item => 
-          item.cartItemId === itemId 
+        return prev.map(item =>
+          item.cartItemId === itemId
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -148,8 +148,8 @@ export default function App() {
   return (
     <div className="bg-white min-h-screen text-charcoal font-sans overflow-x-hidden selection:bg-gold/30 selection:text-charcoal-dark">
       {/* 1. Header & Navigation */}
-      <Navbar 
-        cartCount={totalQty} 
+      <Navbar
+        cartCount={totalQty}
         wishlistCount={wishlist.length}
         onCartToggle={() => setIsCartOpen(true)}
       />
@@ -167,12 +167,12 @@ export default function App() {
       <ShopByCategory />
 
       {/* 6. Collections (New Arrivals, Best Sellers & Bridal Banner) */}
-      <Catalog 
-        products={PRODUCTS} 
+      <Catalog
+        products={PRODUCTS}
         wishlist={wishlist}
         onWishlistToggle={handleToggleWishlist}
-        onAddToCart={handleAddToCart} 
-        onQuickView={setSelectedProduct} 
+        onAddToCart={handleAddToCart}
+        onQuickView={setSelectedProduct}
       />
 
       {/* 7. Live Gold & Silver Market Rates */}
@@ -196,7 +196,7 @@ export default function App() {
       <Footer />
 
       {/* E-Commerce Drawer Overlay */}
-      <CartDrawer 
+      <CartDrawer
         isOpen={isCartOpen}
         cart={cart}
         isDirectCheckout={isDirectCheckout}
@@ -212,7 +212,7 @@ export default function App() {
       />
 
       {/* Details Quick-View Modal */}
-      <ProductModal 
+      <ProductModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
         onAddToCart={handleAddToCart}

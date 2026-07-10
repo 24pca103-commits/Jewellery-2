@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const BASE_RATES = {
-  gold24k: 75.50,
-  gold22k: 69.20,
-  gold18k: 58.10,
-  silver: 1.80,
+  gold24k:  75.50,
+  gold22k:  69.20,
+  gold18k:  58.10,
+  silver:    1.80,
   diamond: 3800.00,
 };
 
@@ -22,11 +22,11 @@ export default function MetalRates() {
     const id = setInterval(() => {
       setRates(prev => {
         const next = {
-          gold24k: +rand(prev.gold24k - 0.30, prev.gold24k + 0.30),
-          gold22k: +rand(prev.gold22k - 0.28, prev.gold22k + 0.28),
-          gold18k: +rand(prev.gold18k - 0.22, prev.gold18k + 0.22),
-          silver: +rand(prev.silver - 0.02, prev.silver + 0.02),
-          diamond: +rand(prev.diamond - 5, prev.diamond + 5),
+          gold24k:  +rand(prev.gold24k  - 0.30, prev.gold24k  + 0.30),
+          gold22k:  +rand(prev.gold22k  - 0.28, prev.gold22k  + 0.28),
+          gold18k:  +rand(prev.gold18k  - 0.22, prev.gold18k  + 0.22),
+          silver:   +rand(prev.silver   - 0.02, prev.silver   + 0.02),
+          diamond:  +rand(prev.diamond  - 5,    prev.diamond   + 5),
         };
         const changed = {};
         Object.keys(next).forEach(k => { changed[k] = next[k] !== prev[k]; });
@@ -46,7 +46,8 @@ export default function MetalRates() {
       purity: '999 Purity',
       icon: '🪙',
       color: '#D4A843',
-      img: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80',
+      img: 'https://cdn.eternz.com/thumbnails/products/253_25dca409_thumbnail_1024.png',
+      bg: 'linear-gradient(135deg, #3B2507 0%, #6B3E10 100%)',
       unit: '/gram',
       prefix: '$',
     },
@@ -56,7 +57,8 @@ export default function MetalRates() {
       purity: '916 Purity',
       icon: '💛',
       color: '#F0C040',
-      img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80',
+      img: 'https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw677f6639/images/hi-res/511069SOEAGA00_1.jpg?sw=480&sh=480',
+      bg: 'linear-gradient(135deg, #4A2D06 0%, #7C4A12 100%)',
       unit: '/gram',
       prefix: '$',
     },
@@ -66,7 +68,8 @@ export default function MetalRates() {
       purity: '750 Purity',
       icon: '✨',
       color: '#E8B84B',
-      img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80',
+      img: 'https://m.media-amazon.com/images/I/71TM-Vk7w7L._AC_UY1100_.jpg',
+      bg: 'linear-gradient(135deg, #3A2A08 0%, #5E4015 100%)',
       unit: '/gram',
       prefix: '$',
     },
@@ -76,7 +79,8 @@ export default function MetalRates() {
       purity: '925 Purity',
       icon: '🔘',
       color: '#C0C8D8',
-      img: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80',
+      img: 'https://silverlinings.in/cdn/shop/products/Filigree_Earrings_ER303.jpg?v=1757268890',
+      bg: 'linear-gradient(135deg, #1A1E2A 0%, #2D3446 100%)',
       unit: '/gram',
       prefix: '$',
     },
@@ -86,7 +90,8 @@ export default function MetalRates() {
       purity: 'VVS1 Clarity',
       icon: '💎',
       color: '#A8D8F0',
-      img: 'https://images.unsplash.com/photo-1615655404746-8f0309326651?auto=format&fit=crop&w=600&q=80',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtzjHpJ3q0WxUxm5MH1mLE2Nn_bg0QjHwWGbpZdA4Dw8N7AoEsnfrDmz0&s=10',
+      bg: 'linear-gradient(135deg, #0D1B2A 0%, #1B3A5C 100%)',
       unit: '/carat',
       prefix: '$',
     },
@@ -95,70 +100,109 @@ export default function MetalRates() {
   const timeStr = updated.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   return (
-    <section id="metal-rates" className="bg-[#FAF6F0] py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="metal-rates" style={{ background: 'var(--cream)', padding: 'clamp(20px, 4vw, 45px) clamp(16px, 4vw, 40px)' }}>
+      <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
 
-        {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-[#8C6239] text-xs font-bold uppercase tracking-widest mb-3">
+         {/* Header */}
+         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--gold-burnished)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '12px' }}>
             Live Market Prices
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-wide text-charcoal mb-4">
+          <h2 style={{ fontSize: '38px', fontFamily: 'Playfair Display, serif', color: 'var(--emerald-deep)', marginBottom: '14px' }}>
             Today's Metal Rates
           </h2>
-          <p className="font-sans text-charcoal-muted text-sm font-light">
+          <p style={{ color: 'var(--gray-text)', fontSize: '14px' }}>
             Rates updated live every few seconds &nbsp;·&nbsp;
-            <span className="text-[#8C6239] font-semibold">Last updated: {timeStr}</span>
+            <span style={{ color: 'var(--gold-burnished)', fontWeight: 600 }}>Last updated: {timeStr}</span>
           </p>
         </div>
 
-        {/* Rate Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {/* Rate Cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '24px',
+        }}>
           {cards.map(card => (
-            <div 
-              key={card.key} 
-              className="rounded-2xl p-8 border border-gold/15 shadow-soft transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-premium relative overflow-hidden"
-              style={{
-                background: `linear-gradient(180deg, rgba(28, 18, 12, 0.72) 0%, rgba(12, 8, 5, 0.94) 100%), url(${card.img}) center/cover no-repeat`,
+            <div key={card.key} style={{
+              background: `linear-gradient(180deg, rgba(15, 10, 8, 0.72) 0%, rgba(5, 3, 2, 0.94) 100%), url(${card.img}) center/cover no-repeat`,
+              borderRadius: '16px',
+              padding: '32px 24px',
+              border: `1px solid rgba(188,160,87,0.25)`,
+              boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+              cursor: 'default',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-6px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.28)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.18)';
               }}
             >
               {/* Glow orb */}
-              <div 
-                className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-10 blur-xl pointer-events-none"
-                style={{ background: card.color }} 
-              />
+              <div style={{
+                position: 'absolute', top: '-30px', right: '-30px',
+                width: '100px', height: '100px',
+                borderRadius: '50%',
+                background: card.color,
+                opacity: 0.08,
+                filter: 'blur(20px)',
+              }} />
 
-              <p className="text-white/50 text-[10px] uppercase tracking-widest mb-2 font-semibold">
+
+
+              <p style={{
+                color: 'rgba(255,255,255,0.55)',
+                fontSize: '10px', letterSpacing: '2.5px',
+                textTransform: 'uppercase',
+                marginBottom: '6px',
+              }}>
                 {card.purity}
               </p>
 
-              <h3 className="text-white font-serif text-lg font-bold mb-5">
+              <h3 style={{
+                color: '#fff',
+                fontSize: '16px',
+                fontWeight: '700',
+                marginBottom: '18px',
+                fontFamily: 'Playfair Display, serif',
+              }}>
                 {card.label}
               </h3>
 
-              <div 
-                className="transition-colors duration-300"
-                style={{
-                  color: flashing[card.key] ? '#fff' : card.color,
-                }}
-              >
-                <span 
-                  className="text-3xl font-bold tracking-tight"
-                  style={{ 
-                    fontFamily: "system-ui, -apple-system, sans-serif", 
-                    fontVariantNumeric: 'tabular-nums' 
-                  }}
-                >
+              <div style={{
+                transition: 'color 0.4s',
+                color: flashing[card.key] ? '#fff' : card.color,
+              }}>
+                <span style={{ fontSize: '30px', fontWeight: '800', fontFamily: 'Montserrat, sans-serif' }}>
                   {card.prefix}{rates[card.key].toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </span>
-                <span className="text-xs text-white/45 ml-1 font-light">
+                <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginLeft: '4px' }}>
                   {card.unit}
                 </span>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#4CAF50] inline-block animate-pulse" />
-                <span className="text-white/45 text-xs font-light">
+              <div style={{
+                marginTop: '20px',
+                paddingTop: '16px',
+                borderTop: '1px solid rgba(255,255,255,0.08)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}>
+                <span style={{
+                  width: '7px', height: '7px',
+                  borderRadius: '50%',
+                  background: '#4CAF50',
+                  display: 'inline-block',
+                  animation: 'pulse-green 1.5s infinite',
+                }} />
+                <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px', letterSpacing: '0.5px' }}>
                   Live · Market rate
                 </span>
               </div>
@@ -167,7 +211,13 @@ export default function MetalRates() {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-center text-charcoal-muted text-xs mt-10 opacity-70">
+        <p style={{
+          textAlign: 'center',
+          color: 'var(--gray-text)',
+          fontSize: '12px',
+          marginTop: '36px',
+          opacity: 0.7,
+        }}>
           * Rates are indicative and subject to making charges, GST, and hallmarking fees. Contact us for final pricing.
         </p>
       </div>

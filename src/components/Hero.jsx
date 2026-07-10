@@ -8,7 +8,7 @@ const SLIDES = [
     title: "The Royal Bridal Heritage",
     subtitle: "Divine Craftsmanship in Gold",
     desc: "Experience the grandeur of traditional South Indian antique earrings, hand-crafted in 22K BIS Hallmarked gold.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-gUzRLMtnbN_KjW7pn26UYssGulhPs4YrqjZMx0CJvr74myn2jk1kGn9&s=10",
+    img: "https://www.crunchyfashion.com/cdn/shop/files/RAE2504_4_cf0cece3-c8ff-406b-9f9a-e393ef82a3c8.jpg?v=1778152134",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   },
@@ -17,7 +17,7 @@ const SLIDES = [
     title: "Solitaire & Diamond Studs",
     subtitle: "VVS1 Clarity Certified Studs",
     desc: "Unveil our magnificent range of VVS1 diamond studs, cascading drops, and chandelier masterpieces.",
-    img: "https://i.pinimg.com/236x/1b/bc/ec/1bbcecfb9cce990a14a7388c0b67d5b1.jpg",
+    img: "https://images-static.nykaa.com/media/catalog/product/b/9/b9e80a0ZGRK286_1.jpg?tr=w-500",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   },
@@ -26,7 +26,7 @@ const SLIDES = [
     title: "Heirloom Gold Jhumkas",
     subtitle: "22K BIS Hallmarked Temple Craft",
     desc: "Explore our magnificent collections of hand-crafted gold hoops, traditional jhumkas, and modern drops.",
-    img: "https://i.pinimg.com/236x/1b/bc/ec/1bbcecfb9cce990a14a7388c0b67d5b1.jpg",
+    img: "https://images-static.nykaa.com/media/catalog/product/7/b/7b46f72DBER282_1.jpg",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   }

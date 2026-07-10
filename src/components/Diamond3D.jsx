@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Sparkles, Zap, ShieldCheck } from 'lucide-react';
 
 export default function Diamond3D() {
-  const [spinSpeed, setSpinSpeed] = useState(10); // duration in seconds
   const [glare, setGlare] = useState(true);
   const [colorTheme, setColorTheme] = useState('platinum'); // platinum | gold | rosegold
+  const spinSpeed = 10;
 
   // Color mapping for top/bottom facets
   const facetColor = {
@@ -19,8 +19,6 @@ export default function Diamond3D() {
     rosegold: 'rgba(224, 137, 157, 0.6)'
   }[colorTheme];
 
-  const speedText = spinSpeed <= 5 ? 'High velocity reflection' : spinSpeed <= 12 ? 'Graceful sweeping orbit' : 'Slow study';
-
   return (
     <section className="section py-16" id="diamond3d">
       <div className="diamond-3d-layout">
@@ -34,29 +32,13 @@ export default function Diamond3D() {
           
           <h3>Precision Craftsmanship</h3>
           <p className="font-sans text-white/70 text-sm leading-relaxed">
-            Our diamonds are cut to absolute mathematical perfection. Explore our ideal 3D brilliant facet structure, reflecting 99% of ambient light. Select your metal setting and spin velocity to test the visual brilliance.
+            Our diamonds are cut to absolute mathematical perfection. Explore our ideal 3D brilliant facet structure, reflecting 99% of ambient light. Select your metal setting theme to view the visual brilliance.
           </p>
 
           <div className="h-[1px] bg-white/10 w-full" />
 
           {/* Interactive Panel controls */}
           <div className="space-y-4">
-            
-            {/* Speed Slider */}
-            <div className="flex flex-col gap-2">
-              <div className="flex justify-between text-xs font-semibold tracking-wider text-gold-light uppercase">
-                <span>Rotation Period ({spinSpeed}s)</span>
-                <span className="text-[10px] text-white/50">{speedText}</span>
-              </div>
-              <input 
-                type="range" 
-                min="3" 
-                max="20" 
-                value={spinSpeed}
-                onChange={(e) => setSpinSpeed(Number(e.target.value))}
-                className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-gold-champagne focus:outline-none"
-              />
-            </div>
 
             {/* Color Theme Selector */}
             <div className="flex flex-col gap-2">

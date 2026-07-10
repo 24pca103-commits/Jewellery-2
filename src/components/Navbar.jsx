@@ -19,32 +19,39 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
     <>
       <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
         
-        {/* Top Bar Scrolling Marquee Announcement */}
-        <div className="top-bar-marquee-container bg-[#1C120C] border-b border-gold/15">
-          <div className="top-bar-marquee-track">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="flex">
-                <div className="top-bar-announcement">
-                  <Phone className="w-3.5 h-3.5 text-gold" />
-                  <span>Call Us: +91 93854 11051</span>
+        {/* Top Bar for Contact & Scrolling rates Announcement */}
+        <div className="bg-[#1C120C] border-b border-gold/15 flex items-center h-9 overflow-hidden">
+          {/* Static Left Portion */}
+          <div className="flex-shrink-0 flex items-center bg-[#1C120C] z-10 pr-4 pl-4 sm:pl-8 border-r border-white/10 h-full">
+            <a href="tel:+919385411051" className="flex items-center gap-1.5 text-gold-light hover:text-gold transition-colors text-[10px] font-bold tracking-wider uppercase">
+              <Phone className="w-3.5 h-3.5 text-gold" />
+              <span>Call Us: +91 93854 11051</span>
+            </a>
+          </div>
+
+          {/* Scrolling Marquee Right Portion */}
+          <div className="top-bar-marquee-container flex-grow h-full bg-[#1C120C]">
+            <div className="top-bar-marquee-track">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="flex items-center">
+                  <div className="top-bar-announcement">
+                    <Sparkles className="w-3.5 h-3.5 text-gold" />
+                    <span>Live Gold (24K): $75.50/g</span>
+                  </div>
+                  <div className="top-bar-announcement">
+                    <Sparkles className="w-3.5 h-3.5 text-gold" />
+                    <span>Silver (925): $1.80/g</span>
+                  </div>
+                  <div className="top-bar-announcement">
+                    <Gift className="w-3.5 h-3.5 text-gold" />
+                    <span>Corporate & Gifting Inquiries</span>
+                  </div>
+                  <div className="top-bar-announcement">
+                    <span>✦ BIS Hallmarked & Insured Delivery</span>
+                  </div>
                 </div>
-                <div className="top-bar-announcement">
-                  <Gift className="w-3.5 h-3.5 text-gold" />
-                  <span>Corporate & Gifting Inquiries</span>
-                </div>
-                <div className="top-bar-announcement">
-                  <Sparkles className="w-3.5 h-3.5 text-gold" />
-                  <span>Live Gold (24K): $75.50/g</span>
-                </div>
-                <div className="top-bar-announcement">
-                  <Sparkles className="w-3.5 h-3.5 text-gold" />
-                  <span>Silver (925): $1.80/g</span>
-                </div>
-                <div className="top-bar-announcement">
-                  <span>✦ BIS Hallmarked & Insured Delivery</span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
