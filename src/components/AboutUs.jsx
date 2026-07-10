@@ -30,8 +30,8 @@ export default function AboutUs() {
   };
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
-      
+    <section id="about" className="py-10 bg-white relative overflow-hidden">
+
       {/* Grand Luxury Radial Gold Backdrops */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-radial opacity-35 pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-gold-radial opacity-25 pointer-events-none" />
@@ -41,9 +41,9 @@ export default function AboutUs() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
-          
+
           {/* Left Column: Brand Story & Staggered Animations (5 cols) */}
-          <motion.div 
+          <motion.div
             variants={textContainer}
             initial="hidden"
             whileInView="show"
@@ -60,7 +60,7 @@ export default function AboutUs() {
               </h2>
               <div className="w-16 h-0.5 bg-gold mt-4" />
             </motion.div>
-            
+
             <motion.div variants={childItem} className="space-y-4">
               <p className="font-sans text-charcoal-muted text-sm sm:text-base leading-relaxed font-light">
                 <span className="font-serif text-4xl sm:text-5xl text-gold font-bold float-left mr-3 mt-1 leading-[0.8] select-none">S</span>
@@ -74,10 +74,10 @@ export default function AboutUs() {
             {/* List of Stats */}
             <motion.div variants={childItem} className="grid grid-cols-2 gap-4 sm:gap-6 pt-2">
               {stats.map((stat, idx) => (
-                <motion.div 
-                  key={idx} 
-                  whileHover={{ 
-                    y: -6, 
+                <motion.div
+                  key={idx}
+                  whileHover={{
+                    y: -6,
                     scale: 1.02,
                     borderColor: '#D4AF37',
                     backgroundColor: '#ffffff',
@@ -86,7 +86,7 @@ export default function AboutUs() {
                   transition={{ type: 'spring', stiffness: 350, damping: 15 }}
                   className="flex items-start gap-3 p-4 bg-[#FAF5EF]/60 border border-gold-light/20 rounded-sm cursor-pointer group"
                 >
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: 15, scale: 1.1 }}
                     className="p-2 bg-white rounded-full border border-gold-light/15 group-hover:bg-[#2A1B14] transition-all duration-300 flex items-center justify-center"
                   >
@@ -104,7 +104,7 @@ export default function AboutUs() {
           </motion.div>
 
           {/* Right Column: Overlapping Visual Showcase Collage (7 cols) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -118,9 +118,9 @@ export default function AboutUs() {
 
             {/* Behind Image Frame (Smelting Gold / Crafting) */}
             <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-[50%] aspect-[4/5] rounded-sm overflow-hidden border border-gold/20 shadow-premium z-10 bg-charcoal">
-              <img 
-                src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80" 
-                alt="Smelting Gold" 
+              <img
+                src="https://i.pinimg.com/474x/e2/cb/3e/e2cb3ef09369d0d8d935656bcb12d848.jpg?nii=t"
+                alt="Stud Earrings Showcase"
                 className="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -129,24 +129,24 @@ export default function AboutUs() {
             <div className="absolute top-20 right-4 sm:top-24 sm:right-8 w-[55%] aspect-[4/5] rounded-sm overflow-hidden border-2 border-gold shadow-premium z-20 bg-charcoal">
               {/* Thin Inner Frame */}
               <div className="absolute inset-2 border border-gold/15 pointer-events-none z-35" />
-              <img 
-                src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80" 
-                alt="Exquisite Earring Details" 
+              <img
+                src="https://i.pinimg.com/236x/46/58/d4/4658d4b6de29d821e5fdf705553aed07.jpg"
+                alt="Exquisite Earring Details"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Overlapping Bottom Small Image (Diamond Setting) */}
             <div className="absolute bottom-4 left-16 sm:bottom-8 sm:left-24 w-[35%] aspect-square rounded-sm overflow-hidden border border-gold/25 shadow-premium z-30 bg-charcoal hidden sm:block">
-              <img 
-                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80" 
-                alt="Diamond Setting Detail" 
+              <img
+                src="https://i.pinimg.com/originals/bf/06/98/bf06982542d3d4e73c3e1676ed27188b.jpg"
+                alt="Hoop Earrings Detail"
                 className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Floating Glassmorphic Trust Seal Badge */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
               className="absolute bottom-20 right-10 sm:bottom-28 sm:right-20 z-40 bg-[#2A1B14]/90 backdrop-blur-md border border-gold/30 p-4 sm:p-5 rounded-sm shadow-gold-glow flex flex-col items-center justify-center text-center max-w-[150px] sm:max-w-[170px]"

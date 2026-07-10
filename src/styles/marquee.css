@@ -1,0 +1,70 @@
+/* ---- Social Gallery Marquee Animation ---- */
+.marquee-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 16px;
+    animation: marquee-scroll 45s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* ---- Top Bar Announcement Marquee ---- */
+.top-bar-marquee-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background-color: #1C120C;
+    display: flex;
+    align-items: center;
+    border-b: 1px solid rgba(188, 160, 87, 0.15);
+}
+
+.top-bar-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: top-bar-marquee-scroll 25s linear infinite;
+}
+
+.top-bar-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.top-bar-announcement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #F2ECE7;
+    white-space: nowrap;
+    padding: 8px 40px;
+}
+
+@keyframes top-bar-marquee-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}

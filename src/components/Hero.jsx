@@ -7,26 +7,26 @@ const SLIDES = [
     tag: "Exclusive Launch",
     title: "The Royal Bridal Heritage",
     subtitle: "Divine Craftsmanship in Gold",
-    desc: "Experience the grandeur of traditional South Indian antique jewellery, hand-crafted in 22K BIS Hallmarked gold.",
-    img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1600&q=80",
+    desc: "Experience the grandeur of traditional South Indian antique earrings, hand-crafted in 22K BIS Hallmarked gold.",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-gUzRLMtnbN_KjW7pn26UYssGulhPs4YrqjZMx0CJvr74myn2jk1kGn9&s=10",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   },
   {
     tag: "Eternal Brilliance",
-    title: "Solitaire & Diamond Suite",
-    subtitle: "VVS1 Clarity Certified Elegance",
-    desc: "Unveil our magnificent range of cut-diamond necklaces, engagement solitaires, and luxury tennis bracelets.",
-    img: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1600&q=80",
+    title: "Solitaire & Diamond Studs",
+    subtitle: "VVS1 Clarity Certified Studs",
+    desc: "Unveil our magnificent range of VVS1 diamond studs, cascading drops, and chandelier masterpieces.",
+    img: "https://i.pinimg.com/236x/1b/bc/ec/1bbcecfb9cce990a14a7388c0b67d5b1.jpg",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   },
   {
     tag: "Modern Heirloom",
-    title: "Ethereal Contemporary Gold",
-    subtitle: "Everyday Minimalist Masterpieces",
-    desc: "Finely sculpted, lightweight gold ornaments designed to transition seamlessly from workspace sophistication to evening glamour.",
-    img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1600&q=80",
+    title: "Heirloom Gold Jhumkas",
+    subtitle: "22K BIS Hallmarked Temple Craft",
+    desc: "Explore our magnificent collections of hand-crafted gold hoops, traditional jhumkas, and modern drops.",
+    img: "https://i.pinimg.com/236x/1b/bc/ec/1bbcecfb9cce990a14a7388c0b67d5b1.jpg",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   }
@@ -47,13 +47,13 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-[#2A1B14]">
-      
+
       {/* Split Screen Grid */}
       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12">
-        
+
         {/* Left Side: Content & Typography (45% Width on Desktop) */}
         <div className="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-20 h-full bg-[#2A1B14] relative z-10 pt-24 lg:pt-12 text-left text-white border-r border-gold/10">
-          
+
           {/* Subtle logo watermark background */}
           <div className="absolute -bottom-10 -left-10 opacity-[0.03] select-none pointer-events-none w-96 h-96">
             <img src="/logo.png" alt="watermark" className="w-full h-full object-contain" />
@@ -124,12 +124,10 @@ export default function Hero() {
                 aria-label={`Go to slide ${idx + 1}`}
               >
                 <div className="flex flex-col gap-1">
-                  <div className={`h-0.5 transition-all duration-500 rounded-full ${
-                    current === idx ? 'w-10 bg-gold' : 'w-6 bg-white/20 group-hover:bg-white/40'
-                  }`} />
-                  <span className={`text-[9px] font-bold tracking-wider transition-colors ${
-                    current === idx ? 'text-gold' : 'text-white/30 group-hover:text-white/50'
-                  }`}>
+                  <div className={`h-0.5 transition-all duration-500 rounded-full ${current === idx ? 'w-10 bg-gold' : 'w-6 bg-white/20 group-hover:bg-white/40'
+                    }`} />
+                  <span className={`text-[9px] font-bold tracking-wider transition-colors ${current === idx ? 'text-gold' : 'text-white/30 group-hover:text-white/50'
+                    }`}>
                     0{idx + 1}
                   </span>
                 </div>
@@ -141,7 +139,7 @@ export default function Hero() {
 
         {/* Right Side: Image Panel (55% Width on Desktop) */}
         <div className="lg:col-span-7 relative h-[50vh] lg:h-full bg-charcoal overflow-hidden order-first lg:order-last">
-          
+
           {/* Decorative luxury gold gallery border */}
           <div className="absolute inset-4 sm:inset-6 border border-gold/15 pointer-events-none z-10" />
 

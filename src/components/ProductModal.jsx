@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { X, Sparkles, ShoppingBag, CreditCard, Video, Image as ImageIcon, Calendar } from 'lucide-react';
 
 export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }) {
-  if (!product) return null;
-
   const [activeTab, setActiveTab] = useState('image'); // 'image' | 'video'
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
@@ -11,6 +9,8 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
   const [metal, setMetal] = useState('18k Yellow Gold');
   const [size, setSize] = useState('Standard');
   const [engraving, setEngraving] = useState('');
+
+  if (!product) return null;
 
   // Close helper reset
   const handleClose = () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
@@ -8,7 +8,7 @@ import MetalRates from './components/MetalRates';
 import Diamond3D from './components/Diamond3D';
 import Consultation from './components/Consultation';
 import TrustBadges from './components/TrustBadges';
-import Testimonials from './components/Testimonials';
+
 import InstagramFeed from './components/InstagramFeed';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
@@ -150,6 +150,7 @@ export default function App() {
       {/* 1. Header & Navigation */}
       <Navbar 
         cartCount={totalQty} 
+        wishlistCount={wishlist.length}
         onCartToggle={() => setIsCartOpen(true)}
       />
 
@@ -183,8 +184,7 @@ export default function App() {
       {/* 9. Booking & Consultation Service */}
       <Consultation />
 
-      {/* 10. Customer Testimonials */}
-      <Testimonials />
+
 
       {/* 11. Social Gallery Feed */}
       <InstagramFeed />

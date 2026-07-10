@@ -1,78 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, ChevronDown, Menu, X, MapPin, Gift } from 'lucide-react';
+import { ShoppingBag, ChevronDown, Menu, X, Gift, Search, User, Heart, Phone, Sparkles, CircleDot, Circle, Crown, Gem, Coins } from 'lucide-react';
 
-export default function Navbar({ cartCount = 0, onCartToggle }) {
-  const [isScrolled, setIsScrolled] = useState(false);
+export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
 
-  // Scroll listener for sticky navbar effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const shopTypes = [
-    'Jhumka Collection',
-    'Stud Earrings',
-    'Hoop Earrings',
-    'Chandelier Earrings',
-    'Diamond Earrings',
-    'Gold Earrings'
+    { name: 'Jhumka Collection', icon: Sparkles },
+    { name: 'Stud Earrings', icon: CircleDot },
+    { name: 'Hoop Earrings', icon: Circle },
+    { name: 'Chandelier Earrings', icon: Crown },
+    { name: 'Diamond Earrings', icon: Gem },
+    { name: 'Gold Earrings', icon: Coins }
   ];
 
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
         
-        {/* Top Bar for Store Locator and Live Gold Rates */}
-        <div className="bg-charcoal text-gold-light text-[10px] font-semibold tracking-wider uppercase py-2 px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 border-b border-gold/15">
-          <div className="flex items-center gap-4">
-            <a href="#store-locator" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-              <MapPin className="w-3.5 h-3.5 text-gold" />
-              Store Locator
-            </a>
-            <span className="text-white/20 hidden sm:inline">|</span>
-            <a href="#corporate" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Gift className="w-3.5 h-3.5 text-gold" />
-              Corporate & Gifting
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <span>Live Gold (24K): $75.50/g</span>
-            <span className="text-white/20">|</span>
-            <span>Silver (925): $1.80/g</span>
-            <span className="text-white/20">|</span>
-            <select className="bg-transparent border-none text-gold-light text-[10px] font-bold outline-none cursor-pointer focus:ring-0">
-              <option value="USD" className="bg-charcoal text-white">USD ($)</option>
-              <option value="INR" className="bg-charcoal text-white">INR (₹)</option>
-              <option value="EUR" className="bg-charcoal text-white">EUR (€)</option>
-            </select>
+        {/* Top Bar Scrolling Marquee Announcement */}
+        <div className="top-bar-marquee-container bg-[#1C120C] border-b border-gold/15">
+          <div className="top-bar-marquee-track">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="flex">
+                <div className="top-bar-announcement">
+                  <Phone className="w-3.5 h-3.5 text-gold" />
+                  <span>Call Us: +91 93854 11051</span>
+                </div>
+                <div className="top-bar-announcement">
+                  <Gift className="w-3.5 h-3.5 text-gold" />
+                  <span>Corporate & Gifting Inquiries</span>
+                </div>
+                <div className="top-bar-announcement">
+                  <Sparkles className="w-3.5 h-3.5 text-gold" />
+                  <span>Live Gold (24K): $75.50/g</span>
+                </div>
+                <div className="top-bar-announcement">
+                  <Sparkles className="w-3.5 h-3.5 text-gold" />
+                  <span>Silver (925): $1.80/g</span>
+                </div>
+                <div className="top-bar-announcement">
+                  <span>✦ BIS Hallmarked & Insured Delivery</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Main Header Row */}
-        <div className={`w-full py-4 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-[#F2ECE7]/95 backdrop-blur-md shadow-premium border-b border-gold/15'
-            : 'bg-black/25 backdrop-blur-sm border-b border-white/10'
-        }`}>
+        {/* Main Header Row - Solid Premium Cream-Brown Backdrop */}
+        <div className="w-full py-4 bg-[#F2ECE7] shadow-premium border-b border-gold/15">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
             {/* Mobile Hamburger menu */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-1.5 rounded-full transition-colors ${
-                isScrolled ? 'text-[#2A1B14] hover:bg-black/5' : 'text-white hover:bg-white/10'
-              }`}
+              className="lg:hidden p-1.5 rounded-full text-[#2A1B14] hover:bg-black/5 transition-colors"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -84,29 +67,23 @@ export default function Navbar({ cartCount = 0, onCartToggle }) {
                 <img 
                   src="/logo.png" 
                   alt="Thodoo Jewellery" 
-                  className={`h-11 sm:h-12 w-auto object-contain transition-all duration-300 ${
-                    isScrolled ? 'brightness-[0.2]' : ''
-                  }`}
+                  className="h-11 sm:h-12 w-auto object-contain brightness-[0.2]"
                 />
               </a>
             </div>
 
-            {/* Center Navigation Links (Exact Navbar Order matching page sections) */}
+            {/* Center Navigation Links - Always Coffee Brown */}
             <nav className="hidden lg:flex space-x-8">
               <a
                 href="#"
-                className={`font-sans text-xs tracking-wider uppercase font-semibold transition-colors duration-300 ${
-                  isScrolled ? 'text-[#2A1B14] hover:text-[#8C6239]' : 'text-white hover:text-gold'
-                }`}
+                className="font-sans text-xs tracking-wider uppercase font-semibold text-[#2A1B14] hover:text-[#8C6239] transition-colors duration-300"
               >
                 Home
               </a>
 
               <a
                 href="#about"
-                className={`font-sans text-xs tracking-wider uppercase font-semibold transition-colors duration-300 ${
-                  isScrolled ? 'text-[#2A1B14] hover:text-[#8C6239]' : 'text-white hover:text-gold'
-                }`}
+                className="font-sans text-xs tracking-wider uppercase font-semibold text-[#2A1B14] hover:text-[#8C6239] transition-colors duration-300"
               >
                 About
               </a>
@@ -119,9 +96,7 @@ export default function Navbar({ cartCount = 0, onCartToggle }) {
               >
                 <a
                   href="#shop-by-type"
-                  className={`flex items-center gap-1 font-sans text-xs tracking-wider uppercase font-semibold transition-colors duration-300 ${
-                    isScrolled ? 'text-[#2A1B14] hover:text-[#8C6239]' : 'text-white hover:text-gold'
-                  }`}
+                  className="flex items-center gap-1 font-sans text-xs tracking-wider uppercase font-semibold text-[#2A1B14] hover:text-[#8C6239] transition-colors duration-300"
                 >
                   Shop By Type
                   <ChevronDown className="w-3.5 h-3.5 opacity-75" />
@@ -134,17 +109,21 @@ export default function Navbar({ cartCount = 0, onCartToggle }) {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-52 bg-[#F2ECE7] border border-gold/15 shadow-premium rounded-sm p-2 z-50 flex flex-col text-left"
+                      className="absolute left-0 top-full mt-2 w-56 bg-[#F2ECE7] border border-gold/15 shadow-premium rounded-sm p-2 z-50 flex flex-col text-left"
                     >
-                      {shopTypes.map((type, sIdx) => (
-                        <a 
-                          key={sIdx}
-                          href="#shop-by-type" 
-                          className="text-xs text-[#2A1B14] hover:bg-black/5 hover:text-[#8C6239] px-4 py-2.5 rounded-sm transition-colors"
-                        >
-                          {type}
-                        </a>
-                      ))}
+                      {shopTypes.map((type, sIdx) => {
+                        const Icon = type.icon;
+                        return (
+                          <a 
+                            key={sIdx}
+                            href="#shop-by-type" 
+                            className="flex items-center gap-2.5 text-xs text-[#2A1B14] hover:bg-black/5 hover:text-[#8C6239] px-4 py-2.5 rounded-sm transition-colors"
+                          >
+                            <Icon className="w-3.5 h-3.5 text-gold-dark" />
+                            {type.name}
+                          </a>
+                        );
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -152,48 +131,57 @@ export default function Navbar({ cartCount = 0, onCartToggle }) {
 
               <a
                 href="#new-arrivals"
-                className={`font-sans text-xs tracking-wider uppercase font-semibold transition-colors duration-300 ${
-                  isScrolled ? 'text-[#2A1B14] hover:text-[#8C6239]' : 'text-white hover:text-gold'
-                }`}
+                className="font-sans text-xs tracking-wider uppercase font-semibold text-[#2A1B14] hover:text-[#8C6239] transition-colors duration-300"
               >
                 New Arrivals
               </a>
 
               <a
                 href="#best-sellers"
-                className={`font-sans text-xs tracking-wider uppercase font-semibold transition-colors duration-300 ${
-                  isScrolled ? 'text-[#2A1B14] hover:text-[#8C6239]' : 'text-white hover:text-gold'
-                }`}
+                className="font-sans text-xs tracking-wider uppercase font-semibold text-[#2A1B14] hover:text-[#8C6239] transition-colors duration-300"
               >
                 Best Sellers
               </a>
 
               <a
                 href="#offers"
-                className={`font-sans text-xs tracking-wider uppercase font-semibold transition-colors duration-300 ${
-                  isScrolled ? 'text-[#2A1B14] hover:text-[#8C6239]' : 'text-white hover:text-gold'
-                }`}
+                className="font-sans text-xs tracking-wider uppercase font-semibold text-[#2A1B14] hover:text-[#8C6239] transition-colors duration-300"
               >
                 Offers
               </a>
             </nav>
 
-            {/* Right Side: Cart Toggle */}
-            <div className="flex items-center">
+            {/* Right Side: Navigation Actions */}
+            <div className="flex items-center gap-1 sm:gap-2 text-[#2A1B14]">
+              {/* Search Icon */}
+              <button className="p-1.5 rounded-full hover:bg-black/5 hover:text-[#8C6239] transition-colors cursor-pointer" aria-label="Search">
+                <Search className="w-4.5 h-4.5 sm:w-5 h-5" />
+              </button>
+
+              {/* User Account Icon */}
+              <button className="p-1.5 rounded-full hover:bg-black/5 hover:text-[#8C6239] transition-colors cursor-pointer" aria-label="Account">
+                <User className="w-4.5 h-4.5 sm:w-5 h-5" />
+              </button>
+
+              {/* Wishlist Button */}
+              <button className="p-1.5 rounded-full hover:bg-black/5 hover:text-[#8C6239] transition-colors relative cursor-pointer" aria-label="Wishlist">
+                <Heart className="w-4.5 h-4.5 sm:w-5 h-5" />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center bg-[#8C6239] text-white border border-[#F2ECE7] shadow-soft">
+                    {wishlistCount}
+                  </span>
+                )}
+              </button>
+
+              {/* Cart Button */}
               <button
                 onClick={onCartToggle}
-                className={`p-2 rounded-full transition-colors relative ${
-                  isScrolled ? 'text-[#2A1B14] hover:bg-black/5 hover:text-[#8C6239]' : 'text-white hover:bg-white/10 hover:text-gold'
-                }`}
+                className="p-1.5 rounded-full hover:bg-black/5 hover:text-[#8C6239] transition-colors relative cursor-pointer"
                 aria-label="Cart"
               >
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingBag className="w-4.5 h-4.5 sm:w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className={`absolute top-0 right-0 text-[9px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center border transition-all ${
-                    isScrolled 
-                      ? 'bg-[#2A1B14] text-white border-[#F2ECE7]' 
-                      : 'bg-gold text-charcoal border-white'
-                  }`}>
+                  <span className="absolute -top-0.5 -right-0.5 text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center bg-[#2A1B14] text-white border border-[#F2ECE7] shadow-soft">
                     {cartCount}
                   </span>
                 )}
@@ -266,16 +254,23 @@ export default function Navbar({ cartCount = 0, onCartToggle }) {
                     </button>
                     {isShopDropdownOpen && (
                       <div className="mt-2 pl-3 space-y-2">
-                        {shopTypes.map((type, sIdx) => (
-                          <a 
-                            key={sIdx}
-                            href="#shop-by-type" 
-                            onClick={() => setIsMobileMenuOpen(false)} 
-                            className="text-xs text-[#2A1B14]/80 hover:text-[#8C6239] block py-1.5"
-                          >
-                            {type}
-                          </a>
-                        ))}
+                        {shopTypes.map((type, sIdx) => {
+                          const Icon = type.icon;
+                          return (
+                            <a 
+                              key={sIdx}
+                              href="#shop-by-type" 
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setIsShopDropdownOpen(false);
+                              }} 
+                              className="flex items-center gap-2.5 text-xs text-[#2A1B14]/80 hover:text-[#8C6239] py-1.5"
+                            >
+                              <Icon className="w-3.5 h-3.5 text-[#8C6239]" />
+                              {type.name}
+                            </a>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

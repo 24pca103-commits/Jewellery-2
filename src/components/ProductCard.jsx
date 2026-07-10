@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, ShoppingBag, Eye, Star, Sparkles, Check } from 'lucide-react';
+import { Heart, ShoppingBag, Star, Check } from 'lucide-react';
 
 // Card animations config
 const cardRevealVariants = {
@@ -34,14 +34,12 @@ const starVariants = {
     transition: { type: 'spring', stiffness: 400, damping: 12 } 
   }
 };
-
 export default function ProductCard({ 
   product, 
   index, 
   isWishlisted, 
   onWishlistToggle, 
-  onAddToCart, 
-  onQuickView 
+  onAddToCart
 }) {
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
@@ -90,7 +88,7 @@ export default function ProductCard({
       className="group relative bg-white border border-gold-light/20 rounded-sm overflow-hidden transition-all duration-400 flex flex-col justify-between h-full"
     >
       {/* Product Image & Quick Actions Box */}
-      <div className="relative aspect-[4/5] bg-luxury-cream overflow-hidden cursor-pointer" onClick={() => onQuickView(product)}>
+      <div className="relative aspect-[4/5] bg-luxury-cream overflow-hidden cursor-default">
         
         {/* Luxury Gold Shine Sweep Overlay */}
         <div className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-[#D4AF37]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-30 transform -skew-x-25" />
@@ -123,18 +121,6 @@ export default function ProductCard({
               className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
             />
           )}
-        </div>
-
-        {/* Floating Quick View overlay (fades in from bottom) */}
-        <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
-          <motion.button 
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={(e) => { e.stopPropagation(); onQuickView(product); }}
-            className="px-5 py-2.5 bg-white text-charcoal hover:bg-gold hover:text-charcoal transition-all duration-300 rounded-sm font-sans text-[10px] font-bold uppercase tracking-widest shadow-premium opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0"
-          >
-            Quick View
-          </motion.button>
         </div>
 
         {/* Wishlist Button (slides in from right) */}

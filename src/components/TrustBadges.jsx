@@ -52,7 +52,7 @@ const itemVariants = {
 
 export default function TrustBadges() {
   return (
-    <section className="py-20 bg-white border-t border-gold-light/20 relative overflow-hidden">
+    <section className="py-10 bg-white border-t border-gold-light/20 relative overflow-hidden">
       
       {/* Decorative luxury gold radial backgrounds */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold-radial opacity-30 pointer-events-none" />

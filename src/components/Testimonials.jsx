@@ -46,7 +46,7 @@ const cardVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-luxury-cream border-t border-gold-light/20">
+    <section className="py-10 bg-luxury-cream border-t border-gold-light/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

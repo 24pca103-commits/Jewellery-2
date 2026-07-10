@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 
 export default function TryOn({ products = [] }) {
-  const [model, setModel] = useState('neck');
+  const [model, setModel] = useState('ear');
   const [userBg, setUserBg] = useState(null);
   const [jewel, setJewel] = useState(null); // Default to null so user only views the canvas image initially
-  const [width, setWidth] = useState(120);
-  const [pos, setPos] = useState({ x: 190, y: 220 }); // initial center pos inside 500x400 canvas
+  const [width, setWidth] = useState(80);
+  const [pos, setPos] = useState({ x: 230, y: 200 }); // initial center pos on the ear lobe
   const [dragging, setDragging] = useState(false);
   const dragStart = useRef({ x: 0, y: 0 });
   const startPos = useRef({ x: 0, y: 0 });
@@ -15,21 +15,23 @@ export default function TryOn({ products = [] }) {
     setModel(tgt);
     setUserBg(null);
     setJewel(null); // Clear overlay on model change
-    if (tgt === 'neck') {
-      setWidth(120);
-      setPos({ x: 190, y: 220 });
+    if (tgt === 'ear') {
+      setWidth(80);
+      setPos({ x: 230, y: 200 });
     } else {
-      setWidth(90); // default scale for circular medallion overlay
-      setPos({ x: 220, y: 200 });
+      setWidth(90); // default scale for earring stand
+      setPos({ x: 250, y: 180 });
     }
   };
 
-  const handleJewelChange = (img) => {
-    setJewel(img);
-    if (img.includes('rings') || img.includes('ring')) {
-      setWidth(90);
+  const handleJewelChange = (product) => {
+    setJewel(product.img);
+    if (product.category === 'studs') {
+      setWidth(55); // Studs are smaller
+    } else if (product.category === 'jhumka' || product.category === 'chandeliers') {
+      setWidth(95); // Jhumkas and chandeliers are larger
     } else {
-      setWidth(120);
+      setWidth(75); // Hoops and other earrings are medium
     }
   };
 
@@ -73,15 +75,8 @@ export default function TryOn({ products = [] }) {
     setDragging(false);
   };
 
-  // Filter master collection products based on active canvas
-  const tryOnItems = products.filter(p => {
-    if (model === 'neck') {
-      return p.category === 'necklaces' || p.category === 'earrings';
-    } else if (model === 'hand') {
-      return p.category === 'rings' || p.category === 'bracelets';
-    }
-    return true; // if custom upload background, display all
-  });
+  // Display all available earring products for try-on
+  const tryOnItems = products;
 
   return (
     <section className="section" id="tryon" onMouseMove={onMouseMove} onMouseUp={onMouseUp}>
@@ -94,7 +89,7 @@ export default function TryOn({ products = [] }) {
         <div className="tryon-viewer">
           <div 
             ref={containerRef}
-            className={`canvas-container ${model === 'neck' ? 'model-neck' : model === 'hand' ? 'model-hand' : ''}`}
+            className={`canvas-container ${model === 'ear' ? 'model-ear' : model === 'stand' ? 'model-stand' : ''}`}
             style={{ backgroundImage: model === 'custom' ? `url(${userBg})` : undefined }}
           >
             <div className="tryon-badge">
@@ -105,7 +100,7 @@ export default function TryOn({ products = [] }) {
               <img 
                 src={jewel} 
                 alt="Overlay jewel" 
-                className="draggable-item ring-preview-style" // apply circular gold medallion preview
+                className="draggable-item object-contain"
                 style={{
                   width: `${width}px`,
                   left: `${pos.x}px`,
@@ -118,29 +113,29 @@ export default function TryOn({ products = [] }) {
           </div>
           
           <div className="tryon-controls">
-            <button className="btn-outline" onClick={() => setWidth(prev => Math.max(prev - 10, 20))} disabled={!jewel}>Scale Down -</button>
-            <button className="btn-outline" onClick={() => setWidth(prev => prev + 10)} disabled={!jewel}>Scale Up +</button>
+            <button className="btn-outline" onClick={() => setWidth(prev => Math.max(prev - 5, 15))} disabled={!jewel}>Scale Down -</button>
+            <button className="btn-outline" onClick={() => setWidth(prev => prev + 5)} disabled={!jewel}>Scale Up +</button>
           </div>
         </div>
 
         <div className="tryon-sidebar">
           <h3>Try On Your Vault Favorites</h3>
-          <p>Test out your next heirloom. Select one of our hand-picked model canvas layouts, upload your own photo to personalize the experience, and scale/drag the jewelry into place.</p>
+          <p>Test out your next heirloom. Select one of our hand-picked model canvas layouts, upload your own photo to personalize the experience, and scale/drag the earrings into place.</p>
           
           <div className="tryon-selection">
             <div className="selection-title">1. Choose Canvas Backdrop</div>
             <div className="selection-grid" style={{ flexWrap: 'wrap', gap: '10px' }}>
               <button 
-                className={`model-option ${model === 'neck' ? 'active' : ''}`}
-                onClick={() => handleModelChange('neck')}
+                className={`model-option ${model === 'ear' ? 'active' : ''}`}
+                onClick={() => handleModelChange('ear')}
               >
-                Necklace Stand
+                Model Ear Canvas
               </button>
               <button 
-                className={`model-option ${model === 'hand' ? 'active' : ''}`}
-                onClick={() => handleModelChange('hand')}
+                className={`model-option ${model === 'stand' ? 'active' : ''}`}
+                onClick={() => handleModelChange('stand')}
               >
-                Ring Cushion
+                Earring Display Stand
               </button>
               
               <label className="model-option" style={{ display: 'inline-flex', cursor: 'pointer', border: '1px dashed var(--gold-burnished)' }}>
@@ -162,7 +157,7 @@ export default function TryOn({ products = [] }) {
                 <div 
                   key={p.id}
                   className={`jewel-option ${jewel === p.img ? 'active' : ''}`}
-                  onClick={() => handleJewelChange(p.img)}
+                  onClick={() => handleJewelChange(p)}
                   title={p.title}
                   style={{ width: '60px', height: '60px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--gold-champagne)', cursor: 'pointer' }}
                 >
@@ -183,7 +178,7 @@ export default function TryOn({ products = [] }) {
           </div>
           
           <p style={{ fontSize: '12px', color: 'var(--gray-text)', fontStyle: 'italic', marginTop: '10px' }}>
-            *Drag the jewelry item inside the mirror frame to position it perfectly on your canvas.
+            *Drag the earring inside the mirror frame to position it perfectly on your canvas.
           </p>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="relative py-24 bg-charcoal border-t border-gold-dark/25 overflow-hidden text-center">
+    <section className="relative py-12 bg-charcoal border-t border-gold-dark/25 overflow-hidden text-center">
       {/* Background Graphic Accents */}
       <div className="absolute inset-0 z-0">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
