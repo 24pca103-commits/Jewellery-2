@@ -60,7 +60,8 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Thodoo Jewellery" 
-                className="h-12 sm:h-14 w-auto object-contain brightness-[0.2] transition-transform duration-300 group-hover:scale-102"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-102"
+                style={{ filter: 'sepia(1) saturate(4) brightness(0.38) hue-rotate(338deg)' }}
               />
             </a>
             <p className="font-sans text-xs sm:text-sm text-charcoal-muted leading-relaxed font-light">

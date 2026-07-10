@@ -7,12 +7,12 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
 
   const shopTypes = [
-    { name: 'Jhumka Collection', img: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=80&q=80' },
-    { name: 'Stud Earrings', img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=80&q=80' },
-    { name: 'Hoop Earrings', img: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=80&q=80' },
-    { name: 'Chandelier Earrings', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=80&q=80' },
-    { name: 'Diamond Earrings', img: 'https://images.unsplash.com/photo-1615655404746-8f0309326651?auto=format&fit=crop&w=80&q=80' },
-    { name: 'Gold Earrings', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=80&q=80' }
+    { name: 'Jhumka Collection', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAuidViczzylZ9HEzZ2K1_W_QiUWwFH3VKbjf5BV4Y_w&s=10' },
+    { name: 'Stud Earrings', img: 'https://estailofashion.com/cdn/shop/files/Picresize-Estailo_1080x1080px_2.5x2.5in_-2023-09-09T202151.440.jpg?v=1751064551&width=2048' },
+    { name: 'Hoop Earrings', img: 'https://annachy-prod-assets.annachy.com/pims/products-v1/013787ROSGOL1_2-image1_v1777379197301.webp' },
+    { name: 'Chandelier Earrings', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxSmLAOXzwtm28yUTG0iWf4fu_fosFpAFYCHK0w5yPyTLlVSc6_oj1YAs&s=10' },
+    { name: 'Diamond Earrings', img: 'https://m.media-amazon.com/images/I/61-IIS0rxuL._AC_UY1100_.jpg' },
+    { name: 'Gold Earrings', img: 'https://images.jdmagicbox.com/quickquotes/images_main/women-elegant-earring-golden-2229100902-717mfypc.jpg' }
   ];
 
   return (
@@ -74,7 +74,8 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                 <img 
                   src="/logo.png" 
                   alt="Thodoo Jewellery" 
-                  className="h-11 sm:h-12 w-auto object-contain brightness-[0.2]"
+                  className="h-11 sm:h-12 w-auto object-contain"
+                  style={{ filter: 'sepia(1) saturate(4) brightness(0.38) hue-rotate(338deg)' }}
                 />
               </a>
             </div>
@@ -221,7 +222,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
               <div>
                 <div className="flex items-center justify-between p-5 border-b border-gold/15">
                   <div className="flex items-center gap-1.5">
-                    <img src="/logo.png" alt="Thodoo" className="h-8 w-auto object-contain brightness-[0.2]" />
+                    <img src="/logo.png" alt="Thodoo" className="h-8 w-auto object-contain" style={{ filter: 'sepia(1) saturate(4) brightness(0.38) hue-rotate(338deg)' }} />
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
