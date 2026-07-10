@@ -108,7 +108,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
       return (
         <div className="checkout-success-view">
           <div className="success-icon">✦</div>
-          <h3 style={{ marginBottom: '10px', fontFamily: 'Cinzel, serif', color: 'var(--emerald-deep)' }}>Purchase Confirmed</h3>
+          <h3 style={{ marginBottom: '10px', color: 'var(--emerald-deep)' }}>Purchase Confirmed</h3>
           <p style={{ fontSize: '13px', color: 'var(--gray-text)', lineHeight: '1.5' }}>
             Your order has been confirmed. A certified shipping specialist will contact you shortly with tracking details.
           </p>

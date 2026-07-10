@@ -56,14 +56,26 @@ export default function Footer() {
           
           {/* Column 1: Company Profile (Full-width on mobile, Double Width on desktop) */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2 space-y-4 text-left">
-            <a href="#" className="flex items-center group">
+            <div className="relative h-12 sm:h-14 w-36 sm:w-40 transition-transform duration-300 group-hover:scale-102">
               <img 
                 src="/logo.png" 
                 alt="Thodoo Jewellery" 
-                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-102"
-                style={{ filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' }}
+                className="absolute inset-0 w-full h-full object-contain"
+                style={{ 
+                  clipPath: 'inset(0 66% 0 0)',
+                  filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' 
+                }}
               />
-            </a>
+              <img 
+                src="/logo.png" 
+                alt="Thodoo Jewellery" 
+                className="absolute inset-0 w-full h-full object-contain"
+                style={{ 
+                  clipPath: 'inset(0 0 0 31%)',
+                  filter: 'brightness(0) invert(9%) sepia(21%) saturate(1915%) hue-rotate(336deg) brightness(96%) contrast(93%)' 
+                }}
+              />
+            </div>
             <p className="font-sans text-xs sm:text-sm text-charcoal-muted leading-relaxed font-light">
               India's most trusted premium earring brand, crafting exquisite gold, diamond, and bridal earrings since 1975. Over 5 lakh happy customers across India.
             </p>

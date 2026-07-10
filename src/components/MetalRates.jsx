@@ -108,7 +108,7 @@ export default function MetalRates() {
           <p style={{ color: 'var(--gold-burnished)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '12px' }}>
             Live Market Prices
           </p>
-          <h2 style={{ fontSize: '38px', fontFamily: 'Cinzel, Georgia, serif', color: 'var(--emerald-deep)', marginBottom: '14px' }}>
+          <h2 style={{ fontSize: '38px', color: 'var(--emerald-deep)', marginBottom: '14px' }}>
             Today's Metal Rates
           </h2>
           <p style={{ color: 'var(--gray-text)', fontSize: '14px' }}>
@@ -170,7 +170,6 @@ export default function MetalRates() {
                 fontSize: '16px',
                 fontWeight: '700',
                 marginBottom: '18px',
-                fontFamily: 'Cinzel, Georgia, serif',
               }}>
                 {card.label}
               </h3>

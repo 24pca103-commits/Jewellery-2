@@ -59,15 +59,29 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
         <div className="w-full py-4 bg-[#F2ECE7] shadow-premium border-b border-gold/15">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            {/* Left: Logo */}
+             {/* Left: Logo */}
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center group">
-                <img 
-                  src="/logo.png" 
-                  alt="Thodoo Jewellery" 
-                  className="h-11 sm:h-12 w-auto object-contain"
-                  style={{ filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' }}
-                />
+                <div className="relative h-11 sm:h-12 w-32 sm:w-36 transition-transform duration-300 group-hover:scale-102">
+                  <img 
+                    src="/logo.png" 
+                    alt="Thodoo Jewellery" 
+                    className="absolute inset-0 w-full h-full object-contain"
+                    style={{ 
+                      clipPath: 'inset(0 66% 0 0)',
+                      filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' 
+                    }}
+                  />
+                  <img 
+                    src="/logo.png" 
+                    alt="Thodoo Jewellery" 
+                    className="absolute inset-0 w-full h-full object-contain"
+                    style={{ 
+                      clipPath: 'inset(0 0 0 31%)',
+                      filter: 'brightness(0) invert(9%) sepia(21%) saturate(1915%) hue-rotate(336deg) brightness(96%) contrast(93%)' 
+                    }}
+                  />
+                </div>
               </a>
             </div>
 
@@ -222,7 +236,26 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
               <div>
                 <div className="flex items-center justify-between p-5 border-b border-gold/15">
                   <div className="flex items-center gap-1.5">
-                    <img src="/logo.png" alt="Thodoo" className="h-8 w-auto object-contain" style={{ filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' }} />
+                    <div className="relative h-8 w-24">
+                      <img 
+                        src="/logo.png" 
+                        alt="Thodoo" 
+                        className="absolute inset-0 w-full h-full object-contain"
+                        style={{ 
+                          clipPath: 'inset(0 66% 0 0)',
+                          filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' 
+                        }}
+                      />
+                      <img 
+                        src="/logo.png" 
+                        alt="Thodoo" 
+                        className="absolute inset-0 w-full h-full object-contain"
+                        style={{ 
+                          clipPath: 'inset(0 0 0 31%)',
+                          filter: 'brightness(0) invert(9%) sepia(21%) saturate(1915%) hue-rotate(336deg) brightness(96%) contrast(93%)' 
+                        }}
+                      />
+                    </div>
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
