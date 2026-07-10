@@ -48,14 +48,14 @@ export default function Footer() {
   };
 
   return (
-    <footer id="about" className="bg-white border-t border-gold-light/20 text-charcoal py-16">
+    <footer id="about" className="bg-white border-t border-gold-light/20 text-charcoal py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           
           {/* Column 1: Company Profile (Double Width) */}
-          <div className="space-y-6 text-left lg:col-span-2">
+          <div className="space-y-4 text-left lg:col-span-2">
             <a href="#" className="flex items-center group">
               <img 
                 src="/logo.png" 
@@ -63,12 +63,12 @@ export default function Footer() {
                 className="h-12 sm:h-14 w-auto object-contain brightness-[0.2] transition-transform duration-300 group-hover:scale-102"
               />
             </a>
-            <p className="font-sans text-xs sm:text-sm text-charcoal-muted leading-loose font-light">
+            <p className="font-sans text-xs sm:text-sm text-charcoal-muted leading-relaxed font-light">
               India's most trusted premium earring brand, crafting exquisite gold, diamond, and bridal earrings since 1975. Over 5 lakh happy customers across India.
             </p>
             
             {/* Contact Details */}
-            <ul className="space-y-4 font-sans text-xs sm:text-sm text-charcoal-muted font-light pt-2">
+            <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-charcoal-muted font-light pt-1">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
@@ -87,7 +87,7 @@ export default function Footer() {
             </ul>
 
             {/* Social Links */}
-            <div className="flex items-center gap-5 pt-4 text-charcoal-muted">
+            <div className="flex items-center gap-5 pt-2 text-charcoal-muted">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold hover:scale-110 transition-all duration-300" title="Instagram">
                 <InstagramIcon className="w-5 h-5" />
               </a>
@@ -104,11 +104,11 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Shop categories */}
-          <div className="space-y-5 text-left">
-            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-3">
+          <div className="space-y-3 text-left">
+            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
               Shop
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2">
               <li><a href="#catalog" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Jhumka Collection</a></li>
               <li><a href="#catalog" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Stud Earrings</a></li>
               <li><a href="#catalog" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Hoop Earrings</a></li>
@@ -119,11 +119,11 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Customer Care */}
-          <div className="space-y-5 text-left">
-            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-3">
+          <div className="space-y-3 text-left">
+            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
               Customer Care
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2">
               <li><a href="#" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Track Order</a></li>
               <li><a href="#" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Return Policy</a></li>
               <li><a href="#" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Exchange Policy</a></li>
@@ -134,20 +134,20 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Company & Subscription */}
-          <div className="space-y-6 text-left">
-            <div className="space-y-5">
-              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-3">
+          <div className="space-y-4 text-left">
+            <div className="space-y-3">
+              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
                 Company
               </h4>
-              <ul className="space-y-3.5">
+              <ul className="space-y-2">
                 <li><a href="#" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">About Thodoo Collections</a></li>
                 <li><a href="#" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Careers</a></li>
                 <li><a href="#" className="text-xs sm:text-sm text-charcoal-muted hover:text-gold hover:translate-x-1.5 transform transition-all duration-300 inline-block">Blog</a></li>
               </ul>
             </div>
             
-            <div className="space-y-4 pt-2">
-              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-3">
+            <div className="space-y-3 pt-1">
+              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
                 Stay Updated
               </h4>
               <p className="font-sans text-xs text-charcoal-muted leading-relaxed font-light">
@@ -189,7 +189,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="mt-12 pt-8 border-t border-luxury-cream flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-charcoal-muted font-light">
+        <div className="mt-8 pt-5 border-t border-luxury-cream flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-charcoal-muted font-light">
           <div>
             &copy; {new Date().getFullYear()} Thodoo Jewellery. All rights reserved.
           </div>

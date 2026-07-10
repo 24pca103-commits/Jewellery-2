@@ -168,13 +168,14 @@ export default function ProductCard({
 
           {/* Price Block */}
           <div className="flex items-center justify-center gap-3 pt-1">
-            <span className="text-xs line-through text-charcoal-muted/70 font-serif">
+            <span className="text-xs line-through text-charcoal-muted/70" style={{ fontFamily: "'Playfair Display', serif" }}>
               ${originalPrice.toLocaleString()}
             </span>
             
             {/* Scale current price up on hover */}
             <motion.span 
-              className="text-base font-bold text-[#2A1B14] tracking-wide font-serif transition-transform duration-300 group-hover:scale-110 inline-block"
+              className="text-base font-bold text-[#2A1B14] tracking-wide transition-transform duration-300 group-hover:scale-110 inline-block"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               ${product.price.toLocaleString()}
             </motion.span>
