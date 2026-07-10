@@ -68,7 +68,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                     alt="Thodoo Jewellery" 
                     className="absolute inset-0 w-full h-full object-contain"
                     style={{ 
-                      clipPath: 'inset(0 55% 0 0)',
+                      clipPath: 'inset(0 52% 0 0)',
                       filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' 
                     }}
                   />
@@ -77,7 +77,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                     alt="Thodoo Jewellery" 
                     className="absolute inset-0 w-full h-full object-contain"
                     style={{ 
-                      clipPath: 'inset(0 0 0 42%)',
+                      clipPath: 'inset(0 0 0 45%)',
                       filter: 'brightness(0) invert(9%) sepia(21%) saturate(1915%) hue-rotate(336deg) brightness(96%) contrast(93%)' 
                     }}
                   />
@@ -242,7 +242,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                         alt="Thodoo" 
                         className="absolute inset-0 w-full h-full object-contain"
                         style={{ 
-                          clipPath: 'inset(0 55% 0 0)',
+                          clipPath: 'inset(0 52% 0 0)',
                           filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' 
                         }}
                       />
@@ -251,7 +251,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                         alt="Thodoo" 
                         className="absolute inset-0 w-full h-full object-contain"
                         style={{ 
-                          clipPath: 'inset(0 0 0 42%)',
+                          clipPath: 'inset(0 0 0 45%)',
                           filter: 'brightness(0) invert(9%) sepia(21%) saturate(1915%) hue-rotate(336deg) brightness(96%) contrast(93%)' 
                         }}
                       />
