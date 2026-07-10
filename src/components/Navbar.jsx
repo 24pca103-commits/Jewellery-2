@@ -23,10 +23,10 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
         <div className="bg-[#1C120C] border-b border-gold/15 flex items-center h-9 overflow-hidden">
           {/* Static Left Portion */}
           <div className="flex-shrink-0 flex items-center bg-[#1C120C] z-10 pr-4 pl-4 sm:pl-8 border-r border-white/10 h-full">
-            <a href="tel:+919385411051" className="flex items-center gap-1.5 text-gold-light hover:text-gold transition-colors text-[10px] font-bold tracking-wider uppercase">
+            <div className="flex items-center gap-1.5 text-gold-light text-[10px] font-bold tracking-wider uppercase">
               <Phone className="w-3.5 h-3.5 text-gold" />
               <span>Call Us: +91 93854 11051</span>
-            </a>
+            </div>
           </div>
 
           {/* Scrolling Marquee Right Portion */}
@@ -36,11 +36,11 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                 <div key={i} className="flex items-center">
                   <div className="top-bar-announcement">
                     <Sparkles className="w-3.5 h-3.5 text-gold" />
-                    <span>Live Gold (24K): $75.50/g</span>
+                    <span>Live Gold (24K): ₹6,418/g</span>
                   </div>
                   <div className="top-bar-announcement">
                     <Sparkles className="w-3.5 h-3.5 text-gold" />
-                    <span>Silver (925): $1.80/g</span>
+                    <span>Silver (925): ₹153/g</span>
                   </div>
                   <div className="top-bar-announcement">
                     <Gift className="w-3.5 h-3.5 text-gold" />
@@ -344,16 +344,6 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                     Offers
                   </a>
                 </nav>
-              </div>
-
-              <div className="p-6 bg-black/5 border-t border-gold/15">
-                <a
-                  href="#consultation"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full text-center bg-[#2A1B14] text-white hover:bg-[#8C6239] transition-colors block text-xs uppercase tracking-widest py-3 rounded-sm font-bold shadow-soft"
-                >
-                  Book Private Viewing
-                </a>
               </div>
             </motion.div>
           </>

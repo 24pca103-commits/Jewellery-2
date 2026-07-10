@@ -169,20 +169,20 @@ export default function ProductCard({
           {/* Price Block */}
           <div className="flex items-center justify-center gap-3 pt-1">
             <span className="text-xs line-through text-charcoal-muted/70 font-sans">
-              ${originalPrice.toLocaleString()}
+              ₹{originalPrice.toLocaleString()}
             </span>
             
             {/* Scale current price up on hover */}
             <motion.span 
               className="text-base font-bold text-[#2A1B14] tracking-wide transition-transform duration-300 group-hover:scale-110 inline-block font-sans"
             >
-              ${product.price.toLocaleString()}
+              ₹{product.price.toLocaleString()}
             </motion.span>
           </div>
 
           {/* Savings Highlight */}
           <div className="text-[10px] text-gold-dark font-semibold tracking-wider uppercase bg-gold/5 border border-gold/15 py-1 px-2.5 rounded-sm inline-block shadow-soft group-hover:shadow-gold-glow transition-all duration-300">
-            Save ${savings.toLocaleString()}
+            Save ₹{savings.toLocaleString()}
           </div>
         </div>
 

@@ -6,7 +6,6 @@ import ShopByCategory from './components/ShopByCategory';
 import Catalog from './components/Catalog';
 import MetalRates from './components/MetalRates';
 import Diamond3D from './components/Diamond3D';
-import Consultation from './components/Consultation';
 import TrustBadges from './components/TrustBadges';
 
 import InstagramFeed from './components/InstagramFeed';
@@ -21,8 +20,8 @@ const PRODUCTS = [
     id: 1,
     title: "Royal Antique Gold Jhumkas",
     category: "jhumka",
-    price: 2800,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR427BZ93vcV4nm9zlbfmwPJb6F2y21RHGYU2ao9ZH8Kz7nTB0-_wLlllQ&s=10",
+    price: 238000,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9R427BZ93vcV4nm9zlbfmwPJb6F2y21RHGYU2ao9ZH8Kz7nTB0-_wLlllQ&s=10",
     hoverImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB476eX8NokiLet-1NO_KkTSjjiRRNsohxed3PRohDYDyQsMp_cWYknKQ&s=10",
     desc: "Stately 22k burnished gold jhumkas featuring intricate temple filigree work and polished gold drop accents. Perfect for bridal elegance."
   },
@@ -30,7 +29,7 @@ const PRODUCTS = [
     id: 2,
     title: "Aura Solitaire Diamond Studs",
     category: "studs",
-    price: 1450,
+    price: 123250,
     img: "https://cdn.eternz.com/thumbnails/products/1_73155584_thumbnail_1024.jpg",
     hoverImg: "https://www.craftier.in/cdn/shop/files/3_a51d1854-f8dd-4e8c-89e2-ae92b07c74af.jpg?v=1777637694",
     desc: "Breathtaking 18k white gold stud earrings featuring brilliant-cut 1.5 carat diamonds with VVS1 clarity, crafted for timeless everyday sophistication."
@@ -39,7 +38,7 @@ const PRODUCTS = [
     id: 3,
     title: "Imperial Gold Hoop Earrings",
     category: "hoops",
-    price: 950,
+    price: 80750,
     img: "https://www.gehnaindia.com/_next/image?url=https%3A%2F%2Fcdn-assets.gehnaindia.com%2F5q0f97fc4jx1okh4wv5ds31yohw1&w=2560&q=75",
     hoverImg: "https://i.etsystatic.com/22353755/r/il/86e419/2440359383/il_fullxfull.2440359383_an3w.jpg",
     desc: "Sculpted 22k gold hoops showcasing textured twist engraving, transitioning seamlessly from workspace elegance to evening luxury."
@@ -48,7 +47,7 @@ const PRODUCTS = [
     id: 4,
     title: "Celestia Diamond Chandeliers",
     category: "chandeliers",
-    price: 3900,
+    price: 331500,
     img: "https://i.etsystatic.com/18812175/r/il/56ed86/4171365892/il_570xN.4171365892_26v5.jpg",
     hoverImg: "https://i.etsystatic.com/18812175/r/il/26b56c/1893781548/il_794xN.1893781548_6qyb.jpg",
     desc: "Cascading chandelier earrings encrusted with baguette and round-cut diamonds, catching and reflecting light at every angle."
@@ -57,7 +56,7 @@ const PRODUCTS = [
     id: 5,
     title: "Regal Emerald Drop Earrings",
     category: "gold",
-    price: 1650,
+    price: 140250,
     img: "https://houseofarmilla.com/cdn/shop/files/7A0904EB-FA67-4F7B-B80D-79A072CDBCAB.png?v=1755165740&width=1946",
     hoverImg: "https://cdn.eternz.com/thumbnails/products/ake045-1_52ff5aa2_thumbnail_1024.jpg",
     desc: "Polished pear-cut natural emeralds suspended from detailed 22k yellow gold filigree posts. Royal charm personified."
@@ -66,7 +65,7 @@ const PRODUCTS = [
     id: 6,
     title: "Orion Diamond Cascade Drops",
     category: "diamond",
-    price: 4500,
+    price: 382500,
     img: "https://www.miabytanishq.com/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw2164c89f/images/Mia/hi-res/2922DCN_1.jpg",
     hoverImg: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwd596221b/images/Mia/hi-res/2922DCN_4.jpg?sw=640&sh=640",
     desc: "Elegant platinum drops featuring cascading emerald-cut diamonds, bringing elite sophistication to your most important milestones."
@@ -179,9 +178,6 @@ export default function App() {
 
       {/* 8. 3D Diamond Custom Showcase */}
       <Diamond3D />
-
-      {/* 9. Booking & Consultation Service */}
-      <Consultation />
 
 
 

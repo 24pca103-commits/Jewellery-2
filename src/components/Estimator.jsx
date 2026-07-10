@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 
 const MARKET_RATES = {
   metal: {
-    gold24k: 75.50,
-    gold916: 69.20,
-    platinum: 95.00,
-    rosegold: 71.80,
-    silver: 1.80
+    gold24k: 6417.50,
+    gold916: 5882.00,
+    platinum: 8075.00,
+    rosegold: 6103.00,
+    silver: 153.00
   },
   stone: {
     none: 0,
-    diamond: 1800,
-    emerald: 1200,
-    sapphire: 1000,
-    ruby: 1150
+    diamond: 153000,
+    emerald: 102000,
+    sapphire: 85000,
+    ruby: 97750
   }
 };
 
@@ -26,8 +26,8 @@ export default function Estimator() {
   const metalPrice = (MARKET_RATES.metal[metal] || 0) * (parseFloat(metalWeight) || 0);
   const stonePrice = (MARKET_RATES.stone[stone] || 0) * (parseFloat(stoneWeight) || 0);
   
-  // Crafting fee formula: 15% of metal value + custom base fee of $250
-  const craftFee = (metalPrice * 0.15) + 250;
+  // Crafting fee formula: 15% of metal value + custom base fee of ₹21,250
+  const craftFee = (metalPrice * 0.15) + 21250;
   const total = metalPrice + stonePrice + craftFee;
 
   return (
@@ -45,15 +45,15 @@ export default function Estimator() {
           <div className="ticker-box">
             <div className="ticker-item">
               <div className="ticker-label">24k Gold (g)</div>
-              <div className="ticker-val">$75.50</div>
+              <div className="ticker-val">₹6,418</div>
             </div>
             <div className="ticker-item">
               <div className="ticker-label">925 Silver (g)</div>
-              <div className="ticker-val">$1.80</div>
+              <div className="ticker-val">₹153</div>
             </div>
             <div className="ticker-item">
               <div className="ticker-label">Diamond (ct)</div>
-              <div className="ticker-val">$1,800</div>
+              <div className="ticker-val">₹1,53,000</div>
             </div>
           </div>
         </div>
@@ -122,24 +122,24 @@ export default function Estimator() {
           <div className="estimate-result" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--gray-text)' }}>
               <span>Metal Value:</span>
-              <span>${Math.round(metalPrice).toLocaleString()}</span>
+              <span>₹{Math.round(metalPrice).toLocaleString()}</span>
             </div>
             {stone !== 'none' && (
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--gray-text)' }}>
                 <span>Gemstone Value:</span>
-                <span>${Math.round(stonePrice).toLocaleString()}</span>
+                <span>₹{Math.round(stonePrice).toLocaleString()}</span>
               </div>
             )}
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'var(--gray-text)' }}>
               <span>Crafting & Making Fee:</span>
-              <span>${Math.round(craftFee).toLocaleString()}</span>
+              <span>₹{Math.round(craftFee).toLocaleString()}</span>
             </div>
             
             <hr style={{ border: 'none', borderTop: '1px solid rgba(188, 160, 87, 0.2)', margin: '4px 0' }} />
             
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span className="res-lbl" style={{ margin: 0 }}>Estimated Total:</span>
-              <span className="res-val" id="estimated-total" style={{ margin: 0 }}>${Math.round(total).toLocaleString()}</span>
+              <span className="res-val" id="estimated-total" style={{ margin: 0 }}>₹{Math.round(total).toLocaleString()}</span>
             </div>
           </div>
         </div>

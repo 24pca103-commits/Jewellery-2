@@ -70,13 +70,6 @@ export default function Diamond3D() {
               playsInline
             />
           </div>
-
-          <a 
-            href="#consultation" 
-            className="inline-block px-8 py-3.5 bg-transparent border border-gold-light hover:bg-gold-light hover:text-charcoal text-white font-sans text-[11px] uppercase tracking-widest font-bold transition-all duration-300"
-          >
-            Schedule Diamond Review
-          </a>
         </div>
 
       </div>

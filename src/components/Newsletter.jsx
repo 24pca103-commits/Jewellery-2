@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Sparkles, CheckCircle } from 'lucide-react';
+import { Mail, Sparkles } from 'lucide-react';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -45,50 +44,24 @@ export default function Newsletter() {
 
         {/* Subscription Form */}
         <div className="max-w-md mx-auto">
-          <AnimatePresence mode="wait">
-            {!isSubmitted ? (
-              <motion.form 
-                key="form"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                onSubmit={handleSubmit}
-                className="flex flex-col sm:flex-row gap-3 w-full"
-              >
-                <div className="relative flex-grow">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full bg-white/5 border border-white/20 focus:border-gold rounded-sm px-4 py-3.5 pl-11 text-sm text-white placeholder-white/45 focus:outline-none focus:ring-1 focus:ring-gold transition-all duration-300 font-sans"
-                  />
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/45" />
-                </div>
-                <button
-                  type="submit"
-                  className="px-8 py-3.5 bg-gold hover:bg-gold-dark text-charcoal text-xs uppercase tracking-widest font-bold rounded-sm shadow-gold-glow transition-all duration-300 whitespace-nowrap cursor-pointer"
-                >
-                  Subscribe
-                </button>
-              </motion.form>
-            ) : (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                className="p-6 bg-gold/10 border border-gold/30 rounded-sm flex flex-col items-center justify-center gap-3 text-white"
-              >
-                <CheckCircle className="w-10 h-10 text-gold" />
-                <h4 className="font-serif text-base font-bold tracking-wide">You are Subscribed!</h4>
-                <p className="font-sans text-xs text-white/85 font-light leading-relaxed">
-                  Thank you for joining. An invitation to the Thodoo Privilege circle has been dispatched to your inbox.
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
+            <div className="relative flex-grow">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-white/5 border border-white/20 focus:border-gold rounded-sm px-4 py-3.5 pl-11 text-sm text-white placeholder-white/45 focus:outline-none focus:ring-1 focus:ring-gold transition-all duration-300 font-sans"
+              />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/45" />
+            </div>
+            <button
+              type="button"
+              className="px-8 py-3.5 bg-gold hover:bg-gold-dark text-charcoal text-xs uppercase tracking-widest font-bold rounded-sm shadow-gold-glow transition-all duration-300 whitespace-nowrap cursor-default"
+            >
+              Subscribe
+            </button>
+          </div>
         </div>
 
       </div>

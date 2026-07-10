@@ -1,11 +1,11 @@
 import React from 'react';
 
 const BASE_RATES = {
-  gold24k:  75.50,
-  gold22k:  69.20,
-  gold18k:  58.10,
-  silver:    1.80,
-  diamond: 3800.00,
+  gold24k:  6417.50,
+  gold22k:  5882.00,
+  gold18k:  4938.50,
+  silver:    153.00,
+  diamond: 323000.00,
 };
 
 export default function MetalRates() {
@@ -21,7 +21,7 @@ export default function MetalRates() {
       img: 'https://cdn.eternz.com/thumbnails/products/253_25dca409_thumbnail_1024.png',
       bg: 'linear-gradient(135deg, #3B2507 0%, #6B3E10 100%)',
       unit: '/gram',
-      prefix: '$',
+      prefix: '₹',
     },
     {
       key: 'gold22k',
@@ -32,7 +32,7 @@ export default function MetalRates() {
       img: 'https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw677f6639/images/hi-res/511069SOEAGA00_1.jpg?sw=480&sh=480',
       bg: 'linear-gradient(135deg, #4A2D06 0%, #7C4A12 100%)',
       unit: '/gram',
-      prefix: '$',
+      prefix: '₹',
     },
     {
       key: 'gold18k',
@@ -43,7 +43,7 @@ export default function MetalRates() {
       img: 'https://m.media-amazon.com/images/I/71TM-Vk7w7L._AC_UY1100_.jpg',
       bg: 'linear-gradient(135deg, #3A2A08 0%, #5E4015 100%)',
       unit: '/gram',
-      prefix: '$',
+      prefix: '₹',
     },
     {
       key: 'silver',
@@ -54,7 +54,7 @@ export default function MetalRates() {
       img: 'https://silverlinings.in/cdn/shop/products/Filigree_Earrings_ER303.jpg?v=1757268890',
       bg: 'linear-gradient(135deg, #1A1E2A 0%, #2D3446 100%)',
       unit: '/gram',
-      prefix: '$',
+      prefix: '₹',
     },
     {
       key: 'diamond',
@@ -65,7 +65,7 @@ export default function MetalRates() {
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtzjHpJ3q0WxUxm5MH1mLE2Nn_bg0QjHwWGbpZdA4Dw8N7AoEsnfrDmz0&s=10',
       bg: 'linear-gradient(135deg, #0D1B2A 0%, #1B3A5C 100%)',
       unit: '/carat',
-      prefix: '$',
+      prefix: '₹',
     },
   ];
 

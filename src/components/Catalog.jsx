@@ -189,10 +189,10 @@ export default function Catalog({ products, wishlist = [], onWishlistToggle, onA
 
                       <div className="pt-2">
                         <span className="text-xs line-through text-charcoal-muted/60 font-serif mr-2">
-                          ${Math.round(activeProduct.price * 1.15).toLocaleString()}
+                          ₹{Math.round(activeProduct.price * 1.15).toLocaleString()}
                         </span>
                         <span className="text-lg font-bold text-[#2A1B14] font-serif">
-                          ${activeProduct.price.toLocaleString()}
+                          ₹{activeProduct.price.toLocaleString()}
                         </span>
                       </div>
                     </motion.div>
@@ -269,7 +269,7 @@ export default function Catalog({ products, wishlist = [], onWishlistToggle, onA
                       </h4>
                       <p className={`font-serif text-xs font-bold transition-colors duration-300 ${isActive ? 'text-gold-dark' : 'text-gold-dark group-hover:text-gold'
                         }`}>
-                        ${item.price.toLocaleString()}
+                        ₹{item.price.toLocaleString()}
                       </p>
                     </div>
                   </button>
@@ -406,12 +406,6 @@ export default function Catalog({ products, wishlist = [], onWishlistToggle, onA
                   className="px-7 py-3.5 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-[#2A1B14] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-sm transition-all duration-300 shadow-soft transform hover:-translate-y-0.5 hover:shadow-gold-glow"
                 >
                   Explore Bridal Suite
-                </a>
-                <a
-                  href="#consultation"
-                  className="px-7 py-3.5 border border-white/35 hover:border-gold hover:text-gold text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-sm backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-0.5"
-                >
-                  Book Consultation
                 </a>
               </div>
             </div>

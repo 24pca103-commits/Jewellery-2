@@ -74,16 +74,9 @@ export default function InstagramFeed() {
         <div className="marquee-container">
           <div className="marquee-track">
             {[...POSTS, ...POSTS].map((post, idx) => (
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open("https://instagram.com", "_blank");
-                }}
-                key={idx}
-                className="flex-shrink-0 w-[240px] sm:w-[280px] aspect-square relative group overflow-hidden rounded-sm border border-gold-light/10 shadow-soft cursor-pointer"
+              <div
+                key={post.img + idx}
+                className="flex-shrink-0 w-[240px] sm:w-[280px] aspect-square relative group overflow-hidden rounded-sm border border-gold-light/10 shadow-soft cursor-default"
               >
                 <img
                   src={post.img}
@@ -105,23 +98,17 @@ export default function InstagramFeed() {
                     </span>
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
 
         <div className="mt-12">
-          <a
-            href="https://instagram.com"
-            target="_blank; rel=noopener noreferrer"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open("https://instagram.com", "_blank");
-            }}
-            className="inline-flex justify-center items-center px-8 py-3.5 border border-charcoal hover:border-gold hover:text-gold text-charcoal font-sans text-xs uppercase tracking-widest font-bold rounded-sm transition-all duration-300 cursor-pointer"
+          <div
+            className="inline-flex justify-center items-center px-8 py-3.5 border border-charcoal text-charcoal font-sans text-xs uppercase tracking-widest font-bold rounded-sm cursor-default"
           >
             Follow Our Journey
-          </a>
+          </div>
         </div>
 
       </div>

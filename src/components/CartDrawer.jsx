@@ -97,7 +97,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
           <div style={{ marginTop: '20px', padding: '15px', border: '1px solid rgba(92, 74, 61, 0.3)', borderRadius: '4px', background: 'rgba(92, 74, 61, 0.05)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
               <span>Total to Pay:</span>
-              <span style={{ color: 'var(--emerald-deep)', fontWeight: 'bold' }}>${subtotal.toLocaleString()}</span>
+              <span style={{ color: 'var(--emerald-deep)', fontWeight: 'bold' }}>₹{subtotal.toLocaleString()}</span>
             </div>
             <p style={{ fontSize: '11px', color: 'var(--gray-text)' }}>Your transaction is encrypted and secured by Jewellery Shop.</p>
           </div>
@@ -170,7 +170,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
                         {item.customDetails.engraving && <div>Engraving: "{item.customDetails.engraving}"</div>}
                       </div>
                     )}
-                    <div className="cart-item-price font-sans">${item.product.price.toLocaleString()}</div>
+                    <div className="cart-item-price font-sans">₹{item.product.price.toLocaleString()}</div>
                     <div className="cart-item-qty">
                       <button className="qty-btn" onClick={() => onQtyChange(item.cartItemId, -1)}>-</button>
                       <span>{item.quantity}</span>
@@ -191,7 +191,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
             {checkoutStep === 0 && (
               <div className="cart-subtotal">
                 <span>Subtotal:</span>
-                <span className="font-sans">${subtotal.toLocaleString()}</span>
+                <span className="font-sans">₹{subtotal.toLocaleString()}</span>
               </div>
             )}
             <div style={{ display: 'flex', gap: '10px' }}>

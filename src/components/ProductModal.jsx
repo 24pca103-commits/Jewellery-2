@@ -35,7 +35,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
   const getPricingBreakdown = (category, price) => {
     let weight = 8.5; // default weight in grams
     let purity = "22K Gold (916 Purity)";
-    let goldRate = 72.50; // $ per gram
+    let goldRate = 6162.50; // ₹ per gram
 
     if (category === 'rings') {
       weight = (price * 0.25) / goldRate;
@@ -160,7 +160,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
                 {product.title}
               </h2>
               <p className="text-xl text-gold-dark font-bold font-sans">
-                ${product.price.toLocaleString()}
+                ₹{product.price.toLocaleString()}
               </p>
             </div>
 
@@ -181,15 +181,15 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
                 </div>
                 <div className="flex justify-between border-b border-gold-light/10 pb-1">
                   <span className="text-charcoal-muted font-light">Metal Value:</span>
-                  <span className="font-semibold text-charcoal">${breakdown.metalValue.toLocaleString()}</span>
+                  <span className="font-semibold text-charcoal">₹{breakdown.metalValue.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between border-b border-gold-light/10 pb-1">
                   <span className="text-charcoal-muted font-light">Making Charges:</span>
-                  <span className="font-semibold text-charcoal">${breakdown.makingCharges.toLocaleString()}</span>
+                  <span className="font-semibold text-charcoal">₹{breakdown.makingCharges.toLocaleString()}</span>
                 </div>
                 <div className="col-span-2 flex justify-between border-b border-gold-light/10 pb-1 pt-1">
                   <span className="text-charcoal-muted font-light">Certified Stone Value:</span>
-                  <span className="font-semibold text-charcoal">${breakdown.stoneValue.toLocaleString()}</span>
+                  <span className="font-semibold text-charcoal">₹{breakdown.stoneValue.toLocaleString()}</span>
                 </div>
               </div>
             </div>
@@ -267,17 +267,6 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
                 Add to Cart
               </button>
             </div>
-
-            <button
-              onClick={() => {
-                window.location.hash = "#consultation";
-                handleClose();
-              }}
-              className="w-full inline-flex justify-center items-center gap-1.5 px-6 py-3 border border-gold hover:bg-gold hover:text-charcoal text-gold text-xs uppercase tracking-widest font-bold rounded-sm transition-colors cursor-pointer"
-            >
-              <Calendar className="w-4 h-4" />
-              Book Private Viewing
-            </button>
 
             <div className="text-center text-[10px] text-charcoal-muted italic font-light pt-1">
               * Govt BIS Hallmarked gold. Certified Diamond authentication included.
