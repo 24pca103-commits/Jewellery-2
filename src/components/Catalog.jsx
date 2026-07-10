@@ -286,7 +286,7 @@ export default function Catalog({ products, wishlist = [], onWishlistToggle, onA
       <section id="best-sellers" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
 
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-12 space-y-3">
+        <div className="text-center max-w-xl mx-auto mb-8 space-y-3">
           <div className="flex items-center justify-center gap-1.5 text-xs text-gold font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
             Signature Masterpieces
@@ -300,8 +300,8 @@ export default function Catalog({ products, wishlist = [], onWishlistToggle, onA
           </p>
         </div>
 
-        {/* Visual Circular Category Bubble Bar */}
-        <div className="flex justify-center items-center gap-5 sm:gap-8 mb-12 overflow-x-auto pb-4 pt-2 scrollbar-none w-full">
+        {/* Visual Circular Category Bubble Bar - horizontal scroll on mobile */}
+        <div className="flex items-center gap-4 sm:gap-8 mb-10 overflow-x-auto pb-4 pt-2 scrollbar-none w-full px-1 sm:justify-center">
           {filterTabs.map(tab => {
             const isActive = filter === tab.id;
             return (

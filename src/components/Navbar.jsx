@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, ChevronDown, Menu, X, Gift, Search, User, Heart, Phone, Sparkles } from 'lucide-react';
+import { ShoppingBag, ChevronDown, Menu, X, Search, User, Heart, Phone, Home, Info, Tag, Sparkle, Star, Percent, Sparkles, Gift } from 'lucide-react';
 
 export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,16 +59,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
         <div className="w-full py-4 bg-[#F2ECE7] shadow-premium border-b border-gold/15">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            {/* Mobile Hamburger menu */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-1.5 rounded-full text-[#2A1B14] hover:bg-black/5 transition-colors"
-              aria-label="Toggle Menu"
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-
-            {/* Left/Center: Logo (Thodoo Jewellery Image) */}
+            {/* Left: Logo */}
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center group">
                 <img 
@@ -158,7 +149,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
               </a>
             </nav>
 
-            {/* Right Side: Navigation Actions */}
+            {/* Right Side: Navigation Actions + Hamburger */}
             <div className="flex items-center gap-1 sm:gap-2 text-[#2A1B14]">
               {/* Search Icon */}
               <button className="p-1.5 rounded-full hover:bg-black/5 hover:text-[#8C6239] transition-colors cursor-pointer" aria-label="Search">
@@ -192,6 +183,15 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                     {cartCount}
                   </span>
                 )}
+              </button>
+
+              {/* Mobile Hamburger menu - placed at far right */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="lg:hidden p-1.5 rounded-full text-[#2A1B14] hover:bg-black/5 transition-colors ml-1"
+                aria-label="Toggle Menu"
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
 
@@ -233,34 +233,37 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                   </button>
                 </div>
                 
-                <nav className="p-6 space-y-4 text-left">
+              <nav className="p-5 space-y-1 text-left">
                   <a
                     href="#"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] block"
+                    className="flex items-center gap-3 font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] py-3 border-b border-black/5"
                   >
+                    <Home className="w-4 h-4 text-gold-dark flex-shrink-0" />
                     Home
                   </a>
 
                   <a
                     href="#about"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] block pb-3 border-b border-black/5"
+                    className="flex items-center gap-3 font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] py-3 border-b border-black/5"
                   >
+                    <Info className="w-4 h-4 text-gold-dark flex-shrink-0" />
                     About
                   </a>
 
                   {/* Mobile Shop Dropdown */}
-                  <div className="border-b border-black/5 pb-3">
+                  <div className="border-b border-black/5">
                     <button
                       onClick={() => setIsShopDropdownOpen(!isShopDropdownOpen)}
-                      className="w-full flex items-center justify-between font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239]"
+                      className="w-full flex items-center gap-3 py-3 font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239]"
                     >
+                      <Tag className="w-4 h-4 text-gold-dark flex-shrink-0" />
                       Shop By Type
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isShopDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 ml-auto transition-transform ${isShopDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {isShopDropdownOpen && (
-                      <div className="mt-2 pl-3 space-y-2">
+                      <div className="mb-2 pl-7 space-y-2">
                         {shopTypes.map((type, sIdx) => {
                           return (
                             <a 
@@ -284,24 +287,27 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                   <a
                     href="#new-arrivals"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] block pb-3 border-b border-black/5"
+                    className="flex items-center gap-3 font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] py-3 border-b border-black/5"
                   >
+                    <Sparkle className="w-4 h-4 text-gold-dark flex-shrink-0" />
                     New Arrivals
                   </a>
 
                   <a
                     href="#best-sellers"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] block pb-3 border-b border-black/5"
+                    className="flex items-center gap-3 font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] py-3 border-b border-black/5"
                   >
+                    <Star className="w-4 h-4 text-gold-dark flex-shrink-0" />
                     Best Sellers
                   </a>
 
                   <a
                     href="#offers"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] block"
+                    className="flex items-center gap-3 font-sans text-sm font-semibold tracking-wider text-[#2A1B14] hover:text-[#8C6239] py-3"
                   >
+                    <Percent className="w-4 h-4 text-gold-dark flex-shrink-0" />
                     Offers
                   </a>
                 </nav>

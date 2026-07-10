@@ -66,7 +66,7 @@ export default function ShopByCategory() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-xl mx-auto mb-10 space-y-3">
           <div className="flex items-center justify-center gap-1.5 text-xs text-gold font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
             Curated Collections
@@ -80,13 +80,38 @@ export default function ShopByCategory() {
           </p>
         </div>
 
-        {/* Categories Grid with 3D perspective viewport */}
+        {/* Mobile: horizontal scroller; Desktop: 3-column grid */}
+        <div className="block sm:hidden overflow-x-auto scrollbar-none -mx-4 px-4">
+          <div className="flex gap-4 pb-4" style={{ width: 'max-content' }}>
+            {CATEGORIES.map((cat, idx) => (
+              <div
+                key={idx}
+                className="relative w-[260px] h-[340px] bg-charcoal rounded-sm overflow-hidden shadow-soft flex-shrink-0 cursor-pointer group"
+              >
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <img src={cat.img} alt={cat.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-85" />
+                </div>
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 text-left space-y-2">
+                  <span className="font-sans text-[10px] tracking-widest uppercase text-gold font-bold">{cat.tag}</span>
+                  <h3 className="font-serif text-lg font-bold tracking-wide text-white">{cat.name}</h3>
+                  <div className="flex justify-between items-center pt-2 border-t border-white/10">
+                    <span className="font-sans text-[11px] text-white/80 font-light">{cat.count}</span>
+                    <span className="font-sans text-[10px] font-bold text-gold uppercase tracking-wider">View All →</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: 3D perspective grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 [perspective:1200px]"
+          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 [perspective:1200px]"
         >
           {CATEGORIES.map((cat, idx) => (
             <motion.div

@@ -40,7 +40,7 @@ export default function AboutUs() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[85%] h-[1px] bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
 
           {/* Left Column: Brand Story & Staggered Animations (5 cols) */}
           <motion.div
@@ -109,7 +109,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 relative h-[450px] sm:h-[550px] w-full"
+            className="lg:col-span-7 relative h-[360px] sm:h-[550px] w-full"
           >
             {/* Background luxury gold watermark pattern */}
             <div className="absolute inset-0 opacity-[0.02] select-none pointer-events-none z-0">
@@ -137,7 +137,7 @@ export default function AboutUs() {
             </div>
 
             {/* Overlapping Bottom Small Image (Diamond Setting) */}
-            <div className="absolute bottom-4 left-16 sm:bottom-8 sm:left-24 w-[35%] aspect-square rounded-sm overflow-hidden border border-gold/25 shadow-premium z-30 bg-charcoal hidden sm:block">
+            <div className="absolute bottom-4 left-16 sm:bottom-8 sm:left-24 w-[32%] aspect-square rounded-sm overflow-hidden border border-gold/25 shadow-premium z-30 bg-charcoal">
               <img
                 src="https://i.pinimg.com/originals/bf/06/98/bf06982542d3d4e73c3e1676ed27188b.jpg"
                 alt="Hoop Earrings Detail"

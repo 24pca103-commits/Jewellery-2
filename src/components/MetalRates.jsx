@@ -112,7 +112,7 @@ export default function MetalRates() {
             Today's Metal Rates
           </h2>
           <p style={{ color: 'var(--gray-text)', fontSize: '14px' }}>
-            Rates updated live every few seconds &nbsp;·&nbsp;
+            Rates updated live every day &nbsp;·&nbsp;
             <span style={{ color: 'var(--gold-burnished)', fontWeight: 600 }}>Last updated: {timeStr}</span>
           </p>
         </div>

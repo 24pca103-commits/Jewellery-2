@@ -61,7 +61,7 @@ export default function TrustBadges() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-xl mx-auto mb-10 space-y-3">
           <div className="flex items-center justify-center gap-1.5 text-xs text-gold font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
             Uncompromised Trust
@@ -94,7 +94,7 @@ export default function TrustBadges() {
                 boxShadow: '0 15px 30px rgba(42, 27, 20, 0.15)'
               }}
               transition={{ type: 'spring', stiffness: 350, damping: 20 }}
-              className="group p-8 rounded-sm border border-gold-light/20 bg-[#FAF5EF]/60 transition-all duration-300 flex items-start gap-5 text-left cursor-pointer"
+              className="group p-6 rounded-sm border border-gold-light/20 bg-[#FAF5EF]/60 transition-all duration-300 flex items-start gap-4 text-left cursor-pointer"
             >
               {/* Icon Container with Scale-up and gold highlights on hover */}
               <div className="p-3 bg-white rounded-full border border-gold-light/15 shadow-soft group-hover:bg-gold/15 group-hover:scale-105 transition-all duration-300 flex-shrink-0 flex items-center justify-center">

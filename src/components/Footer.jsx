@@ -51,11 +51,11 @@ export default function Footer() {
     <footer id="about" className="bg-white border-t border-gold-light/20 text-charcoal py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+        {/* Main Footer Grid - 2-col on mobile, 5-col on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-10">
           
-          {/* Column 1: Company Profile (Double Width) */}
-          <div className="space-y-4 text-left lg:col-span-2">
+          {/* Column 1: Company Profile (Full-width on mobile, Double Width on desktop) */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-2 space-y-4 text-left">
             <a href="#" className="flex items-center group">
               <img 
                 src="/logo.png" 

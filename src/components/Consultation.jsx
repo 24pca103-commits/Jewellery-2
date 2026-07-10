@@ -55,7 +55,8 @@ export default function Consultation() {
             <input 
               type="date" 
               id="book-date" 
-              className="form-input" 
+              className="form-input"
+              style={{ width: '100%', display: 'block', colorScheme: 'light', minHeight: '44px' }}
               value={date}
               onChange={(e) => setDate(e.target.value)}
               required 
@@ -66,6 +67,7 @@ export default function Consultation() {
             <select 
               id="book-interest" 
               className="form-select"
+              style={{ width: '100%', display: 'block' }}
               value={interest}
               onChange={(e) => setInterest(e.target.value)}
             >
@@ -86,12 +88,9 @@ export default function Consultation() {
               onChange={(e) => setNotes(e.target.value)}
             ></textarea>
           </div>
-          <button type="submit" className="btn-gold">Request Booking</button>
+          <button type="submit" className="btn-gold" style={{ width: '100%' }}>Request Booking</button>
         </form>
       </div>
     </section>
   );
 }
-
-
-
