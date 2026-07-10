@@ -7,6 +7,18 @@ export default function Consultation() {
   const [interest, setInterest] = useState('diamonds');
   const [notes, setNotes] = useState('');
 
+  const handleDateChange = (val) => {
+    // Keep only numbers and slashes
+    let clean = val.replace(/[^0-9/]/g, '').slice(0, 10);
+    // Auto insert slashes
+    if (clean.length === 2 && !val.endsWith('/')) {
+      clean = clean + '/';
+    } else if (clean.length === 5 && !val.endsWith('/')) {
+      clean = clean + '/';
+    }
+    setDate(clean);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank you! Your private viewing and consultation has been requested. One of our master curators will contact you within 24 hours.");
@@ -53,12 +65,14 @@ export default function Consultation() {
           <div className="form-group">
             <label htmlFor="book-date">Requested Date</label>
             <input 
-              type="date" 
+              type="text" 
               id="book-date" 
               className="form-input"
-              style={{ width: '100%', display: 'block', colorScheme: 'light', minHeight: '44px' }}
+              placeholder="DD/MM/YYYY"
+              maxLength={10}
+              style={{ width: '100%', display: 'block', minHeight: '44px' }}
               value={date}
-              onChange={(e) => setDate(e.target.value)}
+              onChange={(e) => handleDateChange(e.target.value)}
               required 
             />
           </div>
