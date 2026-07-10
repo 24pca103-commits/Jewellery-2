@@ -25,8 +25,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['Inter', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       boxShadow: {
         'premium': '0 20px 40px rgba(42, 27, 20, 0.08)',
