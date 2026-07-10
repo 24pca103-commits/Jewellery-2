@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, ChevronDown, Menu, X, Gift, Search, User, Heart, Phone, Sparkles, CircleDot, Circle, Crown, Gem, Coins } from 'lucide-react';
+import { ShoppingBag, ChevronDown, Menu, X, Gift, Search, User, Heart, Phone, Sparkles } from 'lucide-react';
 
 export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
 
   const shopTypes = [
-    { name: 'Jhumka Collection', icon: Sparkles },
-    { name: 'Stud Earrings', icon: CircleDot },
-    { name: 'Hoop Earrings', icon: Circle },
-    { name: 'Chandelier Earrings', icon: Crown },
-    { name: 'Diamond Earrings', icon: Gem },
-    { name: 'Gold Earrings', icon: Coins }
+    { name: 'Jhumka Collection', img: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=80&q=80' },
+    { name: 'Stud Earrings', img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=80&q=80' },
+    { name: 'Hoop Earrings', img: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=80&q=80' },
+    { name: 'Chandelier Earrings', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=80&q=80' },
+    { name: 'Diamond Earrings', img: 'https://images.unsplash.com/photo-1615655404746-8f0309326651?auto=format&fit=crop&w=80&q=80' },
+    { name: 'Gold Earrings', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=80&q=80' }
   ];
 
   return (
@@ -119,14 +119,13 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                       className="absolute left-0 top-full mt-2 w-56 bg-[#F2ECE7] border border-gold/15 shadow-premium rounded-sm p-2 z-50 flex flex-col text-left"
                     >
                       {shopTypes.map((type, sIdx) => {
-                        const Icon = type.icon;
                         return (
                           <a 
                             key={sIdx}
                             href="#shop-by-type" 
                             className="flex items-center gap-2.5 text-xs text-[#2A1B14] hover:bg-black/5 hover:text-[#8C6239] px-4 py-2.5 rounded-sm transition-colors"
                           >
-                            <Icon className="w-3.5 h-3.5 text-gold-dark" />
+                            <img src={type.img} alt={type.name} className="w-5 h-5 rounded-full object-cover border border-[#8C6239]/20" />
                             {type.name}
                           </a>
                         );
@@ -262,7 +261,6 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                     {isShopDropdownOpen && (
                       <div className="mt-2 pl-3 space-y-2">
                         {shopTypes.map((type, sIdx) => {
-                          const Icon = type.icon;
                           return (
                             <a 
                               key={sIdx}
@@ -273,7 +271,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                               }} 
                               className="flex items-center gap-2.5 text-xs text-[#2A1B14]/80 hover:text-[#8C6239] py-1.5"
                             >
-                              <Icon className="w-3.5 h-3.5 text-[#8C6239]" />
+                              <img src={type.img} alt={type.name} className="w-4 h-4 rounded-full object-cover border border-[#8C6239]/20" />
                               {type.name}
                             </a>
                           );

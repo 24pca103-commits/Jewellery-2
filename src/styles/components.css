@@ -332,8 +332,9 @@ header.scrolled {
 }
 
 .product-price {
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--charcoal);
 }
 
@@ -397,8 +398,8 @@ header.scrolled {
 
 .ticker-val {
     font-size: 20px;
-    font-weight: 600;
-    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
 }
 
 .estimator-form {
@@ -460,9 +461,9 @@ header.scrolled {
 
 .res-val {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--gold-light);
-    font-family: 'Cinzel', serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* 3D Diamond Cut visualizer */
@@ -622,9 +623,10 @@ header.scrolled {
 }
 
 .cart-item-price {
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
     color: var(--gold-burnished);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -663,10 +665,11 @@ header.scrolled {
 }
 
 .cart-subtotal {
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 

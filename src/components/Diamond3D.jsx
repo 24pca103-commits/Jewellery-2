@@ -1,80 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Sparkles, Zap, ShieldCheck } from 'lucide-react';
 
 export default function Diamond3D() {
-  const [glare, setGlare] = useState(true);
-  const [colorTheme, setColorTheme] = useState('platinum'); // platinum | gold | rosegold
-  const spinSpeed = 10;
-
-  // Color mapping for top/bottom facets
-  const facetColor = {
-    platinum: 'rgba(240, 248, 255, 0.75)',
-    gold: 'rgba(255, 215, 0, 0.75)',
-    rosegold: 'rgba(255, 183, 197, 0.75)'
-  }[colorTheme];
-
-  const bottomFacetColor = {
-    platinum: 'rgba(200, 225, 255, 0.6)',
-    gold: 'rgba(218, 165, 32, 0.6)',
-    rosegold: 'rgba(224, 137, 157, 0.6)'
-  }[colorTheme];
-
   return (
     <section className="section py-16" id="diamond3d">
       <div className="diamond-3d-layout">
         
-        {/* Left Column: Interactive Controls & Details */}
+        {/* Left Column: Details & Process */}
         <div className="diamond-3d-info text-left flex flex-col justify-center space-y-6">
           <div className="flex items-center gap-1.5 text-xs text-[#8C6239] font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
-            Innovative Facet Precision
+            Artisanal Precision
           </div>
           
           <h3>Precision Craftsmanship</h3>
           <p className="font-sans text-white/70 text-sm leading-relaxed">
-            Our diamonds are cut to absolute mathematical perfection. Explore our ideal 3D brilliant facet structure, reflecting 99% of ambient light. Select your metal setting theme to view the visual brilliance.
+            Our diamonds are cut to absolute mathematical perfection. Watch our master artisans bring raw crystals to life, shaping the ideal brilliant facet structure that reflects 99% of ambient light.
           </p>
 
           <div className="h-[1px] bg-white/10 w-full" />
 
-          {/* Interactive Panel controls */}
-          <div className="space-y-4">
-
-            {/* Color Theme Selector */}
-            <div className="flex flex-col gap-2">
-              <span className="text-xs font-semibold tracking-wider text-gold-light uppercase text-left">Metal Tint Theme</span>
-              <div className="flex gap-2.5">
-                {[
-                  { id: 'platinum', label: 'Platinum' },
-                  { id: 'gold', label: '24K Gold' },
-                  { id: 'rosegold', label: 'Rose Gold' }
-                ].map((theme) => (
-                  <button
-                    key={theme.id}
-                    onClick={() => setColorTheme(theme.id)}
-                    className={`flex-1 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border cursor-pointer transition-all duration-300 ${
-                      colorTheme === theme.id 
-                        ? 'bg-gold-light text-charcoal border-gold-light shadow-soft' 
-                        : 'bg-transparent text-white/60 border-white/15 hover:border-white/30 hover:text-white'
-                    }`}
-                  >
-                    {theme.label}
-                  </button>
-                ))}
+          {/* Process Steps */}
+          <div className="space-y-4 font-sans text-sm text-white/80">
+            <div className="flex gap-3">
+              <span className="text-gold font-bold">01.</span>
+              <div>
+                <strong className="text-white">Ethical Sourcing:</strong> Every gem is conflict-free and certified by the world's leading authorities.
               </div>
             </div>
-
-            {/* Glare Toggle */}
-            <div className="flex items-center justify-between py-2">
-              <span className="text-xs font-semibold tracking-wider text-gold-light uppercase">Ambient Glare Overlay</span>
-              <button
-                onClick={() => setGlare(!glare)}
-                className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors duration-300 relative ${glare ? 'bg-gold' : 'bg-white/20'}`}
-              >
-                <div className={`w-4 h-4 rounded-full bg-charcoal transition-transform duration-300 absolute top-1 left-1 ${glare ? 'translate-x-6' : 'translate-x-0'}`} />
-              </button>
+            <div className="flex gap-3">
+              <span className="text-gold font-bold">02.</span>
+              <div>
+                <strong className="text-white">Ideal Cut Calibration:</strong> Formulated mathematically to maximize fire, brilliance, and scintillation.
+              </div>
             </div>
-
+            <div className="flex gap-3">
+              <span className="text-gold font-bold">03.</span>
+              <div>
+                <strong className="text-white">Heirloom Hand Setting:</strong> Set by hand under high magnification for lifelong durability.
+              </div>
+            </div>
           </div>
 
           <div className="h-[1px] bg-white/10 w-full" />
@@ -83,42 +48,27 @@ export default function Diamond3D() {
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 text-white/80">
               <ShieldCheck className="w-4 h-4 text-gold" />
-              <span className="text-xs font-sans tracking-wide">Perfect 57 Facets</span>
+              <span className="text-xs font-sans tracking-wide">Perfect Faceting</span>
             </div>
             <div className="flex items-center gap-2 text-white/80">
               <Zap className="w-4 h-4 text-gold" />
-              <span className="text-xs font-sans tracking-wide">Refracts 99% Light</span>
+              <span className="text-xs font-sans tracking-wide">Maximum Brilliance</span>
             </div>
           </div>
         </div>
 
-        {/* Right Column: 3D Render Viewport */}
+        {/* Right Column: Video Viewport */}
         <div className="flex flex-col items-center justify-center relative">
           
-          <div className="diamond-viewport">
-            <div 
-              className="diamond-object"
-              style={{ 
-                animation: `rotate3d ${spinSpeed}s infinite linear`,
-                filter: glare ? 'drop-shadow(0 0 25px rgba(255,255,255,0.45))' : 'none'
-              }}
-            >
-              {/* Top facets */}
-              <div className="diamond-facet facet-top1" style={{ borderColor: `transparent transparent ${facetColor} transparent` }} />
-              <div className="diamond-facet facet-top2" style={{ borderColor: `transparent transparent ${facetColor} transparent` }} />
-              <div className="diamond-facet facet-top3" style={{ borderColor: `transparent transparent ${facetColor} transparent` }} />
-              <div className="diamond-facet facet-top4" style={{ borderColor: `transparent transparent ${facetColor} transparent` }} />
-              <div className="diamond-facet facet-top5" style={{ borderColor: `transparent transparent ${facetColor} transparent` }} />
-              <div className="diamond-facet facet-top6" style={{ borderColor: `transparent transparent ${facetColor} transparent` }} />
-              
-              {/* Bottom facets */}
-              <div className="diamond-facet facet-bot1" style={{ borderColor: `${bottomFacetColor} transparent transparent transparent` }} />
-              <div className="diamond-facet facet-bot2" style={{ borderColor: `${bottomFacetColor} transparent transparent transparent` }} />
-              <div className="diamond-facet facet-bot3" style={{ borderColor: `${bottomFacetColor} transparent transparent transparent` }} />
-              <div className="diamond-facet facet-bot4" style={{ borderColor: `${bottomFacetColor} transparent transparent transparent` }} />
-              <div className="diamond-facet facet-bot5" style={{ borderColor: `${bottomFacetColor} transparent transparent transparent` }} />
-              <div className="diamond-facet facet-bot6" style={{ borderColor: `${bottomFacetColor} transparent transparent transparent` }} />
-            </div>
+          <div className="w-[300px] h-[300px] rounded-full overflow-hidden border-2 border-gold-light/20 shadow-premium flex items-center justify-center bg-black/60 mb-6 relative group">
+            <video 
+              src="/the_first_image_is_bg_to_set_t (1).mp4"
+              className="w-full h-full object-cover"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            />
           </div>
 
           <a 

@@ -38,19 +38,19 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
     let goldRate = 72.50; // $ per gram
 
     if (category === 'rings') {
-      weight = (price * 0.25) / goldRate; 
+      weight = (price * 0.25) / goldRate;
       purity = "18K Gold";
     } else if (category === 'necklaces') {
       weight = (price * 0.35) / goldRate;
       purity = "22K Gold (916 Purity)";
     } else if (category === 'earrings') {
-      weight = (price * 0.30) / goldRate; 
+      weight = (price * 0.30) / goldRate;
       purity = "18K Gold";
     } else if (category === 'bracelets') {
       weight = (price * 0.32) / goldRate;
       purity = "22K Gold (916 Purity)";
     }
-    
+
     const formattedWeight = weight.toFixed(2);
     const metalValue = parseFloat((weight * goldRate).toFixed(2));
     const makingCharges = parseFloat((price * 0.15).toFixed(2));
@@ -72,16 +72,16 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
-        onClick={handleClose} 
+      <div
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+        onClick={handleClose}
       />
 
       {/* Modal Container */}
       <div className="relative bg-white w-full max-w-4xl rounded-sm shadow-premium border border-gold-light/20 overflow-hidden grid grid-cols-1 md:grid-cols-2 z-10 animate-in fade-in zoom-in-95 duration-300">
-        
+
         {/* Close Button */}
-        <button 
+        <button
           onClick={handleClose}
           className="absolute right-4 top-4 p-1.5 rounded-full bg-white/80 hover:bg-gold hover:text-charcoal transition-colors text-charcoal shadow-soft z-30 cursor-pointer"
           aria-label="Close Modal"
@@ -93,17 +93,17 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
         <div className="bg-luxury-cream p-6 flex flex-col justify-between border-r border-gold-light/10">
           <div className="relative flex-grow flex items-center justify-center min-h-[300px]">
             {activeTab === 'image' ? (
-              <div 
+              <div
                 className="relative overflow-hidden w-full h-full aspect-square rounded-sm cursor-zoom-in"
                 onClick={() => setIsZoomed(!isZoomed)}
                 onMouseMove={handleMouseMove}
                 style={{ cursor: isZoomed ? 'zoom-out' : 'zoom-in' }}
               >
-                <img 
-                  src={product.img} 
-                  alt={product.title} 
+                <img
+                  src={product.img}
+                  alt={product.title}
                   className="w-full h-full object-cover transition-transform duration-200"
-                  style={{ 
+                  style={{
                     transform: isZoomed ? 'scale(2.2)' : 'scale(1)',
                     transformOrigin: isZoomed ? `${zoomPos.x}% ${zoomPos.y}%` : 'center center'
                   }}
@@ -111,12 +111,12 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               </div>
             ) : (
               <div className="w-full h-full aspect-square rounded-sm overflow-hidden flex items-center justify-center">
-                <video 
+                <video
                   src={videoUrl}
                   className="w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
+                  autoPlay
+                  loop
+                  muted
                   playsInline
                   controls
                 />
@@ -126,23 +126,21 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
 
           {/* Media Switcher Tabs */}
           <div className="flex gap-2 justify-center mt-4">
-            <button 
-              className={`flex items-center gap-1 px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-sm border transition-all ${
-                activeTab === 'image' 
-                  ? 'bg-charcoal text-white border-charcoal' 
-                  : 'bg-white text-charcoal-muted border-gold-light/35 hover:border-gold'
-              }`}
+            <button
+              className={`flex items-center gap-1 px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-sm border transition-all ${activeTab === 'image'
+                ? 'bg-charcoal text-white border-charcoal'
+                : 'bg-white text-charcoal-muted border-gold-light/35 hover:border-gold'
+                }`}
               onClick={() => { setActiveTab('image'); setIsZoomed(false); }}
             >
               <ImageIcon className="w-3.5 h-3.5" />
               Image Detail
             </button>
-            <button 
-              className={`flex items-center gap-1 px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-sm border transition-all ${
-                activeTab === 'video' 
-                  ? 'bg-charcoal text-white border-charcoal' 
-                  : 'bg-white text-charcoal-muted border-gold-light/35 hover:border-gold'
-              }`}
+            <button
+              className={`flex items-center gap-1 px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-sm border transition-all ${activeTab === 'video'
+                ? 'bg-charcoal text-white border-charcoal'
+                : 'bg-white text-charcoal-muted border-gold-light/35 hover:border-gold'
+                }`}
               onClick={() => setActiveTab('video')}
             >
               <Video className="w-3.5 h-3.5" />
@@ -161,7 +159,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               <h2 className="font-serif text-2xl font-bold text-charcoal tracking-wide">
                 {product.title}
               </h2>
-              <p className="text-xl font-serif text-gold-dark font-bold">
+              <p className="text-xl text-gold-dark font-bold" style={{ fontFamily: 'Inter, sans-serif' }}>
                 ${product.price.toLocaleString()}
               </p>
             </div>
@@ -205,8 +203,8 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <label className="text-[10px] text-charcoal-muted font-bold uppercase tracking-wider">Metal Type</label>
-                  <select 
-                    value={metal} 
+                  <select
+                    value={metal}
                     onChange={(e) => setMetal(e.target.value)}
                     className="w-full bg-luxury-cream border border-gold-light/35 rounded-sm p-2 text-xs font-semibold focus:outline-none focus:border-gold"
                   >
@@ -218,8 +216,8 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
                 </div>
                 <div className="space-y-1">
                   <label className="text-[10px] text-charcoal-muted font-bold uppercase tracking-wider">Size Selector</label>
-                  <select 
-                    value={size} 
+                  <select
+                    value={size}
                     onChange={(e) => setSize(e.target.value)}
                     className="w-full bg-luxury-cream border border-gold-light/35 rounded-sm p-2 text-xs font-semibold focus:outline-none focus:border-gold"
                   >
@@ -233,9 +231,9 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               </div>
               <div className="space-y-1">
                 <label className="text-[10px] text-charcoal-muted font-bold uppercase tracking-wider">Custom Engraving</label>
-                <input 
-                  type="text" 
-                  placeholder="Complimentary (Max 15 characters)" 
+                <input
+                  type="text"
+                  placeholder="Complimentary (Max 15 characters)"
                   maxLength={15}
                   value={engraving}
                   onChange={(e) => setEngraving(e.target.value)}
@@ -248,7 +246,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
           {/* Action buttons */}
           <div className="space-y-3 pt-4 border-t border-luxury-cream">
             <div className="flex gap-3">
-              <button 
+              <button
                 onClick={() => {
                   onBuyNow(product, { metal, size, engraving });
                   handleClose();
@@ -258,7 +256,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
                 <CreditCard className="w-4 h-4" />
                 Buy Now
               </button>
-              <button 
+              <button
                 onClick={() => {
                   onAddToCart(product, { metal, size, engraving });
                   handleClose();
@@ -270,7 +268,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               </button>
             </div>
 
-            <button 
+            <button
               onClick={() => {
                 window.location.hash = "#consultation";
                 handleClose();
