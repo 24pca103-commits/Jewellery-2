@@ -26,7 +26,7 @@ const SLIDES = [
     title: "Heirloom Gold Jhumkas",
     subtitle: "22K BIS Hallmarked Temple Craft",
     desc: "Explore our magnificent collections of hand-crafted gold hoops, traditional jhumkas, and modern drops.",
-    img: "https://images-static.nykaa.com/media/catalog/product/7/b/7b46f72DBER282_1.jpg",
+    img: "https://m.media-amazon.com/images/I/714ZanbnYwL._AC_UY1100_.jpg",
     ctaGold: "#catalog",
     ctaDiamonds: "#catalog"
   }

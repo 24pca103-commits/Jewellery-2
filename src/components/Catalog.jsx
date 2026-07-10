@@ -372,7 +372,7 @@ export default function Catalog({ products, wishlist = [], onWishlistToggle, onA
           {/* Banner Image with Ken Burns hover effect */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1600&q=80"
+              src="https://dastoorjewels.com/cdn/shop/files/KER13G.png?v=1782801094&width=1080"
               alt="Bridal Jhumkas Background"
               className="w-full h-full object-cover opacity-50 transition-transform duration-[8000ms] ease-out group-hover:scale-108"
             />

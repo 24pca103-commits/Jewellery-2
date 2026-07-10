@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const BASE_RATES = {
-  gold24k:  75.50,
-  gold22k:  69.20,
-  gold18k:  58.10,
-  silver:    1.80,
+  gold24k: 75.50,
+  gold22k: 69.20,
+  gold18k: 58.10,
+  silver: 1.80,
   diamond: 3800.00,
 };
 
@@ -22,11 +22,11 @@ export default function MetalRates() {
     const id = setInterval(() => {
       setRates(prev => {
         const next = {
-          gold24k:  +rand(prev.gold24k  - 0.30, prev.gold24k  + 0.30),
-          gold22k:  +rand(prev.gold22k  - 0.28, prev.gold22k  + 0.28),
-          gold18k:  +rand(prev.gold18k  - 0.22, prev.gold18k  + 0.22),
-          silver:   +rand(prev.silver   - 0.02, prev.silver   + 0.02),
-          diamond:  +rand(prev.diamond  - 5,    prev.diamond   + 5),
+          gold24k: +rand(prev.gold24k - 0.30, prev.gold24k + 0.30),
+          gold22k: +rand(prev.gold22k - 0.28, prev.gold22k + 0.28),
+          gold18k: +rand(prev.gold18k - 0.22, prev.gold18k + 0.22),
+          silver: +rand(prev.silver - 0.02, prev.silver + 0.02),
+          diamond: +rand(prev.diamond - 5, prev.diamond + 5),
         };
         const changed = {};
         Object.keys(next).forEach(k => { changed[k] = next[k] !== prev[k]; });
@@ -46,7 +46,7 @@ export default function MetalRates() {
       purity: '999 Purity',
       icon: '🪙',
       color: '#D4A843',
-      img: 'https://cdn.eternz.com/thumbnails/products/253_25dca409_thumbnail_1024.png',
+      img: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80',
       bg: 'linear-gradient(135deg, #3B2507 0%, #6B3E10 100%)',
       unit: '/gram',
       prefix: '$',
@@ -57,7 +57,7 @@ export default function MetalRates() {
       purity: '916 Purity',
       icon: '💛',
       color: '#F0C040',
-      img: 'https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw677f6639/images/hi-res/511069SOEAGA00_1.jpg?sw=480&sh=480',
+      img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80',
       bg: 'linear-gradient(135deg, #4A2D06 0%, #7C4A12 100%)',
       unit: '/gram',
       prefix: '$',
@@ -68,7 +68,7 @@ export default function MetalRates() {
       purity: '750 Purity',
       icon: '✨',
       color: '#E8B84B',
-      img: 'https://m.media-amazon.com/images/I/71TM-Vk7w7L._AC_UY1100_.jpg',
+      img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80',
       bg: 'linear-gradient(135deg, #3A2A08 0%, #5E4015 100%)',
       unit: '/gram',
       prefix: '$',
@@ -79,7 +79,7 @@ export default function MetalRates() {
       purity: '925 Purity',
       icon: '🔘',
       color: '#C0C8D8',
-      img: 'https://silverlinings.in/cdn/shop/products/Filigree_Earrings_ER303.jpg?v=1757268890',
+      img: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80',
       bg: 'linear-gradient(135deg, #1A1E2A 0%, #2D3446 100%)',
       unit: '/gram',
       prefix: '$',
@@ -90,7 +90,7 @@ export default function MetalRates() {
       purity: 'VVS1 Clarity',
       icon: '💎',
       color: '#A8D8F0',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtzjHpJ3q0WxUxm5MH1mLE2Nn_bg0QjHwWGbpZdA4Dw8N7AoEsnfrDmz0&s=10',
+      img: 'https://images.unsplash.com/photo-1615655404746-8f0309326651?auto=format&fit=crop&w=600&q=80',
       bg: 'linear-gradient(135deg, #0D1B2A 0%, #1B3A5C 100%)',
       unit: '/carat',
       prefix: '$',
@@ -179,7 +179,7 @@ export default function MetalRates() {
                 transition: 'color 0.4s',
                 color: flashing[card.key] ? '#fff' : card.color,
               }}>
-                <span style={{ fontSize: '30px', fontWeight: '800', fontFamily: 'Montserrat, sans-serif' }}>
+                <span style={{ fontSize: '30px', fontWeight: '800', fontFamily: 'Inter, sans-serif', fontVariantNumeric: 'tabular-nums' }}>
                   {card.prefix}{rates[card.key].toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </span>
                 <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginLeft: '4px' }}>
@@ -224,6 +224,3 @@ export default function MetalRates() {
     </section>
   );
 }
-
-
-

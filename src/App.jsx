@@ -49,8 +49,8 @@ const PRODUCTS = [
     title: "Celestia Diamond Chandeliers",
     category: "chandeliers",
     price: 3900,
-    img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
-    hoverImg: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+    img: "https://i.etsystatic.com/18812175/r/il/56ed86/4171365892/il_570xN.4171365892_26v5.jpg",
+    hoverImg: "https://i.etsystatic.com/18812175/r/il/26b56c/1893781548/il_794xN.1893781548_6qyb.jpg",
     desc: "Cascading chandelier earrings encrusted with baguette and round-cut diamonds, catching and reflecting light at every angle."
   },
   {

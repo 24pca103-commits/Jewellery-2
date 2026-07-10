@@ -507,12 +507,23 @@ header.scrolled {
     justify-content: center;
     align-items: center;
 }
-
 .diamond-object {
     width: 200px;
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotateX(15deg) rotateY(0deg) translateY(0px);
+    }
+    50% {
+        transform: rotateX(25deg) rotateY(180deg) translateY(-12px);
+    }
+    100% {
+        transform: rotateX(15deg) rotateY(360deg) translateY(0px);
+    }
 }
 
 .diamond-facet {
