@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const BASE_RATES = {
   gold24k:  75.50,
@@ -8,36 +8,8 @@ const BASE_RATES = {
   diamond: 3800.00,
 };
 
-function rand(min, max) {
-  return (Math.random() * (max - min) + min).toFixed(2);
-}
-
 export default function MetalRates() {
-  const [rates, setRates] = useState(BASE_RATES);
-  const [updated, setUpdated] = useState(new Date());
-  const [flashing, setFlashing] = useState({});
-
-  // Simulate live rate fluctuation every 8 seconds
-  useEffect(() => {
-    const id = setInterval(() => {
-      setRates(prev => {
-        const next = {
-          gold24k:  +rand(prev.gold24k  - 0.30, prev.gold24k  + 0.30),
-          gold22k:  +rand(prev.gold22k  - 0.28, prev.gold22k  + 0.28),
-          gold18k:  +rand(prev.gold18k  - 0.22, prev.gold18k  + 0.22),
-          silver:   +rand(prev.silver   - 0.02, prev.silver   + 0.02),
-          diamond:  +rand(prev.diamond  - 5,    prev.diamond   + 5),
-        };
-        const changed = {};
-        Object.keys(next).forEach(k => { changed[k] = next[k] !== prev[k]; });
-        setFlashing(changed);
-        setTimeout(() => setFlashing({}), 700);
-        return next;
-      });
-      setUpdated(new Date());
-    }, 8000);
-    return () => clearInterval(id);
-  }, []);
+  const rates = BASE_RATES;
 
   const cards = [
     {
@@ -97,7 +69,7 @@ export default function MetalRates() {
     },
   ];
 
-  const timeStr = updated.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  const dateStr = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
     <section id="metal-rates" style={{ background: 'var(--cream)', padding: 'clamp(20px, 4vw, 45px) clamp(16px, 4vw, 40px)' }}>
@@ -106,14 +78,14 @@ export default function MetalRates() {
          {/* Header */}
          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
           <p style={{ color: 'var(--gold-burnished)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '12px' }}>
-            Live Market Prices
+            Daily Market Prices
           </p>
           <h2 style={{ fontSize: '38px', color: 'var(--emerald-deep)', marginBottom: '14px' }}>
             Today's Metal Rates
           </h2>
           <p style={{ color: 'var(--gray-text)', fontSize: '14px' }}>
-            Rates updated live every day &nbsp;·&nbsp;
-            <span style={{ color: 'var(--gold-burnished)', fontWeight: 600 }}>Last updated: {timeStr}</span>
+            Rates updated daily &nbsp;·&nbsp;
+            <span style={{ color: 'var(--gold-burnished)', fontWeight: 600 }}>Last updated: {dateStr}</span>
           </p>
         </div>
 
@@ -154,8 +126,6 @@ export default function MetalRates() {
                 filter: 'blur(20px)',
               }} />
 
-
-
               <p style={{
                 color: 'rgba(255,255,255,0.55)',
                 fontSize: '10px', letterSpacing: '2.5px',
@@ -176,7 +146,7 @@ export default function MetalRates() {
 
               <div style={{
                 transition: 'color 0.4s',
-                color: flashing[card.key] ? '#fff' : card.color,
+                color: card.color,
               }}>
                 <span style={{ fontSize: '30px', fontWeight: '800', fontFamily: 'Inter, sans-serif' }}>
                   {card.prefix}{rates[card.key].toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -199,10 +169,9 @@ export default function MetalRates() {
                   borderRadius: '50%',
                   background: '#4CAF50',
                   display: 'inline-block',
-                  animation: 'pulse-green 1.5s infinite',
                 }} />
                 <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px', letterSpacing: '0.5px' }}>
-                  Live · Market rate
+                  Daily market rate
                 </span>
               </div>
             </div>
