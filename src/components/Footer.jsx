@@ -62,7 +62,7 @@ export default function Footer() {
                 alt="Thodoo Jewellery" 
                 className="absolute inset-0 w-full h-full object-contain"
                 style={{ 
-                  clipPath: 'inset(0 66% 0 0)',
+                  clipPath: 'inset(0 62% 0 0)',
                   filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' 
                 }}
               />
@@ -71,7 +71,7 @@ export default function Footer() {
                 alt="Thodoo Jewellery" 
                 className="absolute inset-0 w-full h-full object-contain"
                 style={{ 
-                  clipPath: 'inset(0 0 0 31%)',
+                  clipPath: 'inset(0 0 0 35%)',
                   filter: 'brightness(0) invert(9%) sepia(21%) saturate(1915%) hue-rotate(336deg) brightness(96%) contrast(93%)' 
                 }}
               />
@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* Column 2: Shop categories */}
           <div className="space-y-3 text-left">
-            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
+            <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
               Shop
             </h4>
             <ul className="space-y-2">
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Column 3: Customer Care */}
           <div className="space-y-3 text-left">
-            <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
+            <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
               Customer Care
             </h4>
             <ul className="space-y-2">
@@ -149,7 +149,7 @@ export default function Footer() {
           {/* Column 4: Company & Subscription */}
           <div className="space-y-4 text-left">
             <div className="space-y-3">
-              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
+              <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
                 Company
               </h4>
               <ul className="space-y-2">
@@ -160,7 +160,7 @@ export default function Footer() {
             </div>
             
             <div className="space-y-3 pt-1">
-              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
+              <h4 className="font-sans text-sm font-bold uppercase tracking-wider text-charcoal border-b border-gold-light/25 pb-2">
                 Stay Updated
               </h4>
               <p className="font-sans text-xs text-charcoal-muted leading-relaxed font-light">
