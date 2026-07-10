@@ -61,7 +61,7 @@ export default function Footer() {
                 src="/logo.png" 
                 alt="Thodoo Jewellery" 
                 className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-102"
-                style={{ filter: 'sepia(1) saturate(4) brightness(0.38) hue-rotate(338deg)' }}
+                style={{ filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' }}
               />
             </a>
             <p className="font-sans text-xs sm:text-sm text-charcoal-muted leading-relaxed font-light">

@@ -143,13 +143,12 @@ export default function App() {
     setCart([]);
   };
 
-  const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div className="bg-white min-h-screen text-charcoal font-sans overflow-x-hidden selection:bg-gold/30 selection:text-charcoal-dark">
       {/* 1. Header & Navigation */}
       <Navbar
-        cartCount={totalQty}
+        cartCount={cart.length}
         wishlistCount={wishlist.length}
         onCartToggle={() => setIsCartOpen(true)}
       />

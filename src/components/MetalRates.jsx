@@ -108,7 +108,7 @@ export default function MetalRates() {
           <p style={{ color: 'var(--gold-burnished)', fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '12px' }}>
             Live Market Prices
           </p>
-          <h2 style={{ fontSize: '38px', fontFamily: 'Playfair Display, serif', color: 'var(--emerald-deep)', marginBottom: '14px' }}>
+          <h2 style={{ fontSize: '38px', fontFamily: 'Cinzel, Georgia, serif', color: 'var(--emerald-deep)', marginBottom: '14px' }}>
             Today's Metal Rates
           </h2>
           <p style={{ color: 'var(--gray-text)', fontSize: '14px' }}>
@@ -170,7 +170,7 @@ export default function MetalRates() {
                 fontSize: '16px',
                 fontWeight: '700',
                 marginBottom: '18px',
-                fontFamily: 'Playfair Display, serif',
+                fontFamily: 'Cinzel, Georgia, serif',
               }}>
                 {card.label}
               </h3>
@@ -179,7 +179,7 @@ export default function MetalRates() {
                 transition: 'color 0.4s',
                 color: flashing[card.key] ? '#fff' : card.color,
               }}>
-                <span style={{ fontSize: '30px', fontWeight: '800', fontFamily: 'Montserrat, sans-serif' }}>
+                <span style={{ fontSize: '30px', fontWeight: '800', fontFamily: 'Inter, sans-serif' }}>
                   {card.prefix}{rates[card.key].toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </span>
                 <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginLeft: '4px' }}>

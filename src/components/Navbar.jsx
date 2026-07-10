@@ -66,7 +66,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
                   src="/logo.png" 
                   alt="Thodoo Jewellery" 
                   className="h-11 sm:h-12 w-auto object-contain"
-                  style={{ filter: 'sepia(1) saturate(4) brightness(0.38) hue-rotate(338deg)' }}
+                  style={{ filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' }}
                 />
               </a>
             </div>
@@ -222,7 +222,7 @@ export default function Navbar({ cartCount = 0, wishlistCount = 0, onCartToggle 
               <div>
                 <div className="flex items-center justify-between p-5 border-b border-gold/15">
                   <div className="flex items-center gap-1.5">
-                    <img src="/logo.png" alt="Thodoo" className="h-8 w-auto object-contain" style={{ filter: 'sepia(1) saturate(4) brightness(0.38) hue-rotate(338deg)' }} />
+                    <img src="/logo.png" alt="Thodoo" className="h-8 w-auto object-contain" style={{ filter: 'brightness(0) invert(1) drop-shadow(1px 0px 0px #2A1B14) drop-shadow(-1px 0px 0px #2A1B14) drop-shadow(0px 1px 0px #2A1B14) drop-shadow(0px -1px 0px #2A1B14) drop-shadow(0px 0px 1px #2A1B14)' }} />
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}

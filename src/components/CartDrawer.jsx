@@ -170,7 +170,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
                         {item.customDetails.engraving && <div>Engraving: "{item.customDetails.engraving}"</div>}
                       </div>
                     )}
-                    <div className="cart-item-price" style={{ fontFamily: "'Playfair Display', serif" }}>${item.product.price.toLocaleString()}</div>
+                    <div className="cart-item-price font-sans">${item.product.price.toLocaleString()}</div>
                     <div className="cart-item-qty">
                       <button className="qty-btn" onClick={() => onQtyChange(item.cartItemId, -1)}>-</button>
                       <span>{item.quantity}</span>
@@ -191,7 +191,7 @@ export default function CartDrawer({ isOpen, cart, onClose, onQtyChange, onRemov
             {checkoutStep === 0 && (
               <div className="cart-subtotal">
                 <span>Subtotal:</span>
-                <span style={{ fontFamily: "'Playfair Display', serif" }}>${subtotal.toLocaleString()}</span>
+                <span className="font-sans">${subtotal.toLocaleString()}</span>
               </div>
             )}
             <div style={{ display: 'flex', gap: '10px' }}>

@@ -159,7 +159,7 @@ export default function ProductModal({ product, onClose, onAddToCart, onBuyNow }
               <h2 className="font-serif text-2xl font-bold text-charcoal tracking-wide">
                 {product.title}
               </h2>
-              <p className="text-xl text-gold-dark font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <p className="text-xl text-gold-dark font-bold font-sans">
                 ${product.price.toLocaleString()}
               </p>
             </div>

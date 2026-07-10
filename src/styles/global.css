@@ -14,12 +14,12 @@ html {
 body {
     background-color: var(--cream-bg);
     color: var(--charcoal);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 15px;
     line-height: 1.6;
     overflow-x: hidden;
     max-width: 100%;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 /* Prevent any image from busting layout width */
@@ -29,9 +29,9 @@ img, video, svg {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', Georgia, serif;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: var(--emerald-deep);
 }
 

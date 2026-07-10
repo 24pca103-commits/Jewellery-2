@@ -78,8 +78,12 @@ export default function InstagramFeed() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open("https://instagram.com", "_blank");
+                }}
                 key={idx}
-                className="flex-shrink-0 w-[240px] sm:w-[280px] aspect-square relative group overflow-hidden rounded-sm border border-gold-light/10 shadow-soft"
+                className="flex-shrink-0 w-[240px] sm:w-[280px] aspect-square relative group overflow-hidden rounded-sm border border-gold-light/10 shadow-soft cursor-pointer"
               >
                 <img
                   src={post.img}
@@ -109,9 +113,12 @@ export default function InstagramFeed() {
         <div className="mt-12">
           <a
             href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex justify-center items-center px-8 py-3.5 border border-charcoal hover:border-gold hover:text-gold text-charcoal font-sans text-xs uppercase tracking-widest font-bold rounded-sm transition-all duration-300"
+            target="_blank; rel=noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open("https://instagram.com", "_blank");
+            }}
+            className="inline-flex justify-center items-center px-8 py-3.5 border border-charcoal hover:border-gold hover:text-gold text-charcoal font-sans text-xs uppercase tracking-widest font-bold rounded-sm transition-all duration-300 cursor-pointer"
           >
             Follow Our Journey
           </a>
